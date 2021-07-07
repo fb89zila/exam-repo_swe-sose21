@@ -1,7 +1,7 @@
 # Markdown to LaTex
 ## Description
-This projects goal is to transform LaTeX documents into Markdown documents and calculate simple functions.  
-The focus lies in the conversion and the calculation is planned to be only a small part, but extendable.
+This projects goal is to transform Markdown documents into LaTeX documents and calculate simple functions.  
+The focus lies on the conversion and the calculation is planned to be only a small part, but extendable.
 
 ## Class diagram
 The class diagram is found [here](https://github.com/fb89zila/exam-repo_swe-sose21/wiki/Developer#class-diagram).

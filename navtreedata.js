@@ -26,9 +26,10 @@ var NAVTREE =
 [
   [ "Markdown to LaTeX", "index.html", [
     [ "Description", "index.html#autotoc_md1", null ],
-    [ "Class diagram", "index.html#autotoc_md2", null ],
-    [ "Class reference", "index.html#autotoc_md3", null ],
-    [ "Used libraries and other sources", "index.html#autotoc_md4", null ],
+    [ "Activity diagram", "index.html#autotoc_md2", null ],
+    [ "Class diagram", "index.html#autotoc_md3", null ],
+    [ "Class reference", "index.html#autotoc_md4", null ],
+    [ "Used libraries and other sources", "index.html#autotoc_md5", null ],
     [ "Packages", "namespaces.html", [
       [ "Packages", "namespaces.html", "namespaces_dup" ]
     ] ],

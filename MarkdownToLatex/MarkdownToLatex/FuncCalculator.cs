@@ -21,7 +21,7 @@ namespace MarkdownToLatex {
         {
             try {
                 Expr func = Expr.Parse(function);
-                return func.ToLaTeX();
+                return $"f({vars}) = " + func.ToLaTeX();
             } catch (Exception ex) {
                 Console.WriteLine("[ERROR] Error converting function: {0}", ex.Message);
                 return null;
@@ -42,7 +42,7 @@ namespace MarkdownToLatex {
         {
             try {
                 Expr func = Expr.Parse(function);
-                return func.ToLaTeX() + " = " + func.Compile(vars)(param);
+                return $"f({vars}) = " + func.ToLaTeX() + $" with f({param}) = " + func.Compile(vars)(param);
             } catch (Exception ex){
                 Console.WriteLine("[ERROR] Error converting function: {0}", ex.Message);
                 return null;

@@ -29,17 +29,17 @@ namespace MarkdownToLatex {
         /// Checks if an <paramref name="element"/> is a single variable function.
         /// </summary>
         /// <returns>
-        /// a bool indicating whether the <paramref name="element"/> is a single variable function or not.
+        /// a Match indicating whether the <paramref name="element"/> is a single variable function or not.
         /// </returns>
         /// <param name="element">The element to check.</param>
-        public static bool IsSVFunction(string element) {
+        public static Match MatchSVFunction(string element) {
             Regex svregex;
             bool getregex = mathrx.TryGetValue("svfunction", out svregex);
             if(getregex){
-                return svregex.IsMatch(element);
+                return svregex.Match(element);
             } else {
                 Console.WriteLine("[ERROR] Error getting RegEx.");
-                return false;
+                return Match.Empty;
             }
         }
 

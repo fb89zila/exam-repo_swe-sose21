@@ -5,12 +5,22 @@ using System;
 namespace MarkdownToLatex {
 
     /// <summary>
-    /// A static class used for parsing elements based on different regular expressions
+    /// A static class used for parsing elements based on different regular expressions.
     /// </summary>
     public static class MathParser {
 
         /// <summary>
         /// The Dictionary containing regular expressions to parse math elements.
+        /// <list type="table">
+        ///     <listheader>
+        ///         <term>Key</term>
+        ///         <description>Description of the returned RegEx</description>
+        ///     </listheader>
+        ///     <item>
+        ///         <term>svfunction</term>
+        ///         <description>RegEx to find single variable functions</description>
+        ///     </item>
+        /// </list>
         /// </summary>
         public static Dictionary<string, Regex> mathrx {get;}
 

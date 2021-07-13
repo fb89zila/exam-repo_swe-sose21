@@ -11,6 +11,7 @@ namespace MarkdownToLatex {
 
         /// <summary>
         /// The Dictionary containing regular expressions to parse math elements.
+        /// The following keys are accepted:
         /// <list type="table">
         ///     <listheader>
         ///         <term>Key</term>

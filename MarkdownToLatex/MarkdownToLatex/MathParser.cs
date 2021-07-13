@@ -37,7 +37,7 @@ namespace MarkdownToLatex {
         /// </summary>
         static MathParser() {
             mathrx = new Dictionary<string, Regex>();
-            mathrx.Add("", new Regex(""));
+            mathrx.Add("svfunction", new Regex(@"f\(([a-z]|[\d\.]+)\)=([\d\^\+\-\*\\a-z]*):([a-z])"));
         }
     }
 }

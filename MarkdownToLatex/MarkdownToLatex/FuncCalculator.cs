@@ -19,6 +19,8 @@ namespace MarkdownToLatex {
         /// <param name="function">The function to process.</param>
         public override string ConvertElement(string vars, string function)
         {
+            this.Element = function;
+            this.Variable = char.Parse(vars.Substring(0, 1));
             try {
                 Expr func = Expr.Parse(function);
                 return $"f({vars}) = " + func.ToLaTeX();
@@ -40,6 +42,9 @@ namespace MarkdownToLatex {
         /// <param name="param">The parameter at which the function should be evaluated.</param>
         public override string ConvertElement(double param, string vars, string function)
         {
+            this.Element = function;
+            this.Variable = char.Parse(vars.Substring(0, 1));
+            this.Input = param;
             try {
                 Expr func = Expr.Parse(function);
                 return $"f({vars}) = " + func.ToLaTeX() + $" with f({param}) = " + func.Compile(vars)(param);

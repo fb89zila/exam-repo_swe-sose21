@@ -11,6 +11,6 @@ namespace MarkdownToLatex
         /// <summary>
         /// The element to process.
         /// </summary>
-        public string Element {get; private set;}
+        public string Element {get; protected set;}
     }
 }

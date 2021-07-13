@@ -9,12 +9,12 @@ namespace MarkdownToLatex {
         /// <summary>
         /// The variable to use.
         /// </summary>
-        public char Variable {get; private set;}
+        public char Variable {get; protected set;}
 
         /// <summary>
         /// The input element to process.
         /// </summary>
-        public double Input {get; private set;}
+        public double Input {get; protected set;}
 
         /// <summary>
         /// Takes the <paramref name="vars"/> to use and an <paramref name="element"/> to process.

@@ -29,7 +29,8 @@ var NAVTREE =
     [ "Activity diagram", "index.html#autotoc_md2", null ],
     [ "Class diagram", "index.html#autotoc_md3", null ],
     [ "Class reference", "index.html#autotoc_md4", null ],
-    [ "Used libraries and other sources", "index.html#autotoc_md5", null ],
+    [ "Used regular expressions", "index.html#autotoc_md5", null ],
+    [ "Used libraries and other sources", "index.html#autotoc_md6", null ],
     [ "Packages", "namespaces.html", [
       [ "Packages", "namespaces.html", "namespaces_dup" ]
     ] ],

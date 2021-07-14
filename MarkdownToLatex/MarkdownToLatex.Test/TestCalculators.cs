@@ -3,7 +3,7 @@ using Xunit;
 
 namespace MarkdownToLatex.Test
 {
-    public class UnitTest1
+    public class TestCalculators
     {
         [Fact]
         public void Test1()

@@ -25,8 +25,10 @@ namespace MarkdownToLatex {
 
         /// <summary>Initializes the Dictionary and adds regular expressions to it.</summary>
         static MathParser() {
-            mathrx = new Dictionary<string, Regex>();
-            mathrx.Add("svfunction", new Regex(@"f\(([a-z]|[\d\.]+)\)=([\d\^\+\-\*\/\\a-z]*):([a-z])"));
+            mathrx = new Dictionary<string, Regex>()
+            {
+                {"svfunction", new Regex(@"f\(([a-z]|[\d\.]+)\)=([\d\^\+\-\*\/a-z]*):([a-z])")}
+            };
         }
     }
 }

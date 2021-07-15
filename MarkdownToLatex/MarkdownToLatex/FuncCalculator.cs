@@ -1,5 +1,6 @@
 using System;
 using MathNet.Symbolics;
+using System.Globalization;
 using Expr = MathNet.Symbolics.SymbolicExpression;
 
 namespace MarkdownToLatex {
@@ -47,7 +48,7 @@ namespace MarkdownToLatex {
             this.Input = param;
             try {
                 Expr func = Expr.Parse(function);
-                return $"f({vars}) = " + func.ToLaTeX() + $" with f({param}) = " + func.Compile(vars)(param);
+                return $"f({vars}) = " + func.ToLaTeX() + $" with f({param.ToString(CultureInfo.InvariantCulture)}) = " + func.Compile(vars)(param).ToString(CultureInfo.InvariantCulture);
             } catch (Exception ex){
                 Console.WriteLine("[ERROR] Error converting function: {0}", ex.Message);
                 return null;

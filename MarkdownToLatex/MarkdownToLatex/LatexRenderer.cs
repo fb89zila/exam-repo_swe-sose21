@@ -144,9 +144,6 @@ namespace MarkdownToLatex
         /// <summary>
         /// Writes a List in LaTeX
         /// </summary>
-        /// <returns>
-        /// Multiple LaTeX lines containing the List
-        /// </returns>
         /// <param name="line">The corresponding line</param>
         public static void WriteList(string line){
             Match m = MarkdownParser.MatchList(line);
@@ -201,9 +198,6 @@ namespace MarkdownToLatex
         /// <summary>
         /// Writes a Quote in LaTeX
         /// </summary>
-        /// <returns>
-        /// A LaTeX line containing the Quote
-        /// </returns>
         /// <param name="line">The corresponding line</param>
         public static void WriteQuote(string line){
             Match m = MarkdownParser.MatchQuote(line);

@@ -12,5 +12,9 @@ The class diagram is found [here](https://github.com/fb89zila/exam-repo_swe-sose
 ## Class reference
 The the link to the github-page can be found under Environments and [here](https://github.com/fb89zila/exam-repo_swe-sose21/wiki/Developer#class-reference-).
 
+## Used regular expressions
+Used RegEx, divided by classes, can be found [here](https://github.com/fb89zila/exam-repo_swe-sose21/wiki/Developer#used-regular-expressions-).  
+The links redirect to the [RegExr online tool](https://regexr.com/), which helps to understand and test regular expressions.
+
 ## Used libraries and other sources
 References to libraries, NuGet packages and other sources used in this project are found [here](https://github.com/fb89zila/exam-repo_swe-sose21/wiki/Developer#references-).

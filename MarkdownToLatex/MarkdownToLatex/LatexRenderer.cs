@@ -41,18 +41,14 @@ namespace MarkdownToLatex
         ///             <term>3</term>
         ///             <description>Layer 3</description>
         ///         </item>
-        ///         <item>
-        ///             <term>4</term>
-        ///             <description>Layer 4</description>
-        ///         </item>
         /// </list>
         /// </summary>
-        /// <exception cref="System.FormatException">Thrown when trying to set the value to something other than 0-4</exception>
+        /// <exception cref="System.FormatException">Thrown when trying to set the value to something other than 0-3</exception>
         public static byte InList {get => _inlist; private set {
-            if(0 <= value && value <= 4){
+            if(0 <= value && value <= 3){
                 _inlist = value;
             } else {
-                throw new FormatException("Input has to be between 0 and 4. Check the documentation for details."); 
+                throw new FormatException("Input has to be between 0 and 3. Check the documentation for details."); 
             }
         }}
 
@@ -85,7 +81,7 @@ namespace MarkdownToLatex
         /// </summary>
         /// <exception cref="System.FormatException">Thrown when trying to set the value to something other than 0-3</exception>
         public static byte InQuote {get => _inquote; private set {
-            if(0 <= value && value <= 4){
+            if(0 <= value && value <= 3){
                 _inquote = value;
             } else {
                 throw new FormatException("Input has to be between 0 and 3. Check the documentation for details."); 
@@ -96,7 +92,7 @@ namespace MarkdownToLatex
         /// Writes the LaTeX document into a file
         /// </summary>
         public static void WriteLatexDocument(){
-            FileStream fs = File.Create(Path.Combine(MdToTex.MdFilePath, "../latex")); //Creating or Overwriting file
+            FileStream fs = File.Create(Path.Combine(MdToTex.MdFilePath, "latex/output.tex")); //Creating or Overwriting file, for now the file is called "output.tex", this could be changed to the FileName of the .md file later
             using(StreamWriter sw = new StreamWriter(fs)){
                 foreach(string ln in LatexLines){
                     sw.WriteLine(ln);
@@ -186,13 +182,6 @@ namespace MarkdownToLatex
             } else if (InList == 3){
                 if(depth == 3){
                     appendNewItem(content);
-                } else if(depth == 4){
-                    newListAfterItem(content);
-                    InList = 4;
-                }
-            } else if (InList == 4){
-                if(depth == 4){
-                    appendNewItem(content);
                 }
             }
         }
@@ -269,31 +258,19 @@ namespace MarkdownToLatex
         /// <summary>
         /// Writes a line with cursive text in LaTeX
         /// </summary>
+        /// <returns>the line, converted from Markdown into LaTeX</returns>
         /// <param name="line">The corresponding line</param>
-        public static void WriteCursive(string line){
-            MatchCollection mc = MarkdownParser.MatchCursive(line);
-            string result = line;
-
-            foreach(Match m in mc){
-                result = result.Replace(m.Groups[0].Value, String.Format(@"\textit{{{0}}}", m.Groups[2].Value));
-            }
-
-            LatexLines.Add(result);
+        public static string WriteCursive(string line){
+            return MarkdownParser.TextRx["cursive"].Replace(line, @"\textit{$2}");
         }
 
         /// <summary>
         /// Writes a line with bold text in LaTeX
         /// </summary>
+        /// <returns>the line, converted from Markdown into LaTeX</returns>
         /// <param name="line">The corresponding line</param>
-        public static void WriteBold(string line){
-            MatchCollection mc = MarkdownParser.MatchBold(line);
-            string result = line;
-
-            foreach(Match m in mc){
-                result = result.Replace(m.Groups[0].Value, String.Format(@"\textbf{{{0}}}", m.Groups[2].Value));
-            }
-
-            LatexLines.Add(result);
+        public static string WriteBold(string line){
+            return MarkdownParser.TextRx["bold"].Replace(line, @"\textbf{$2}");
         }
 
         static LatexRenderer(){

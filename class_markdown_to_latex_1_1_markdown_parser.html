@@ -82,14 +82,367 @@ $(document).ready(function(){initNavTree('class_markdown_to_latex_1_1_markdown_p
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#properties">Properties</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="class_markdown_to_latex_1_1_markdown_parser-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">MarkdownToLatex.MarkdownParser Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class with methods to parse Markdown documents  
+ <a href="class_markdown_to_latex_1_1_markdown_parser.html#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ab87ed678a64ee19b64a93d252122f7df"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_markdown_parser.html#ab87ed678a64ee19b64a93d252122f7df">ReadMdDocument</a> (string mdFilePath)</td></tr>
+<tr class="memdesc:ab87ed678a64ee19b64a93d252122f7df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads lines of document from given file path. The resulting array is saved to <a class="el" href="class_markdown_to_latex_1_1_markdown_parser.html#a186d2c9d16e5ea1910829ac18b16ab05" title="Contains Markdown lines. Read from ReadMdDocument().">MdLines</a>. </p><dl class="section see"><dt>See also</dt><dd>MdToTex.parsePath()</dd></dl>
+ <a href="class_markdown_to_latex_1_1_markdown_parser.html#ab87ed678a64ee19b64a93d252122f7df">More...</a><br /></td></tr>
+<tr class="separator:ab87ed678a64ee19b64a93d252122f7df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2445f0ea3e826799a91603a2c817f06a"><td class="memItemLeft" align="right" valign="top">static Match&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_markdown_parser.html#a2445f0ea3e826799a91603a2c817f06a">MatchMathElement</a> (string line)</td></tr>
+<tr class="memdesc:a2445f0ea3e826799a91603a2c817f06a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matches math element in Markdown with a custom "! " operator.  <a href="class_markdown_to_latex_1_1_markdown_parser.html#a2445f0ea3e826799a91603a2c817f06a">More...</a><br /></td></tr>
+<tr class="separator:a2445f0ea3e826799a91603a2c817f06a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa4f46aa478a809e0795a208c4214039"><td class="memItemLeft" align="right" valign="top">static Match&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_markdown_parser.html#afa4f46aa478a809e0795a208c4214039">MatchHeadline</a> (string text)</td></tr>
+<tr class="memdesc:afa4f46aa478a809e0795a208c4214039"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matches headlines in Markdown.  <a href="class_markdown_to_latex_1_1_markdown_parser.html#afa4f46aa478a809e0795a208c4214039">More...</a><br /></td></tr>
+<tr class="separator:afa4f46aa478a809e0795a208c4214039"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab64d00547e7ecac176806579aa3b72f4"><td class="memItemLeft" align="right" valign="top">static Match&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_markdown_parser.html#ab64d00547e7ecac176806579aa3b72f4">MatchList</a> (string text)</td></tr>
+<tr class="memdesc:ab64d00547e7ecac176806579aa3b72f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matches list and sublist in Markdown.  <a href="class_markdown_to_latex_1_1_markdown_parser.html#ab64d00547e7ecac176806579aa3b72f4">More...</a><br /></td></tr>
+<tr class="separator:ab64d00547e7ecac176806579aa3b72f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5d11814cb6238995a75406b1c10d414"><td class="memItemLeft" align="right" valign="top">static Match&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_markdown_parser.html#ad5d11814cb6238995a75406b1c10d414">MatchQuote</a> (string text)</td></tr>
+<tr class="memdesc:ad5d11814cb6238995a75406b1c10d414"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matches quote in Markdown.  <a href="class_markdown_to_latex_1_1_markdown_parser.html#ad5d11814cb6238995a75406b1c10d414">More...</a><br /></td></tr>
+<tr class="separator:ad5d11814cb6238995a75406b1c10d414"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49e2a271f56458cb9b3c00ef5587e35f"><td class="memItemLeft" align="right" valign="top">static MatchCollection&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_markdown_parser.html#a49e2a271f56458cb9b3c00ef5587e35f">MatchCursive</a> (string text)</td></tr>
+<tr class="memdesc:a49e2a271f56458cb9b3c00ef5587e35f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matches cursive/italic text in Markdown line (when mixed, detect bold first and then cursive)  <a href="class_markdown_to_latex_1_1_markdown_parser.html#a49e2a271f56458cb9b3c00ef5587e35f">More...</a><br /></td></tr>
+<tr class="separator:a49e2a271f56458cb9b3c00ef5587e35f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a314dac022219ad9432b11002f07db1cf"><td class="memItemLeft" align="right" valign="top">static MatchCollection&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_markdown_parser.html#a314dac022219ad9432b11002f07db1cf">MatchBold</a> (string text)</td></tr>
+<tr class="memdesc:a314dac022219ad9432b11002f07db1cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matches bold text in a Markdown line (when mixed, detect bold first and then cursive)  <a href="class_markdown_to_latex_1_1_markdown_parser.html#a314dac022219ad9432b11002f07db1cf">More...</a><br /></td></tr>
+<tr class="separator:a314dac022219ad9432b11002f07db1cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a186d2c9d16e5ea1910829ac18b16ab05"><td class="memItemLeft" align="right" valign="top">static string[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_markdown_parser.html#a186d2c9d16e5ea1910829ac18b16ab05">MdLines</a><code> [get, private set]</code></td></tr>
+<tr class="memdesc:a186d2c9d16e5ea1910829ac18b16ab05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains Markdown lines. Read from <a class="el" href="class_markdown_to_latex_1_1_markdown_parser.html#ab87ed678a64ee19b64a93d252122f7df" title="Reads lines of document from given file path. The resulting array is saved to MdLines....">ReadMdDocument()</a>.  <a href="class_markdown_to_latex_1_1_markdown_parser.html#a186d2c9d16e5ea1910829ac18b16ab05">More...</a><br /></td></tr>
+<tr class="separator:a186d2c9d16e5ea1910829ac18b16ab05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa19dab6091a7dcc217ed5fd2187b05c0"><td class="memItemLeft" align="right" valign="top">static Dictionary&lt; string, Regex &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_markdown_parser.html#aa19dab6091a7dcc217ed5fd2187b05c0">TextRx</a><code> [get]</code></td></tr>
+<tr class="memdesc:aa19dab6091a7dcc217ed5fd2187b05c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains regular expressions defined in the constructor <a class="el" href="class_markdown_to_latex_1_1_markdown_parser.html#aba21f724ef87014a68ffa656474ba59f" title="Constructor initializes TextRx">MarkdownParser()</a>. <br  />
+ They are used to parse Markdown lines. For more details look <a href="https://github.com/fb89zila/exam-repo_swe-sose21/wiki/Developer#used-regular-expressions-">here</a>.  <a href="class_markdown_to_latex_1_1_markdown_parser.html#aa19dab6091a7dcc217ed5fd2187b05c0">More...</a><br /></td></tr>
+<tr class="separator:aa19dab6091a7dcc217ed5fd2187b05c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:aba21f724ef87014a68ffa656474ba59f"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_markdown_parser.html#aba21f724ef87014a68ffa656474ba59f">MarkdownParser</a> ()</td></tr>
+<tr class="memdesc:aba21f724ef87014a68ffa656474ba59f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor initializes <a class="el" href="class_markdown_to_latex_1_1_markdown_parser.html#aa19dab6091a7dcc217ed5fd2187b05c0" title="Contains regular expressions defined in the constructor MarkdownParser().   They are used to parse Ma...">TextRx</a>  <a href="class_markdown_to_latex_1_1_markdown_parser.html#aba21f724ef87014a68ffa656474ba59f">More...</a><br /></td></tr>
+<tr class="separator:aba21f724ef87014a68ffa656474ba59f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_markdown_parser_8cs_source.html#l00003">3</a> of file <a class="el" href="_markdown_parser_8cs_source.html">MarkdownParser.cs</a>.</p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+<div class="textblock"><p>Class with methods to parse Markdown documents </p>
+
+<p class="definition">Definition at line <a class="el" href="_markdown_parser_8cs_source.html#l00009">9</a> of file <a class="el" href="_markdown_parser_8cs_source.html">MarkdownParser.cs</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aba21f724ef87014a68ffa656474ba59f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba21f724ef87014a68ffa656474ba59f">&#9670;&nbsp;</a></span>MarkdownParser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static MarkdownToLatex.MarkdownParser.MarkdownParser </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor initializes <a class="el" href="class_markdown_to_latex_1_1_markdown_parser.html#aa19dab6091a7dcc217ed5fd2187b05c0" title="Contains regular expressions defined in the constructor MarkdownParser().   They are used to parse Ma...">TextRx</a> </p>
+
+<p class="definition">Definition at line <a class="el" href="_markdown_parser_8cs_source.html#l00073">73</a> of file <a class="el" href="_markdown_parser_8cs_source.html">MarkdownParser.cs</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a314dac022219ad9432b11002f07db1cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a314dac022219ad9432b11002f07db1cf">&#9670;&nbsp;</a></span>MatchBold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static MatchCollection MarkdownToLatex.MarkdownParser.MatchBold </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Matches bold text in a Markdown line (when mixed, detect bold first and then cursive) </p>
+<dl class="section return"><dt>Returns</dt><dd>MatchCollection with all the bold text in Group[1]</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_markdown_parser_8cs_source.html#l00066">66</a> of file <a class="el" href="_markdown_parser_8cs_source.html">MarkdownParser.cs</a>.</p>
+
+</div>
+</div>
+<a id="a49e2a271f56458cb9b3c00ef5587e35f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49e2a271f56458cb9b3c00ef5587e35f">&#9670;&nbsp;</a></span>MatchCursive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static MatchCollection MarkdownToLatex.MarkdownParser.MatchCursive </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Matches cursive/italic text in Markdown line (when mixed, detect bold first and then cursive) </p>
+<dl class="section return"><dt>Returns</dt><dd>MatchCollection with all the cursive/italic text in Group[1]</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_markdown_parser_8cs_source.html#l00059">59</a> of file <a class="el" href="_markdown_parser_8cs_source.html">MarkdownParser.cs</a>.</p>
+
+</div>
+</div>
+<a id="afa4f46aa478a809e0795a208c4214039"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa4f46aa478a809e0795a208c4214039">&#9670;&nbsp;</a></span>MatchHeadline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Match MarkdownToLatex.MarkdownParser.MatchHeadline </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Matches headlines in Markdown. </p>
+<dl class="section return"><dt>Returns</dt><dd>Match with the headline in Group[2] and type of headline as the length of Group[1].</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_markdown_parser_8cs_source.html#l00038">38</a> of file <a class="el" href="_markdown_parser_8cs_source.html">MarkdownParser.cs</a>.</p>
+
+</div>
+</div>
+<a id="ab64d00547e7ecac176806579aa3b72f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab64d00547e7ecac176806579aa3b72f4">&#9670;&nbsp;</a></span>MatchList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Match MarkdownToLatex.MarkdownParser.MatchList </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Matches list and sublist in Markdown. </p>
+<dl class="section return"><dt>Returns</dt><dd>Match with the list item in Group[2] and the depth of the list as length/2 of Group[1]</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_markdown_parser_8cs_source.html#l00045">45</a> of file <a class="el" href="_markdown_parser_8cs_source.html">MarkdownParser.cs</a>.</p>
+
+</div>
+</div>
+<a id="a2445f0ea3e826799a91603a2c817f06a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2445f0ea3e826799a91603a2c817f06a">&#9670;&nbsp;</a></span>MatchMathElement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Match MarkdownToLatex.MarkdownParser.MatchMathElement </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>line</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Matches math element in Markdown with a custom "! " operator. </p>
+<dl class="section return"><dt>Returns</dt><dd>Match with the math element in Group[1].</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_markdown_parser_8cs_source.html#l00031">31</a> of file <a class="el" href="_markdown_parser_8cs_source.html">MarkdownParser.cs</a>.</p>
+
+</div>
+</div>
+<a id="ad5d11814cb6238995a75406b1c10d414"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5d11814cb6238995a75406b1c10d414">&#9670;&nbsp;</a></span>MatchQuote()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Match MarkdownToLatex.MarkdownParser.MatchQuote </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Matches quote in Markdown. </p>
+<dl class="section return"><dt>Returns</dt><dd>Match with the quote in Group[2] and the depth of the quote as length of Group[1]</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_markdown_parser_8cs_source.html#l00052">52</a> of file <a class="el" href="_markdown_parser_8cs_source.html">MarkdownParser.cs</a>.</p>
+
+</div>
+</div>
+<a id="ab87ed678a64ee19b64a93d252122f7df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab87ed678a64ee19b64a93d252122f7df">&#9670;&nbsp;</a></span>ReadMdDocument()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void MarkdownToLatex.MarkdownParser.ReadMdDocument </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>mdFilePath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reads lines of document from given file path. The resulting array is saved to <a class="el" href="class_markdown_to_latex_1_1_markdown_parser.html#a186d2c9d16e5ea1910829ac18b16ab05" title="Contains Markdown lines. Read from ReadMdDocument().">MdLines</a>. </p><dl class="section see"><dt>See also</dt><dd>MdToTex.parsePath()</dd></dl>
+</p>
+
+<p class="definition">Definition at line <a class="el" href="_markdown_parser_8cs_source.html#l00024">24</a> of file <a class="el" href="_markdown_parser_8cs_source.html">MarkdownParser.cs</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="a186d2c9d16e5ea1910829ac18b16ab05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a186d2c9d16e5ea1910829ac18b16ab05">&#9670;&nbsp;</a></span>MdLines</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string [] MarkdownToLatex.MarkdownParser.MdLines</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">get</span><span class="mlabel">private set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Contains Markdown lines. Read from <a class="el" href="class_markdown_to_latex_1_1_markdown_parser.html#ab87ed678a64ee19b64a93d252122f7df" title="Reads lines of document from given file path. The resulting array is saved to MdLines....">ReadMdDocument()</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="_markdown_parser_8cs_source.html#l00013">13</a> of file <a class="el" href="_markdown_parser_8cs_source.html">MarkdownParser.cs</a>.</p>
+
+</div>
+</div>
+<a id="aa19dab6091a7dcc217ed5fd2187b05c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa19dab6091a7dcc217ed5fd2187b05c0">&#9670;&nbsp;</a></span>TextRx</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Dictionary&lt;string, Regex&gt; MarkdownToLatex.MarkdownParser.TextRx</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Contains regular expressions defined in the constructor <a class="el" href="class_markdown_to_latex_1_1_markdown_parser.html#aba21f724ef87014a68ffa656474ba59f" title="Constructor initializes TextRx">MarkdownParser()</a>. <br  />
+ They are used to parse Markdown lines. For more details look <a href="https://github.com/fb89zila/exam-repo_swe-sose21/wiki/Developer#used-regular-expressions-">here</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="_markdown_parser_8cs_source.html#l00019">19</a> of file <a class="el" href="_markdown_parser_8cs_source.html">MarkdownParser.cs</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>MarkdownToLatex/<a class="el" href="_markdown_parser_8cs_source.html">MarkdownParser.cs</a></li>
 </ul>
 </div><!-- contents -->

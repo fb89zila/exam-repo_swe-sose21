@@ -76,7 +76,7 @@ namespace MarkdownToLatex
             {
                 {"math", new Regex(@"^! (.+)")},
                 {"headline", new Regex(@"^(#+) (.+)")},
-                {"list", new Regex(@"^([  ]*)- (.+)")},
+                {"list", new Regex(@"^((  )*)[-*+] (.+)")},
                 {"quote", new Regex(@"^(>+) (.+)")},
                 {"cursive", new Regex(@"(\*|_)([^\*_]+?|[^\*_]*?(\*\*|__)[^\*_]+?(\*\*|__)[^\*_]*?)(\1)")},
                 {"bold", new Regex(@"(\*\*|__)([^\*_]+?|[^\*_]*?(\*|_)[^\*_]+?(\*|_)[^\*_]*?)(\1)")}

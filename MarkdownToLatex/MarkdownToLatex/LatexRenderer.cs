@@ -31,15 +31,15 @@ namespace MarkdownToLatex
         ///         </item>
         ///         <item>
         ///             <term>1</term>
-        ///             <description>Layer 1</description>
+        ///             <description>List</description>
         ///         </item>
         ///         <item>
         ///             <term>2</term>
-        ///             <description>Layer 2</description>
+        ///             <description>SubList</description>
         ///         </item>
         ///         <item>
         ///             <term>3</term>
-        ///             <description>Layer 3</description>
+        ///             <description>SubSubList</description>
         ///         </item>
         /// </list>
         /// </summary>

@@ -7,10 +7,12 @@ namespace MarkdownToLatex.Test
 {
     public class TestMarkdownParser
     {
-        [Theory]
-        [InlineData(@".\test_files\test1.md")]
-        public void TestReadMdDocument(string path)
+        [Fact]
+        public void TestReadMdDocument()
         {
+            //arrange
+            string path = @"test_files/test1.md";
+            
             //act
             MarkdownParser.ReadMdDocument(path);
 

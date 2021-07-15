@@ -9,7 +9,6 @@ namespace MarkdownToLatex.Test
     {
         [Theory]
         [InlineData(@".\test_files\test1.md")]
-        [InlineData(@"D:\Felix\Documents\_projects\C#\SWE_Prufung\exam-repo_swe-sose21\MarkdownToLatex\MarkdownToLatex.Test\test_files\test1.md")]
         public void TestReadMdDocument(string path)
         {
             //act

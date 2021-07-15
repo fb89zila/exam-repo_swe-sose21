@@ -8,13 +8,13 @@ namespace MarkdownToLatex {
     public static class MathParser {
 
         /// <summary>The Dictionary containing regular expressions to parse math elements.</summary>
-        public static Dictionary<string, Regex> mathrx {get;}
+        public static Dictionary<string, Regex> MathRx {get;}
 
         /// <summary>Checks if an <paramref name="element"/> is a single variable function.</summary>
         /// <returns>a Match indicating whether the <paramref name="element"/> is a single variable function or not.</returns>
         public static Match MatchSVFunction(string element) {
             Regex svregex;
-            bool getregex = mathrx.TryGetValue("svfunction", out svregex);
+            bool getregex = MathRx.TryGetValue("svfunction", out svregex);
             if(getregex){
                 return svregex.Match(element);
             } else {
@@ -25,7 +25,7 @@ namespace MarkdownToLatex {
 
         /// <summary>Initializes the Dictionary and adds regular expressions to it.</summary>
         static MathParser() {
-            mathrx = new Dictionary<string, Regex>()
+            MathRx = new Dictionary<string, Regex>()
             {
                 {"svfunction", new Regex(@"f\(([a-z]|[\d\.]+)\)=([\d\^\+\-\*\/a-z]*):([a-z])")}
             };

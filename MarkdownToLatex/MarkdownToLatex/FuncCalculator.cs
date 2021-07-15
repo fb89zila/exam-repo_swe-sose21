@@ -12,13 +12,12 @@ namespace MarkdownToLatex {
         public override string ConvertElement(string var, string function)
         {
             this.Element = function;
-            this.Variable = char.Parse(var.Substring(0, 1));
+            this.Variable = char.Parse(var);
             try {
                 Expr func = Expr.Parse(function);
                 return $"f({var}) = " + func.ToLaTeX();
             } catch (Exception ex) {
-                Console.WriteLine("[ERROR] Error converting function: {0}", ex.Message);
-                return null;
+                throw new ConvertElementException(String.Format("[ERROR] Error converting function: {0}", ex.Message), ex);
             }
         }
 
@@ -27,14 +26,13 @@ namespace MarkdownToLatex {
         public override string ConvertElement(double param, string var, string function)
         {
             this.Element = function;
-            this.Variable = char.Parse(var.Substring(0, 1));
+            this.Variable = char.Parse(var);
             this.Input = param;
             try {
                 Expr func = Expr.Parse(function);
                 return $"f({var}) = " + func.ToLaTeX() + $" with f({param.ToString(CultureInfo.InvariantCulture)}) = " + func.Compile(var)(param).ToString(CultureInfo.InvariantCulture);
             } catch (Exception ex){
-                Console.WriteLine("[ERROR] Error converting function: {0}", ex.Message);
-                return null;
+                throw new ConvertElementException(String.Format("[ERROR] Error converting function: {0}", ex.Message), ex);
             }
         }
     }

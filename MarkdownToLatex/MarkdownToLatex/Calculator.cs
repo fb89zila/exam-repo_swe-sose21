@@ -4,7 +4,9 @@ using System;
 namespace MarkdownToLatex
 {
 
-    /// <summary>The basic calculator class. <typeparamref name="T"/> specifies the parameter/s to use and cannot be a reference type. <typeparamref name="U"/> specifies the variable/s to use.</summary>
+    /// <summary>The basic calculator class. 
+    /// <typeparamref name="T"/> specifies the parameter/s to use and cannot be a reference type.
+    /// <typeparamref name="U"/> specifies the variable/s to use.</summary>
     public abstract class Calculator<T, U> where T : struct //Needed or else Nullable will not work!
     {
 
@@ -21,6 +23,9 @@ namespace MarkdownToLatex
         public abstract string ConvertElement();
 
         /// <summary>Initializes a new Calculator. Only used in derived classes.</summary>
+        /// <param name="var">The variable/s to use.</param>
+        /// <param name="element">The element to process</param>
+        /// <param name="param">The parameter/s to use, can be <c>null</c>.</param>
         protected Calculator(U var, string element, T? param = null){
             this.Var = var;
             this.Element = element;
@@ -28,4 +33,3 @@ namespace MarkdownToLatex
         }
     }
 }
-#nullable disable

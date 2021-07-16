@@ -6,43 +6,15 @@ using System.IO;
 namespace MarkdownToLatex
 {
 
-    /// <summary>
-    /// a static class containing methods used for rendering the LaTeX document
-    /// </summary>
+    /// <summary>a static class containing methods used for rendering the LaTeX document</summary>
     public static class LatexRenderer
     {
-        /// <summary>
-        /// a List containing the LaTeX document line by line
-        /// </summary>
+        /// <summary>a List containing the LaTeX document line by line</summary>
         public static List<string> LatexLines;
 
         private static byte _inlist;
 
-        /// <summary>
-        /// a byte indicating whether a list is currently rendered
-        /// <list type="table">
-        ///         <listheader>
-        ///             <term>Value</term>
-        ///             <description>Meaning</description>
-        ///         </listheader>
-        ///         <item>
-        ///             <term>0</term>
-        ///             <description>Not in list</description>
-        ///         </item>
-        ///         <item>
-        ///             <term>1</term>
-        ///             <description>List</description>
-        ///         </item>
-        ///         <item>
-        ///             <term>2</term>
-        ///             <description>SubList</description>
-        ///         </item>
-        ///         <item>
-        ///             <term>3</term>
-        ///             <description>SubSubList</description>
-        ///         </item>
-        /// </list>
-        /// </summary>
+        /// <summary>a byte indicating whether a list is currently rendered</summary>
         /// <exception cref="System.FormatException">Thrown when trying to set the value to something other than 0-3</exception>
         public static byte InList {get => _inlist; private set {
             if(0 <= value && value <= 3){
@@ -54,31 +26,7 @@ namespace MarkdownToLatex
 
         private static byte _inquote;
 
-        /// <summary>
-        /// a byte indicating whether a quote is currently rendered
-        /// <list type="table">
-        ///         <listheader>
-        ///             <term>Value</term>
-        ///             <description>Meaning</description>
-        ///         </listheader>
-        ///         <item>
-        ///             <term>0</term>
-        ///             <description>Not in quote</description>
-        ///         </item>
-        ///         <item>
-        ///             <term>1</term>
-        ///             <description>Layer 1</description>
-        ///         </item>
-        ///         <item>
-        ///             <term>2</term>
-        ///             <description>Layer 2</description>
-        ///         </item>
-        ///         <item>
-        ///             <term>3</term>
-        ///             <description>Layer 3</description>
-        ///         </item>
-        /// </list>
-        /// </summary>
+        /// <summary>a byte indicating whether a quote is currently rendered</summary>
         /// <exception cref="System.FormatException">Thrown when trying to set the value to something other than 0-3</exception>
         public static byte InQuote {get => _inquote; private set {
             if(0 <= value && value <= 3){
@@ -88,9 +36,7 @@ namespace MarkdownToLatex
             }
         }}
 
-        /// <summary>
-        /// Writes the LaTeX document into a file
-        /// </summary>
+        /// <summary>Writes the LaTeX document into a file</summary>
         public static void WriteLatexDocument(){
             FileStream fs = File.Create(Path.Combine(MdToTex.MdFilePath, "latex/output.tex")); //Creating or Overwriting file, for now the file is called "output.tex", this could be changed to the FileName of the .md file later
             using(StreamWriter sw = new StreamWriter(fs)){
@@ -102,18 +48,12 @@ namespace MarkdownToLatex
             fs.Close();
         }
 
-        /// <summary>
-        /// Writes a MathElement in LaTeX
-        /// </summary>
-        /// <param name="line">The corresponding line</param>
+        /// <summary>Writes a MathElement in LaTeX</summary>
         public static void WriteMathElement(string line){
             LatexLines.Add(line); //The calculation stuff is handled in MdToTex class
         }
 
-        /// <summary>
-        /// Writes a Headline in LaTeX
-        /// </summary>
-        /// <param name="line">The corresponding line</param>
+        /// <summary>Writes a Headline in LaTeX</summary>
         public static void WriteHeadline(string line){
             Match m = MarkdownParser.MatchHeadline(line);
 
@@ -141,10 +81,7 @@ namespace MarkdownToLatex
             }
         }
 
-        /// <summary>
-        /// Writes a List in LaTeX
-        /// </summary>
-        /// <param name="line">The corresponding line</param>
+        /// <summary>Writes a List in LaTeX</summary>
         public static void WriteList(string line){
             Match m = MarkdownParser.MatchList(line);
 
@@ -195,10 +132,7 @@ namespace MarkdownToLatex
             LatexLines.InsertRange(LatexLines.FindLastIndex(x => x.StartsWith(@"\item"))+1, tmp);
         }
 
-        /// <summary>
-        /// Writes a Quote in LaTeX
-        /// </summary>
-        /// <param name="line">The corresponding line</param>
+        /// <summary>Writes a Quote in LaTeX</summary>
         public static void WriteQuote(string line){
             Match m = MarkdownParser.MatchQuote(line);
 
@@ -249,20 +183,14 @@ namespace MarkdownToLatex
             LatexLines.InsertRange(LatexLines.FindLastIndex(x => x.StartsWith(@"\end{quote}")), tmp);
         }
 
-        /// <summary>
-        /// Writes a line with cursive text in LaTeX
-        /// </summary>
+        /// <summary>Writes a line with cursive text in LaTeX</summary>
         /// <returns>the line, converted from Markdown into LaTeX</returns>
-        /// <param name="line">The corresponding line</param>
         public static string WriteCursive(string line){
             return MarkdownParser.TextRx["cursive"].Replace(line, @"\textit{$2}");
         }
 
-        /// <summary>
-        /// Writes a line with bold text in LaTeX
-        /// </summary>
+        /// <summary>Writes a line with bold text in LaTeX</summary>
         /// <returns>the line, converted from Markdown into LaTeX</returns>
-        /// <param name="line">The corresponding line</param>
         public static string WriteBold(string line){
             return MarkdownParser.TextRx["bold"].Replace(line, @"\textbf{$2}");
         }

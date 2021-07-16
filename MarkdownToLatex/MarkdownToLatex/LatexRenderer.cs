@@ -54,10 +54,8 @@ namespace MarkdownToLatex
         }
 
         /// <summary>Writes a Headline in LaTeX</summary>
-        public static void WriteHeadline(string line){
-            Match m = MarkdownParser.MatchHeadline(line);
-
-            if(m == Match.Empty) {LatexLines.Add(line); return;} //SHOULD never happen, but you never know ;D
+        public static void WriteHeadline(Match m){
+            if(m == Match.Empty) {return;} //SHOULD never happen, but you never know ;D
 
             int length = m.Groups[1].Value.Length; //First Group, number of #'s
             string caption = m.Groups[2].Value; //Second Group, the actual text
@@ -82,9 +80,7 @@ namespace MarkdownToLatex
         }
 
         /// <summary>Writes a List in LaTeX</summary>
-        public static void WriteList(string line){
-            Match m = MarkdownParser.MatchList(line);
-
+        public static void WriteList(Match m){
             int depth = m.Groups[1].Value.Length/2+1;
             string content = m.Groups[2].Value;
 
@@ -133,9 +129,7 @@ namespace MarkdownToLatex
         }
 
         /// <summary>Writes a Quote in LaTeX</summary>
-        public static void WriteQuote(string line){
-            Match m = MarkdownParser.MatchQuote(line);
-
+        public static void WriteQuote(Match m){
             int depth = m.Groups[1].Value.Length;
             string content = m.Groups[2].Value;
 

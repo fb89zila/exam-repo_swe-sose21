@@ -36,16 +36,9 @@ namespace MarkdownToLatex
             }
         }}
 
-        /// <summary>Writes the LaTeX document into a file</summary>
-        public static void WriteLatexDocument(){
-            FileStream fs = File.Create(Path.Combine(MdToTex.MdFilePath, "latex/output.tex")); //Creating or Overwriting file, for now the file is called "output.tex", this could be changed to the FileName of the .md file later
-            using(StreamWriter sw = new StreamWriter(fs)){
-                foreach(string ln in LatexLines){
-                    sw.WriteLine(ln);
-                }
-                sw.Close();
-            }
-            fs.Close();
+        /// <summary>Writes the LaTeX document into a file at the specified <paramref name="path"/></summary>
+        public static void WriteLatexDocument(string path){
+            File.WriteAllLines(path, LatexLines);
         }
 
         /// <summary>Writes a MathElement in LaTeX</summary>

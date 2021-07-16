@@ -53,7 +53,7 @@ namespace MarkdownToLatex
             LatexLines.Add(line); //The calculation stuff is handled in MdToTex class
         }
 
-        /// <summary>Writes a Headline in LaTeX</summary>
+        /// <summary>Writes a Headline in LaTeX using a Match <paramref name="m"/></summary>
         public static void WriteHeadline(Match m){
             if(m == Match.Empty) {return;} //SHOULD never happen, but you never know ;D
 
@@ -79,7 +79,7 @@ namespace MarkdownToLatex
             }
         }
 
-        /// <summary>Writes a List in LaTeX</summary>
+        /// <summary>Writes a List in LaTeX using a Match <paramref name="m"/></summary>
         public static void WriteList(Match m){
             int depth = m.Groups[1].Value.Length/2+1;
             string content = m.Groups[3].Value;
@@ -128,7 +128,7 @@ namespace MarkdownToLatex
             LatexLines.InsertRange(LatexLines.FindLastIndex(x => x.StartsWith(@"\item"))+1, tmp);
         }
 
-        /// <summary>Writes a Quote in LaTeX</summary>
+        /// <summary>Writes a Quote in LaTeX using a Match <paramref name="m"/></summary>
         public static void WriteQuote(Match m){
             int depth = m.Groups[1].Value.Length;
             string content = m.Groups[2].Value;
@@ -177,13 +177,13 @@ namespace MarkdownToLatex
             LatexLines.InsertRange(LatexLines.FindLastIndex(x => x.StartsWith(@"\end{quote}")), tmp);
         }
 
-        /// <summary>Writes a line with cursive text in LaTeX</summary>
+        /// <summary>Writes a <paramref name="line"/> with cursive text in LaTeX</summary>
         /// <returns>the line, converted from Markdown into LaTeX</returns>
         public static string WriteCursive(string line){
             return MarkdownParser.TextRx["cursive"].Replace(line, @"\textit{$2}");
         }
 
-        /// <summary>Writes a line with bold text in LaTeX</summary>
+        /// <summary>Writes a <paramref name="line"/> with bold text in LaTeX</summary>
         /// <returns>the line, converted from Markdown into LaTeX</returns>
         public static string WriteBold(string line){
             return MarkdownParser.TextRx["bold"].Replace(line, @"\textbf{$2}");

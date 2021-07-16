@@ -82,7 +82,7 @@ namespace MarkdownToLatex
         /// <summary>Writes a List in LaTeX</summary>
         public static void WriteList(Match m){
             int depth = m.Groups[1].Value.Length/2+1;
-            string content = m.Groups[2].Value;
+            string content = m.Groups[3].Value;
 
             if(m == Match.Empty) depth = 0;
 

@@ -45,7 +45,7 @@ namespace MarkdownToLatex.Test
 
             //assert
             Assert.Equal(expType, result.Groups[1].Length);
-            Assert.Contains(expText, result.Groups[2].Value);
+            Assert.Equal(expText, result.Groups[2].Value);
         }
 
         [Theory]
@@ -58,7 +58,7 @@ namespace MarkdownToLatex.Test
             Match result = MarkdownParser.MatchList(teststr);
             //assert
             Assert.Equal(expLevel, result.Groups[1].Length/2);
-            Assert.Contains(expText, result.Groups[2].Value);
+            Assert.Equal(expText, result.Groups[2].Value);
         }
 
         [Theory]
@@ -71,7 +71,7 @@ namespace MarkdownToLatex.Test
             Match result = MarkdownParser.MatchQuote(teststr);
             //assert
             Assert.Equal(expDepth, result.Groups[1].Length);
-            Assert.Contains(expText, result.Groups[2].Value);
+            Assert.Equal(expText, result.Groups[2].Value);
         }
 
         [Theory]

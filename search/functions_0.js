@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['markdownparser_20',['MarkdownParser',['../class_markdown_to_latex_1_1_markdown_parser.html#aba21f724ef87014a68ffa656474ba59f',1,'MarkdownToLatex::MarkdownParser']]],
-  ['matchbold_21',['MatchBold',['../class_markdown_to_latex_1_1_markdown_parser.html#a314dac022219ad9432b11002f07db1cf',1,'MarkdownToLatex::MarkdownParser']]],
-  ['matchcursive_22',['MatchCursive',['../class_markdown_to_latex_1_1_markdown_parser.html#a49e2a271f56458cb9b3c00ef5587e35f',1,'MarkdownToLatex::MarkdownParser']]],
-  ['matchheadline_23',['MatchHeadline',['../class_markdown_to_latex_1_1_markdown_parser.html#afa4f46aa478a809e0795a208c4214039',1,'MarkdownToLatex::MarkdownParser']]],
-  ['matchlist_24',['MatchList',['../class_markdown_to_latex_1_1_markdown_parser.html#ab64d00547e7ecac176806579aa3b72f4',1,'MarkdownToLatex::MarkdownParser']]],
-  ['matchmathelement_25',['MatchMathElement',['../class_markdown_to_latex_1_1_markdown_parser.html#a2445f0ea3e826799a91603a2c817f06a',1,'MarkdownToLatex::MarkdownParser']]],
-  ['matchquote_26',['MatchQuote',['../class_markdown_to_latex_1_1_markdown_parser.html#ad5d11814cb6238995a75406b1c10d414',1,'MarkdownToLatex::MarkdownParser']]]
+  ['calculate_35',['Calculate',['../class_markdown_to_latex_1_1_func_calculator.html#aff3f1b890122a8f63f0540765d001351',1,'MarkdownToLatex::FuncCalculator']]],
+  ['calculator_36',['Calculator',['../class_markdown_to_latex_1_1_calculator.html#aa80ebdcec1789d0a90b5abc2ffe57c0e',1,'MarkdownToLatex::Calculator']]],
+  ['convertelement_37',['ConvertElement',['../class_markdown_to_latex_1_1_calculator.html#a6ba6778c42d83e47acd33f61ea7c9494',1,'MarkdownToLatex.Calculator.ConvertElement()'],['../class_markdown_to_latex_1_1_func_calculator.html#a02302b5507cfe7d798343eac69f23084',1,'MarkdownToLatex.FuncCalculator.ConvertElement()']]],
+  ['convertelementexception_38',['ConvertElementException',['../class_markdown_to_latex_1_1_convert_element_exception.html#a09983af847d31ad7eb915ca790990f02',1,'MarkdownToLatex.ConvertElementException.ConvertElementException()'],['../class_markdown_to_latex_1_1_convert_element_exception.html#ade6d5726e98babecc2c908b2d98dd1f4',1,'MarkdownToLatex.ConvertElementException.ConvertElementException(string message)'],['../class_markdown_to_latex_1_1_convert_element_exception.html#ab6f54a31680b56839f65e1acdfb2c6a4',1,'MarkdownToLatex.ConvertElementException.ConvertElementException(string message, Exception inner)']]]
 ];

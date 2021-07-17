@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Markdown to LaTeX: MarkdownToLatex.Calculator Class Reference</title>
+<title>Markdown to LaTeX: MarkdownToLatex.Calculator&lt; T, U &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -82,14 +82,220 @@ $(document).ready(function(){initNavTree('class_markdown_to_latex_1_1_calculator
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#properties">Properties</a> &#124;
+<a href="class_markdown_to_latex_1_1_calculator-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">MarkdownToLatex.Calculator Class Reference</div>  </div>
+<div class="title">MarkdownToLatex.Calculator&lt; T, U &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The basic calculator class. <em>T</em>  specifies the parameter/s to use and cannot be a reference type. <em>U</em>  specifies the variable/s to use.  
+ <a href="class_markdown_to_latex_1_1_calculator.html#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a6ba6778c42d83e47acd33f61ea7c9494"><td class="memItemLeft" align="right" valign="top">abstract string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_calculator.html#a6ba6778c42d83e47acd33f61ea7c9494">ConvertElement</a> ()</td></tr>
+<tr class="memdesc:a6ba6778c42d83e47acd33f61ea7c9494"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the <a class="el" href="class_markdown_to_latex_1_1_calculator.html#a262dd15e09fd921208c62563ed4a45cc" title="The element to process.">Element</a> to LaTeX.  <a href="class_markdown_to_latex_1_1_calculator.html#a6ba6778c42d83e47acd33f61ea7c9494">More...</a><br /></td></tr>
+<tr class="separator:a6ba6778c42d83e47acd33f61ea7c9494"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:aa80ebdcec1789d0a90b5abc2ffe57c0e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_calculator.html#aa80ebdcec1789d0a90b5abc2ffe57c0e">Calculator</a> (U var, string element, T? param=null)</td></tr>
+<tr class="memdesc:aa80ebdcec1789d0a90b5abc2ffe57c0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new <a class="el" href="class_markdown_to_latex_1_1_calculator.html" title="The basic calculator class. T  specifies the parameter/s to use and cannot be a reference type....">Calculator</a>. Only used in derived classes.  <a href="class_markdown_to_latex_1_1_calculator.html#aa80ebdcec1789d0a90b5abc2ffe57c0e">More...</a><br /></td></tr>
+<tr class="separator:aa80ebdcec1789d0a90b5abc2ffe57c0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a262dd15e09fd921208c62563ed4a45cc"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_calculator.html#a262dd15e09fd921208c62563ed4a45cc">Element</a><code> [get, protected set]</code></td></tr>
+<tr class="memdesc:a262dd15e09fd921208c62563ed4a45cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The element to process.  <a href="class_markdown_to_latex_1_1_calculator.html#a262dd15e09fd921208c62563ed4a45cc">More...</a><br /></td></tr>
+<tr class="separator:a262dd15e09fd921208c62563ed4a45cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3895ad0ee10261dfb7852b0b16c2d891"><td class="memItemLeft" align="right" valign="top">T?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_calculator.html#a3895ad0ee10261dfb7852b0b16c2d891">Param</a><code> [get, protected set]</code></td></tr>
+<tr class="memdesc:a3895ad0ee10261dfb7852b0b16c2d891"><td class="mdescLeft">&#160;</td><td class="mdescRight">The parameter to use. Can be <code>null</code>.  <a href="class_markdown_to_latex_1_1_calculator.html#a3895ad0ee10261dfb7852b0b16c2d891">More...</a><br /></td></tr>
+<tr class="separator:a3895ad0ee10261dfb7852b0b16c2d891"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8105525c636f6b1fbef18c968ddd3036"><td class="memItemLeft" align="right" valign="top">U&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_calculator.html#a8105525c636f6b1fbef18c968ddd3036">Var</a><code> [get, protected set]</code></td></tr>
+<tr class="memdesc:a8105525c636f6b1fbef18c968ddd3036"><td class="mdescLeft">&#160;</td><td class="mdescRight">The variable to use.  <a href="class_markdown_to_latex_1_1_calculator.html#a8105525c636f6b1fbef18c968ddd3036">More...</a><br /></td></tr>
+<tr class="separator:a8105525c636f6b1fbef18c968ddd3036"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_calculator_8cs_source.html#l00003">3</a> of file <a class="el" href="_calculator_8cs_source.html">Calculator.cs</a>.</p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+<div class="textblock"><p>The basic calculator class. <em>T</em>  specifies the parameter/s to use and cannot be a reference type. <em>U</em>  specifies the variable/s to use. </p>
+<div class="typeconstraint">
+<dl><dt><b>Type Constraints</b></dt><dd>
+<table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>struct</em></td><td>&#160;</td></tr>
+</table>
+</dd>
+</dl>
+</div>
+
+<p class="definition">Definition at line <a class="el" href="_calculator_8cs_source.html#l00010">10</a> of file <a class="el" href="_calculator_8cs_source.html">Calculator.cs</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aa80ebdcec1789d0a90b5abc2ffe57c0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa80ebdcec1789d0a90b5abc2ffe57c0e">&#9670;&nbsp;</a></span>Calculator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_markdown_to_latex_1_1_calculator.html">MarkdownToLatex.Calculator</a>&lt; T, U &gt;.<a class="el" href="class_markdown_to_latex_1_1_calculator.html">Calculator</a> </td>
+          <td>(</td>
+          <td class="paramtype">U&#160;</td>
+          <td class="paramname"><em>var</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>element</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T?&#160;</td>
+          <td class="paramname"><em>param</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new <a class="el" href="class_markdown_to_latex_1_1_calculator.html" title="The basic calculator class. T  specifies the parameter/s to use and cannot be a reference type....">Calculator</a>. Only used in derived classes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">var</td><td>The variable/s to use.</td></tr>
+    <tr><td class="paramname">element</td><td>The element to process</td></tr>
+    <tr><td class="paramname">param</td><td>The parameter/s to use, can be <code>null</code>.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_calculator_8cs_source.html#l00029">29</a> of file <a class="el" href="_calculator_8cs_source.html">Calculator.cs</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6ba6778c42d83e47acd33f61ea7c9494"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ba6778c42d83e47acd33f61ea7c9494">&#9670;&nbsp;</a></span>ConvertElement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract string <a class="el" href="class_markdown_to_latex_1_1_calculator.html">MarkdownToLatex.Calculator</a>&lt; T, U &gt;.ConvertElement </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts the <a class="el" href="class_markdown_to_latex_1_1_calculator.html#a262dd15e09fd921208c62563ed4a45cc" title="The element to process.">Element</a> to LaTeX. </p>
+
+<p>Implemented in <a class="el" href="class_markdown_to_latex_1_1_func_calculator.html#a02302b5507cfe7d798343eac69f23084">MarkdownToLatex.FuncCalculator</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="a262dd15e09fd921208c62563ed4a45cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a262dd15e09fd921208c62563ed4a45cc">&#9670;&nbsp;</a></span>Element</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="class_markdown_to_latex_1_1_calculator.html">MarkdownToLatex.Calculator</a>&lt; T, U &gt;.Element</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">protected set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The element to process. </p>
+
+<p class="definition">Definition at line <a class="el" href="_calculator_8cs_source.html#l00014">14</a> of file <a class="el" href="_calculator_8cs_source.html">Calculator.cs</a>.</p>
+
+</div>
+</div>
+<a id="a3895ad0ee10261dfb7852b0b16c2d891"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3895ad0ee10261dfb7852b0b16c2d891">&#9670;&nbsp;</a></span>Param</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T? <a class="el" href="class_markdown_to_latex_1_1_calculator.html">MarkdownToLatex.Calculator</a>&lt; T, U &gt;.Param</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">protected set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The parameter to use. Can be <code>null</code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="_calculator_8cs_source.html#l00017">17</a> of file <a class="el" href="_calculator_8cs_source.html">Calculator.cs</a>.</p>
+
+</div>
+</div>
+<a id="a8105525c636f6b1fbef18c968ddd3036"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8105525c636f6b1fbef18c968ddd3036">&#9670;&nbsp;</a></span>Var</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">U <a class="el" href="class_markdown_to_latex_1_1_calculator.html">MarkdownToLatex.Calculator</a>&lt; T, U &gt;.Var</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">protected set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The variable to use. </p>
+
+<p class="definition">Definition at line <a class="el" href="_calculator_8cs_source.html#l00020">20</a> of file <a class="el" href="_calculator_8cs_source.html">Calculator.cs</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>MarkdownToLatex/<a class="el" href="_calculator_8cs_source.html">Calculator.cs</a></li>
 </ul>
 </div><!-- contents -->

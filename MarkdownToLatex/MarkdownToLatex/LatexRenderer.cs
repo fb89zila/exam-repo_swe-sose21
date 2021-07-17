@@ -6,16 +6,16 @@ using System.IO;
 namespace MarkdownToLatex
 {
 
-    /// <summary>a static class containing methods used for rendering the LaTeX document</summary>
+    /// <summary>a static class containing methods used for rendering the LaTeX document.</summary>
     public static class LatexRenderer
     {
-        /// <summary>a List containing the LaTeX document line by line</summary>
+        /// <summary>a List containing the LaTeX document line by line.</summary>
         public static List<string> LatexLines;
 
         private static byte _inlist;
 
-        /// <summary>a byte indicating whether a list is currently rendered</summary>
-        /// <exception cref="System.FormatException">Thrown when trying to set the value to something other than 0-3</exception>
+        /// <summary>a byte indicating whether a list is currently rendered.</summary>
+        /// <exception cref="System.FormatException">Thrown when trying to set the value to something other than 0-3.</exception>
         public static byte InList {get => _inlist; private set {
             if(0 <= value && value <= 3){
                 _inlist = value;
@@ -26,8 +26,8 @@ namespace MarkdownToLatex
 
         private static byte _inquote;
 
-        /// <summary>a byte indicating whether a quote is currently rendered</summary>
-        /// <exception cref="System.FormatException">Thrown when trying to set the value to something other than 0-3</exception>
+        /// <summary>a byte indicating whether a quote is currently rendered.</summary>
+        /// <exception cref="System.FormatException">Thrown when trying to set the value to something other than 0-3.</exception>
         public static byte InQuote {get => _inquote; private set {
             if(0 <= value && value <= 3){
                 _inquote = value;
@@ -36,17 +36,17 @@ namespace MarkdownToLatex
             }
         }}
 
-        /// <summary>Writes the LaTeX document into a file at the specified <paramref name="path"/></summary>
+        /// <summary>Writes the LaTeX document into a file at the specified <paramref name="path"/>.</summary>
         public static void WriteLatexDocument(string path){
             File.WriteAllLines(path, LatexLines);
         }
 
-        /// <summary>Writes a MathElement in LaTeX</summary>
+        /// <summary>Writes a MathElement in LaTeX.</summary>
         public static void WriteMathElement(string line){
             LatexLines.Add(line); //The calculation stuff is handled in MdToTex class
         }
 
-        /// <summary>Writes a Headline in LaTeX using a Match <paramref name="m"/></summary>
+        /// <summary>Writes a Headline in LaTeX using a Match <paramref name="m"/>.</summary>
         public static void WriteHeadline(Match m){
             if(m == Match.Empty) {return;} //SHOULD never happen, but you never know ;D
 
@@ -121,7 +121,7 @@ namespace MarkdownToLatex
             LatexLines.InsertRange(LatexLines.FindLastIndex(x => x.StartsWith(@"\item"))+1, tmp);
         }
 
-        /// <summary>Writes a Quote in LaTeX using a Match <paramref name="m"/></summary>
+        /// <summary>Writes a Quote in LaTeX using a Match <paramref name="m"/>.</summary>
         public static void WriteQuote(Match m){
             int depth = m.Groups[1].Value.Length;
             string content = m.Groups[2].Value;
@@ -170,16 +170,31 @@ namespace MarkdownToLatex
             LatexLines.InsertRange(LatexLines.FindLastIndex(x => x.StartsWith(@"\end{quote}")), tmp);
         }
 
-        /// <summary>Writes a <paramref name="line"/> with cursive text in LaTeX</summary>
-        /// <returns>the line, converted from Markdown into LaTeX</returns>
+        /// <summary>Writes a <paramref name="line"/> with cursive text in LaTeX.</summary>
+        /// <returns>the line, converted from Markdown into LaTeX.</returns>
         public static string WriteCursive(string line){
             return MarkdownParser.TextRx["cursive"].Replace(line, @"\textit{$2}");
         }
 
-        /// <summary>Writes a <paramref name="line"/> with bold text in LaTeX</summary>
-        /// <returns>the line, converted from Markdown into LaTeX</returns>
+        /// <summary>Writes a <paramref name="line"/> with bold text in LaTeX.</summary>
+        /// <returns>the line, converted from Markdown into LaTeX.</returns>
         public static string WriteBold(string line){
             return MarkdownParser.TextRx["bold"].Replace(line, @"\textbf{$2}");
+        }
+
+        /// <summary>Writes a normal text <paramref name="line"/> in LaTeX.</summary>
+        public static void WriteText(string line){
+            LatexLines.Add(line);
+        }
+
+        /// <summary>Starts a new line with the content of <paramref name="line"/>.</summary>
+        public static void StartNewLine(string line){
+            LatexLines.Add(line + @"\\");
+        }
+
+        /// <summary>Starts a new paragraph.</summary>
+        public static void StartNewParagraph(){
+            LatexLines.Add(@"\\\\");
         }
 
         static LatexRenderer(){

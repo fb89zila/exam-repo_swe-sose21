@@ -1,27 +1,30 @@
 ﻿using System;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("MarkdownToLatex.Test")]
 
 namespace MarkdownToLatex
 {
-    static class MdToTex
+    public static class MdToTex
     {
         //field
         /// <summary>Contains the currently used /// <see cref="Calculator"/> class</summary>
-        private static Calculator calc;
+        private static ICalculator calc;
 
         /// <summary>Contains the file path to the Markdown document which will be parsed</summary>
         private static string mdFilePath;
 
         //methods
-        private static string convertMathElement(string element)
+        internal static string convertMathElement(string element)
         {
             return "";
         }
 
         /// <summary>Checks type of given Markdown <param name="text"> and converts it to LaTeX</summary>
         /// <returns>LaTeX lines of given Markdown <param name="text"></returns>
-        private static string convertText(string text)
+        internal static string convertText(string text)
         {
             
 
@@ -41,7 +44,7 @@ namespace MarkdownToLatex
 
         /// <summary>Desides if given line is Markdown text or a custom math element</summary>
         /// <returns>LaTeX line to be saved in <see cref="LatexRenderer.LatexLines"></returns>
-        private static string convert(string line)
+        internal static string convert(string line)
         {
             Match lineMatch = MarkdownParser.MatchMathElement(line);
 
@@ -53,20 +56,10 @@ namespace MarkdownToLatex
 
         /// <summary>Parses the path given as argument</summary>
         /// <returns>Usable path to a Markdown file</returns>
-        private static string parsePath(string inputPath)
+        internal static string parsePath(string inputPath)
         {
-            char sep = Path.DirectorySeparatorChar;
-            string current = Directory.GetCurrentDirectory();
-            string path;
-
-            if (Path.IsPathFullyQualified(inputPath)) {
-                path = inputPath;
-            } else {
-                path = Path.Combine(current, inputPath);
-            }
-
-            if (File.Exists(path)) {
-                if (Path.GetExtension(path) == ".md") {
+            if (File.Exists(inputPath)) {
+                if (Path.GetExtension(inputPath) == ".md") {
                     return inputPath;
                 } else {
                     throw new FileNotFoundException("Only Markdown files can be converted.");

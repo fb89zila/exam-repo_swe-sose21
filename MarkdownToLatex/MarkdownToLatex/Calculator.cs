@@ -7,7 +7,7 @@ namespace MarkdownToLatex
     /// <summary>The basic calculator class. 
     /// <typeparamref name="T"/> specifies the parameter/s to use and cannot be a reference type.
     /// <typeparamref name="U"/> specifies the variable/s to use.</summary>
-    public abstract class Calculator<T, U> where T : struct //Needed or else Nullable will not work!
+    public abstract class Calculator<T, U> : ICalculator where T : struct //Needed or else Nullable will not work!
     {
 
         /// <summary>The element to process.</summary>

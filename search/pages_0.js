@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['markdown_20to_20latex_56',['Markdown to LaTex',['../index.html',1,'']]]
+  ['markdown_20to_20latex_58',['Markdown to LaTex',['../index.html',1,'']]]
 ];

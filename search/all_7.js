@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['textrx_24',['TextRx',['../class_markdown_to_latex_1_1_markdown_parser.html#aa19dab6091a7dcc217ed5fd2187b05c0',1,'MarkdownToLatex::MarkdownParser']]]
+  ['readmddocument_24',['ReadMdDocument',['../class_markdown_to_latex_1_1_markdown_parser.html#ab87ed678a64ee19b64a93d252122f7df',1,'MarkdownToLatex::MarkdownParser']]]
 ];

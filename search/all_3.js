@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['latexrenderer_7',['LatexRenderer',['../class_markdown_to_latex_1_1_latex_renderer.html',1,'MarkdownToLatex']]]
+  ['icalculator_7',['ICalculator',['../interface_markdown_to_latex_1_1_i_calculator.html',1,'MarkdownToLatex']]]
 ];

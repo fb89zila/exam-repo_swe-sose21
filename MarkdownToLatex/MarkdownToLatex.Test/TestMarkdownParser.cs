@@ -50,7 +50,7 @@ namespace MarkdownToLatex.Test
 
         [Theory]
         [InlineData(@"- some ***list*** item", 0, @"some ***list*** item")]
-        [InlineData(@"  * some **sub**list item", 1, @"some **sub**list item")]
+        [InlineData(@"  - some **sub**list item", 1, @"some **sub**list item")]
         [InlineData(@"    + some *subsub*list item", 2, @"some *subsub*list item")]
         public void TestMatchList(string teststr, int expLevel, string expText)
         {

@@ -7,54 +7,56 @@ using System.Runtime.CompilerServices;
 
 namespace MarkdownToLatex
 {
+    /// <summary>Main Class - coordinates which Markdown line is converted to which LaTeX line.</summary>
     public static class MdToTex
     {
         //field
-        /// <summary>Contains the currently used /// <see cref="Calculator"/> class</summary>
+        /// <summary>Contains the currently used <see cref="Calculator"/> class</summary>
         private static ICalculator calc;
 
         /// <summary>Contains the file path to the Markdown document which will be parsed</summary>
         private static string mdFilePath;
 
         //methods
-        internal static string convertMathElement(string element)
+        internal static void convertMathElement(string element)
         {
-            return "";
+            //
         }
 
         /// <summary>Checks type of given Markdown <param name="text"> and converts it to LaTeX</summary>
         /// <returns>LaTeX lines of given Markdown <param name="text"></returns>
-        internal static string convertText(string text)
+        internal static void convertText(string text)
         {
-            
+            string bcText = LatexRenderer.WriteCursive(LatexRenderer.WriteBold(text)).TrimStart();
 
-            switch (String.IsNullOrEmpty(text)) {
-                case false when MarkdownParser.MatchHeadline(text) != Match.Empty:
-                    return ""; //temp
-                case false when MarkdownParser.MatchList(text) != Match.Empty:
-                    return ""; //temp
-                case false when MarkdownParser.MatchQuote(text) != Match.Empty:
-                    return ""; //temp
-                case true: // `text` is null or empty --> new paragraph
-                    return ""; //temp
-                default:
-                    return text;
+            if (bcText.StartsWith('#')) {
+                LatexRenderer.WriteHeadline(MarkdownParser.MatchHeadline(bcText));
+            } else if (bcText.StartsWith('-') || bcText.StartsWith('+')) {
+                LatexRenderer.WriteList(MarkdownParser.MatchList(text));
+            } else if (bcText.StartsWith('>')) {
+                LatexRenderer.WriteQuote(MarkdownParser.MatchQuote(text));
+            } else if (bcText.EndsWith("  ")) {
+                LatexRenderer.StartNewLine(text);
+            } else if (String.IsNullOrWhiteSpace(bcText)) {
+                LatexRenderer.StartNewParagraph();
+            } else {
+                LatexRenderer.WriteText(text);
             }
         }
 
-        /// <summary>Desides if given line is Markdown text or a custom math element</summary>
+        /// <summary>Desides if given <param name="line"> is Markdown text or a custom math element</summary>
         /// <returns>LaTeX line to be saved in <see cref="LatexRenderer.LatexLines"></returns>
-        internal static string convert(string line)
+        internal static void convert(string line)
         {
             Match lineMatch = MarkdownParser.MatchMathElement(line);
 
             if (lineMatch != Match.Empty) {
-                return convertMathElement(lineMatch.Groups[1].Value);
+                convertMathElement(lineMatch.Groups[1].Value);
             }
-            return convertText(line);
+            convertText(line);
         }
 
-        /// <summary>Parses the path given as argument</summary>
+        /// <summary>Parses the <param name="inputPath"> given as argument</summary>
         /// <returns>Usable path to a Markdown file</returns>
         internal static string parsePath(string inputPath)
         {
@@ -75,12 +77,14 @@ namespace MarkdownToLatex
         static void Main(string[] args)
         {
             try {
-                MarkdownParser.ReadMdDocument(parsePath(args[1]));
+                mdFilePath = parsePath(args[1]);
             } catch (FileNotFoundException e) {
                 Console.WriteLine("There was a problem with given path:\n{0}", e.Message);
             } catch (Exception e) {
                 Console.WriteLine("Error:\n{0}", e.Message);
             }
+
+            MarkdownParser.ReadMdDocument(mdFilePath);
 
             try {
                 foreach (string line in MarkdownParser.MdLines) {

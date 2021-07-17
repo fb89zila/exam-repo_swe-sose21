@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['readmddocument_55',['ReadMdDocument',['../class_markdown_to_latex_1_1_markdown_parser.html#ab87ed678a64ee19b64a93d252122f7df',1,'MarkdownToLatex::MarkdownParser']]]
+  ['parsepath_60',['parsePath',['../class_markdown_to_latex_1_1_md_to_tex.html#a5552c0091879a7346bf1408ba0533890',1,'MarkdownToLatex::MdToTex']]]
 ];

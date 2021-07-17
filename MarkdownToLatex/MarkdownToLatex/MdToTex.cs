@@ -11,10 +11,10 @@ namespace MarkdownToLatex
     public static class MdToTex
     {
         //field
-        /// <summary>Contains the currently used <see cref="Calculator"/> class</summary>
+        /// <summary>Contains the currently used <see cref="Calculator"/> class.</summary>
         private static ICalculator calc;
 
-        /// <summary>Contains the file path to the Markdown document which will be parsed</summary>
+        /// <summary>Contains the file path to the Markdown document which will be parsed.</summary>
         private static string mdFilePath;
 
         //methods
@@ -23,8 +23,8 @@ namespace MarkdownToLatex
             //
         }
 
-        /// <summary>Checks type of given Markdown <param name="text"> and converts it to LaTeX</summary>
-        /// <returns>LaTeX lines of given Markdown <param name="text"></returns>
+        /// <summary>Checks type of given Markdown <param name="text"> and converts it to LaTeX.</summary>
+        /// <returns>LaTeX lines of given Markdown <param name="text">.</returns>
         internal static void convertText(string text)
         {
             string bcText = LatexRenderer.WriteCursive(LatexRenderer.WriteBold(text)).TrimStart();
@@ -44,8 +44,8 @@ namespace MarkdownToLatex
             }
         }
 
-        /// <summary>Desides if given <param name="line"> is Markdown text or a custom math element</summary>
-        /// <returns>LaTeX line to be saved in <see cref="LatexRenderer.LatexLines"></returns>
+        /// <summary>Desides if given <param name="line"> is Markdown text or a custom math element.</summary>
+        /// <returns>LaTeX line to be saved in <see cref="LatexRenderer.LatexLines">.</returns>
         internal static void convert(string line)
         {
             Match lineMatch = MarkdownParser.MatchMathElement(line);
@@ -56,8 +56,8 @@ namespace MarkdownToLatex
             convertText(line);
         }
 
-        /// <summary>Parses the <param name="inputPath"> given as argument</summary>
-        /// <returns>Usable path to a Markdown file</returns>
+        /// <summary>Parses the <param name="inputPath"> given as argument.</summary>
+        /// <returns>Usable path to a Markdown file.</returns>
         internal static string parsePath(string inputPath)
         {
             if (File.Exists(inputPath)) {
@@ -73,7 +73,7 @@ namespace MarkdownToLatex
         
         /// <summary>Entrypoint</summary>
         /// <param name="args">[1]: path to Markdownfile  
-        /// [2]: -</param>
+        /// [2]: (maybe later LaTeX output)</param>
         static void Main(string[] args)
         {
             try {

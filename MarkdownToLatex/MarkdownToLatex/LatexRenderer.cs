@@ -187,7 +187,7 @@ namespace MarkdownToLatex
             LatexLines.Add(line);
         }
 
-        /// <summary>Starts a new line with the content of <paramref name="line"/>.</summary>
+        /// <summary>Starts a new line after the given <paramref name="line"/>.</summary>
         public static void StartNewLine(string line){
             LatexLines.Add(line + @"\\");
         }

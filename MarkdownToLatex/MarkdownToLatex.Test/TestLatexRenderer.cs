@@ -1,10 +1,13 @@
 using System.IO;
 using Xunit;
+using System;
 
 namespace MarkdownToLatex.Test
 {
     public class TestLatexRenderer
     {
+
+        Random rnd = new Random();
 
         [Theory]
         [InlineData("# A nice Chapter", @"\chapter*{A nice Chapter}")]
@@ -80,6 +83,44 @@ namespace MarkdownToLatex.Test
             string path = @"test_files/test.tex";
             LatexRenderer.WriteLatexDocument(path);
             Assert.True(File.Exists(path));
+        }
+
+        [Fact]
+        public void TestWriteText(){
+            string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 ";
+            string randomText = "";
+            int randomTextLength = rnd.Next(1, 256);
+            for (int i = 0; i<randomTextLength; i++){
+                randomText+=chars.ToCharArray()[rnd.Next(0, chars.Length)];
+            }
+
+            LatexRenderer.WriteText(randomText);
+
+            Assert.Contains(randomText, LatexRenderer.LatexLines);
+        }
+
+        [Fact]
+        public void TestNewLine(){
+            LatexRenderer.LatexLines.Clear();
+            LatexRenderer.WriteText("Hello, this is very important: ");
+            LatexRenderer.StartNewLine("a new line will be started after this text.");
+            LatexRenderer.WriteText("And there it is!");
+
+            string[] texlines = {"Hello, this is very important: ", @"a new line will be started after this text.\\", "And there it is!"};
+
+            Assert.Equal(texlines, LatexRenderer.LatexLines.ToArray());
+        }
+
+        [Fact]
+        public void TestNewParagraph(){
+            LatexRenderer.LatexLines.Clear();
+            LatexRenderer.WriteText("This is a really wonderful sentence!");
+            LatexRenderer.StartNewParagraph();
+            LatexRenderer.WriteText("And now a different topic!");
+
+            string[] texlines = {"This is a really wonderful sentence!", @"\\\\", "And now a different topic!"};
+
+            Assert.Equal(texlines, LatexRenderer.LatexLines.ToArray());
         }
     }
 }

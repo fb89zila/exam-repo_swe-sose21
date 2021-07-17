@@ -8,7 +8,7 @@ namespace MarkdownToLatex
     {
         //field
         /// <summary>Contains the currently used /// <see cref="Calculator"/> class</summary>
-        private static Calculator calc;
+        private static ICalculator calc;
 
         /// <summary>Contains the file path to the Markdown document which will be parsed</summary>
         private static string mdFilePath;

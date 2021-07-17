@@ -7,11 +7,12 @@ namespace MarkdownToLatex {
     /// <summary>This class is used for processing single variable functions.</summary>
     public class FuncCalculator : Calculator<double, string> {
 
-        /// <summary>Calculates the function at the given parameter, if no parameter is set, assuming '0'</summary>
-        public string Calculate(){
+        /// <summary>Calculates the function at the given parameter, if no parameter is set, assuming '0'.
+        /// The <paramref name="precision"/> paameter specifies the rounding accuracy.</summary>
+        public string Calculate(int precision = 2){
             try{
                 var func = Expr.Parse(this.Element);
-                return $"f({this.Var})=" + Math.Round(func.Compile(this.Var)(this.Param ?? 0), 2).ToString(CultureInfo.InvariantCulture);
+                return $"f({this.Var})=" + Math.Round(func.Compile(this.Var)(this.Param ?? 0), precision).ToString(CultureInfo.InvariantCulture);
             } catch (Exception ex){
                 throw new ConvertElementException("Error calculating function!", ex);
             }

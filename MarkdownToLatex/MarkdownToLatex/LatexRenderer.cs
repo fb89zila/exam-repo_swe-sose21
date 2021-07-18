@@ -62,7 +62,7 @@ namespace MarkdownToLatex
 
         /// <summary>Writes a MathElement in LaTeX.</summary>
         public static void WriteMathElement(string line){
-            LatexLines.Add(line); //The calculation stuff is handled in MdToTex class
+            LatexLines.Add(@"\[" + line + @"\]"); //The calculation stuff is handled in MdToTex class
         }
 
         /// <summary>Writes a Headline in LaTeX using a Match <paramref name="m"/>.</summary>

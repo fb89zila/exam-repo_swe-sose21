@@ -2,6 +2,7 @@
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Runtime.CompilerServices;
+using System.Globalization;
 
 [assembly: InternalsVisibleTo("MarkdownToLatex.Test")]
 
@@ -18,9 +19,30 @@ namespace MarkdownToLatex
         internal static string mdFilePath;
 
         //methods
-        internal static void convertMathElement(string element)
+
+        /// <summary>Takes a <paramref name="match"/> of a math element, decides
+        /// which math element to process and what results to generate and
+        /// writes them into the LaTeX document.</summary>
+        internal static void convertMathElement(Match match)
         {
-            //
+            switch(match.Groups[1].Value){
+                case "svfunc":
+                    Match svfunc = MathParser.MatchSVFunction(match.Groups[2].Value);
+                    double param;
+                    bool hasParam = double.TryParse(svfunc.Groups[1].Value, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out param);
+                    calc = new FuncCalculator(svfunc.Groups[3].Value, svfunc.Groups[2].Value, hasParam ? param : null);
+                    LatexRenderer.WriteMathElement(calc.ConvertElement());
+
+                    MatchCollection mc = MathParser.MatchParameters(match.Groups[3].Value);
+                    foreach(Match m in mc){
+                        switch(m.Groups[1].Value){
+                            case "result":
+                                LatexRenderer.WriteMathElement((calc as FuncCalculator).Calculate());
+                                break;
+                        }
+                    }
+                    break;
+            }
         }
 
         /// <summary>Checks type of given Markdown <paramref name="text"/> and converts it to LaTeX.</summary>
@@ -51,9 +73,10 @@ namespace MarkdownToLatex
             Match lineMatch = MarkdownParser.MatchMathElement(line);
 
             if (lineMatch != Match.Empty) {
-                convertMathElement(lineMatch.Groups[1].Value);
+                convertMathElement(lineMatch);
+            } else {
+                convertText(line);
             }
-            convertText(line);
         }
 
         /// <summary>Parses the <paramref name="inputPath"/> given as argument.</summary>

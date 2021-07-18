@@ -118,6 +118,13 @@ namespace MarkdownToLatex.Test
         [Fact]
         public void TestWriteLatexDocument(){
             //arrange
+            LatexRenderer.LatexLines.Clear();
+            string[] input = {
+                @"\chapter*{A nice Chapter}",
+                @"\section*{A nicer Section}",
+                @"\subsection*{vërÿ wëïrd ïnpüt}",
+                @"\subsection*{An even nicer Subsection}"
+            };
             string expPath = @"test_files/latex/test.tex";
             string[] expected = {
                 @"\documentclass{scrreprt}",
@@ -133,6 +140,7 @@ namespace MarkdownToLatex.Test
             };
 
             //act
+            LatexRenderer.LatexLines.AddRange(input);
             LatexRenderer.WriteLatexDocument(expPath);
             string[] result = File.ReadAllLines(expPath);
 

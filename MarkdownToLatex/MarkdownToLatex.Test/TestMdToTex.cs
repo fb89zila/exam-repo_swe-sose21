@@ -27,11 +27,23 @@ namespace MarkdownToLatex.Test
         }
         
         [Fact]
-        public void TestConvert()
+        public void TestConvertMathElement()
         {
             //arrange
+            LatexRenderer.LatexLines.Clear();
+            string mathElement = "!{svfunc} f(3.1415)=x^2+3*x+5:x !{result}";
+            string[] expected = {
+                @"\[f(x)=5 + 3x + {x}^{2}\]",
+                @"\[f(3.1415)=24.29\]"
+            };
+
             //act
+            MdToTex.convertMathElement(MarkdownParser.MatchMathElement(mathElement));
+
             //assert
+            foreach(string expLine in expected){
+                Assert.Contains(expLine, LatexRenderer.LatexLines);
+            }
         }
     }
 }

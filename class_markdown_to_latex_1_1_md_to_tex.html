@@ -98,9 +98,9 @@ $(document).ready(function(){initNavTree('class_markdown_to_latex_1_1_md_to_tex.
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pac-static-methods"></a>
 Static Package Functions</h2></td></tr>
-<tr class="memitem:ab37d6c0b1deb49c4bb57984f4ce06d84"><td class="memItemLeft" align="right" valign="top"><a id="ab37d6c0b1deb49c4bb57984f4ce06d84"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>convertMathElement</b> (string element)</td></tr>
-<tr class="separator:ab37d6c0b1deb49c4bb57984f4ce06d84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d31cc8427dd75c6141e46b9e9599ef0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_md_to_tex.html#a9d31cc8427dd75c6141e46b9e9599ef0">convertMathElement</a> (Match match)</td></tr>
+<tr class="memdesc:a9d31cc8427dd75c6141e46b9e9599ef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes a <em>match</em>  of a math element, decides which math element to process and what results to generate and writes them into the LaTeX document.  <a href="class_markdown_to_latex_1_1_md_to_tex.html#a9d31cc8427dd75c6141e46b9e9599ef0">More...</a><br /></td></tr>
+<tr class="separator:a9d31cc8427dd75c6141e46b9e9599ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43c6d390a3146f13f458a908b026ad58"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_md_to_tex.html#a43c6d390a3146f13f458a908b026ad58">convertText</a> (string text)</td></tr>
 <tr class="memdesc:a43c6d390a3146f13f458a908b026ad58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks type of given Markdown <em>text</em>  and converts it to LaTeX.  <a href="class_markdown_to_latex_1_1_md_to_tex.html#a43c6d390a3146f13f458a908b026ad58">More...</a><br /></td></tr>
 <tr class="separator:a43c6d390a3146f13f458a908b026ad58"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,7 +132,7 @@ Static Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Main Class - coordinates which Markdown line is converted to which LaTeX line. </p>
 
-<p class="definition">Definition at line <a class="el" href="_md_to_tex_8cs_source.html#l00011">11</a> of file <a class="el" href="_md_to_tex_8cs_source.html">MdToTex.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_md_to_tex_8cs_source.html#l00012">12</a> of file <a class="el" href="_md_to_tex_8cs_source.html">MdToTex.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ac4edf6bc575d51d76366549d176a7642"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac4edf6bc575d51d76366549d176a7642">&#9670;&nbsp;</a></span>convert()</h2>
@@ -161,7 +161,37 @@ Static Private Attributes</h2></td></tr>
 <p>Desides if given <em>line</em>  is Markdown text or a custom math element. </p>
 <dl class="section return"><dt>Returns</dt><dd>LaTeX line to be saved in <a class="el" href="class_markdown_to_latex_1_1_latex_renderer.html#a70ec49acaee7d2e2fcb167383633ff24" title="a List containing the LaTeX document line by line.">LatexRenderer.LatexLines</a>.</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_md_to_tex_8cs_source.html#l00049">49</a> of file <a class="el" href="_md_to_tex_8cs_source.html">MdToTex.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_md_to_tex_8cs_source.html#l00071">71</a> of file <a class="el" href="_md_to_tex_8cs_source.html">MdToTex.cs</a>.</p>
+
+</div>
+</div>
+<a id="a9d31cc8427dd75c6141e46b9e9599ef0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d31cc8427dd75c6141e46b9e9599ef0">&#9670;&nbsp;</a></span>convertMathElement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void MarkdownToLatex.MdToTex.convertMathElement </td>
+          <td>(</td>
+          <td class="paramtype">Match&#160;</td>
+          <td class="paramname"><em>match</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Takes a <em>match</em>  of a math element, decides which math element to process and what results to generate and writes them into the LaTeX document. </p>
+
+<p class="definition">Definition at line <a class="el" href="_md_to_tex_8cs_source.html#l00026">26</a> of file <a class="el" href="_md_to_tex_8cs_source.html">MdToTex.cs</a>.</p>
 
 </div>
 </div>
@@ -192,7 +222,7 @@ Static Private Attributes</h2></td></tr>
 <p>Checks type of given Markdown <em>text</em>  and converts it to LaTeX. </p>
 <dl class="section return"><dt>Returns</dt><dd>LaTeX lines of given Markdown <em>text</em> .</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_md_to_tex_8cs_source.html#l00028">28</a> of file <a class="el" href="_md_to_tex_8cs_source.html">MdToTex.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_md_to_tex_8cs_source.html#l00050">50</a> of file <a class="el" href="_md_to_tex_8cs_source.html">MdToTex.cs</a>.</p>
 
 </div>
 </div>
@@ -229,7 +259,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_md_to_tex_8cs_source.html#l00077">77</a> of file <a class="el" href="_md_to_tex_8cs_source.html">MdToTex.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_md_to_tex_8cs_source.html#l00100">100</a> of file <a class="el" href="_md_to_tex_8cs_source.html">MdToTex.cs</a>.</p>
 
 </div>
 </div>
@@ -260,7 +290,7 @@ Static Private Attributes</h2></td></tr>
 <p>Parses the <em>inputPath</em>  given as argument. </p>
 <dl class="section return"><dt>Returns</dt><dd>Usable path to a Markdown file.</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_md_to_tex_8cs_source.html#l00061">61</a> of file <a class="el" href="_md_to_tex_8cs_source.html">MdToTex.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_md_to_tex_8cs_source.html#l00084">84</a> of file <a class="el" href="_md_to_tex_8cs_source.html">MdToTex.cs</a>.</p>
 
 </div>
 </div>
@@ -287,7 +317,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Contains the currently used <a class="el" href="class_markdown_to_latex_1_1_calculator.html" title="The basic calculator class. T  specifies the parameter/s to use and cannot be a reference type....">Calculator</a> class. </p>
 
-<p class="definition">Definition at line <a class="el" href="_md_to_tex_8cs_source.html#l00015">15</a> of file <a class="el" href="_md_to_tex_8cs_source.html">MdToTex.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_md_to_tex_8cs_source.html#l00016">16</a> of file <a class="el" href="_md_to_tex_8cs_source.html">MdToTex.cs</a>.</p>
 
 </div>
 </div>
@@ -313,7 +343,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Contains the file path to the Markdown document is parsed. </p>
 
-<p class="definition">Definition at line <a class="el" href="_md_to_tex_8cs_source.html#l00018">18</a> of file <a class="el" href="_md_to_tex_8cs_source.html">MdToTex.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_md_to_tex_8cs_source.html#l00019">19</a> of file <a class="el" href="_md_to_tex_8cs_source.html">MdToTex.cs</a>.</p>
 
 </div>
 </div>

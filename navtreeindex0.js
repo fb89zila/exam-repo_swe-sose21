@@ -67,7 +67,7 @@ var NAVTREEINDEX0 =
 "class_markdown_to_latex_1_1_md_to_tex.html#a5552c0091879a7346bf1408ba0533890":[8,0,0,7,4],
 "class_markdown_to_latex_1_1_md_to_tex.html#a719b3fe9eab2ad2c8cc299d5389b176f":[8,0,0,7,3],
 "class_markdown_to_latex_1_1_md_to_tex.html#a91281eca116e8d754dacba80fe8f4376":[8,0,0,7,5],
-"class_markdown_to_latex_1_1_md_to_tex.html#ab37d6c0b1deb49c4bb57984f4ce06d84":[8,0,0,7,1],
+"class_markdown_to_latex_1_1_md_to_tex.html#a9d31cc8427dd75c6141e46b9e9599ef0":[8,0,0,7,1],
 "class_markdown_to_latex_1_1_md_to_tex.html#ac4edf6bc575d51d76366549d176a7642":[8,0,0,7,0],
 "class_markdown_to_latex_1_1_md_to_tex.html#acfb553280b878f4e5660b3760c4a1f0d":[8,0,0,7,6],
 "classes.html":[8,1],

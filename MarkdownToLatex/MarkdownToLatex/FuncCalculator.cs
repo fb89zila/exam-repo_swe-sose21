@@ -12,7 +12,7 @@ namespace MarkdownToLatex {
         public string Calculate(int precision = 2){
             try{
                 var func = Expr.Parse(this.Element);
-                return $"f({this.Var})=" + Math.Round(func.Compile(this.Var)(this.Param ?? 0), precision).ToString(CultureInfo.InvariantCulture);
+                return $"f({this.Param ?? 0})=" + Math.Round(func.Compile(this.Var)(this.Param ?? 0), precision).ToString(CultureInfo.InvariantCulture);
             } catch (Exception ex){
                 throw new ConvertElementException("Error calculating function!", ex);
             }

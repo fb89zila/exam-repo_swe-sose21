@@ -48,7 +48,7 @@ namespace MarkdownToLatex
             } else {
                 latexPath = Path.Combine(path, Path.GetFileNameWithoutExtension(MdToTex.mdFilePath) + ".tex");
             }
-            Directory.CreateDirectory(latexPath);
+            Directory.CreateDirectory(Path.GetDirectoryName(latexPath));
 
             File.WriteAllLines(latexPath, new string[]{
                 @"\documentclass{scrreprt}",
@@ -89,7 +89,7 @@ namespace MarkdownToLatex
         /// <summary>Writes a List in LaTeX using a Match <paramref name="m"/></summary>
         public static void WriteList(Match m){
             int depth = m.Groups[1].Value.Length/2+1;
-            string content = m.Groups[3].Value;
+            string content = m.Groups[2].Value;
 
             while(depth < InList){
                 InList--;

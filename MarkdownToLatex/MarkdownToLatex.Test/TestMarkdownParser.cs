@@ -11,7 +11,7 @@ namespace MarkdownToLatex.Test
         public void TestReadMdDocument()
         {
             //arrange
-            string path = @"test_files/test1.md";
+            string path = @"test_files/testAll.md";
             
             //act
             MarkdownParser.ReadMdDocument(path);

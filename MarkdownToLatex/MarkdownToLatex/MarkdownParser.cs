@@ -19,14 +19,14 @@ namespace MarkdownToLatex
         public static Dictionary<string, Regex> TextRx {get;}
 
         //methods
-        /// <summary>Reads lines of document from given file path. The resulting array is saved to <see cref="MdLines"/>.
+        /// <summary>Reads lines of document from <paramref name="mdFilePath">. The resulting array is saved to <see cref="MdLines"/>.
         /// <seealso cref="MdToTex.parsePath()"></seealso></summary>
         public static void ReadMdDocument(string mdFilePath)
         {
             MdLines = File.ReadAllLines(mdFilePath);
         }
 
-        /// <summary>Matches math element in Markdown with a custom "! " operator.</summary>
+        /// <summary>Matches math element in Markdown with a custom "!{} " operator.</summary>
         /// <returns>Match with the math element in Group[1].</returns>
         public static Match MatchMathElement(string line)
         {
@@ -74,9 +74,9 @@ namespace MarkdownToLatex
         {
             TextRx = new Dictionary<string, Regex>()
             {
-                {"math", new Regex(@"^! (.+)")},
+                {"math", new Regex(@"^!{([^{}]+)} (.+) !((?:{[^{}]+})*)")},
                 {"headline", new Regex(@"^(#+) (.+)")},
-                {"list", new Regex(@"^((  )*)[-*+] (.+)")},
+                {"list", new Regex(@"^((?:  )*)[-+] (.+)")},
                 {"quote", new Regex(@"^(>+) (.+)")},
                 {"cursive", new Regex(@"(\*|_)([^\*_]+?|[^\*_]*?(\*\*|__)[^\*_]+?(\*\*|__)[^\*_]*?)(\1)")},
                 {"bold", new Regex(@"(\*\*|__)([^\*_]+?|[^\*_]*?(\*|_)[^\*_]+?(\*|_)[^\*_]*?)(\1)")}

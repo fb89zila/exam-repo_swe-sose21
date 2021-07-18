@@ -21,15 +21,17 @@ namespace MarkdownToLatex.Test
         }
 
         [Theory]
-        [InlineData("! f(x)=x^2+5*x-11/10:x", "f(x)=x^2+5*x-11/10:x")]
-        [InlineData("! f(99.12)=x^4+3*x^3-111/100:x", "f(99.12)=x^4+3*x^3-111/100:x")]
-        public void TestMatchMathElement(string teststr, string expText)
+        [InlineData("!{svfunc} f(x)=x^2+5*x-11/10:x !", "svfunc", "f(x)=x^2+5*x-11/10:x", "")]
+        [InlineData("!{mvfunc} f(99.12,0)=x^4+3*x^3-111/100-1.2*y:x,y !{result}{root}", "mvfunc", "f(99.12,0)=x^4+3*x^3-111/100-1.2*y:x,y", "{result}{root}")]
+        public void TestMatchMathElement(string teststr, string expType, string expText, string expParam)
         {
             //act
             Match result = MarkdownParser.MatchMathElement(teststr);
 
             //assert
-            Assert.Contains(expText, result.Groups[1].Value);
+            Assert.Equal(expType, result.Groups[1].Value);
+            Assert.Equal(expText, result.Groups[2].Value);
+            Assert.Equal(expParam, result.Groups[3].Value);
         }
 
         [Theory]
@@ -43,12 +45,12 @@ namespace MarkdownToLatex.Test
 
             //assert
             Assert.Equal(expType, result.Groups[1].Length);
-            Assert.Contains(expText, result.Groups[2].Value);
+            Assert.Equal(expText, result.Groups[2].Value);
         }
 
         [Theory]
         [InlineData(@"- some ***list*** item", 0, @"some ***list*** item")]
-        [InlineData(@"  * some **sub**list item", 1, @"some **sub**list item")]
+        [InlineData(@"  - some **sub**list item", 1, @"some **sub**list item")]
         [InlineData(@"    + some *subsub*list item", 2, @"some *subsub*list item")]
         public void TestMatchList(string teststr, int expLevel, string expText)
         {
@@ -56,7 +58,7 @@ namespace MarkdownToLatex.Test
             Match result = MarkdownParser.MatchList(teststr);
             //assert
             Assert.Equal(expLevel, result.Groups[1].Length/2);
-            Assert.Contains(expText, result.Groups[3].Value);
+            Assert.Equal(expText, result.Groups[2].Value);
         }
 
         [Theory]
@@ -69,7 +71,7 @@ namespace MarkdownToLatex.Test
             Match result = MarkdownParser.MatchQuote(teststr);
             //assert
             Assert.Equal(expDepth, result.Groups[1].Length);
-            Assert.Contains(expText, result.Groups[2].Value);
+            Assert.Equal(expText, result.Groups[2].Value);
         }
 
         [Theory]
@@ -101,14 +103,9 @@ namespace MarkdownToLatex.Test
             Assert.Equal(matchCount, result.Count);
         }
 
-        /*  Error with RegEx
-        \textbf{*s*}a*a*\textbf{a*a*a}a\textbf{*a*a}a\textbf{a*a*}a*a\textbf{a}*a**a*a\textbf{a}a*a*\textbf{a}a*a*a\textbf{a}*
-        \textbf{*s*}a*a*\textbf{a*a*a}a\textbf{*a*a}a**a*a\textbf{*a*a}a*\textbf{a}a*a**a\textbf{a*a*}a\textbf{a*a*a}a***	        C#
-
-        a**a*a***a*a**a***a**a*a**a**a*a***a**a*a*a**a***
-        */
         [Theory]
         [InlineData("***s***a*a***a*a*a**a***a*a**a**a*a***a*a**a***a**a*a**a**a*a***a**a*a*a**a***", 8 + 9)] // bold + cursive
+        [InlineData("simple **bold**, *cursive* and ***bold+cursive***", 2 + 2)]
         public void TestMatchBoldAndCursive(string teststr, int matchCount)
         {
             //arrange
@@ -119,13 +116,13 @@ namespace MarkdownToLatex.Test
             int cursiveCounter;
 
             //act
+                //bold
             boldMatch = MarkdownParser.MatchBold(resultstr);
             boldCounter = boldMatch.Count;
 
             resultstr = MarkdownParser.TextRx["bold"].Replace(resultstr, @"\textbf{$2}");
 
-            // Replace is working wrong
-
+                //cursive
             cursiveMatch = MarkdownParser.MatchCursive(resultstr);
             cursiveCounter = cursiveMatch.Count;
 

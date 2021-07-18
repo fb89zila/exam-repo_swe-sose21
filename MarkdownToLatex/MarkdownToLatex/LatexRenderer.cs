@@ -37,7 +37,7 @@ namespace MarkdownToLatex
             }
         }}
 
-        /// <summary>Writes the LaTeX document into a file at the specified <paramref name="path"/>.</summary>
+        /// <summary>Writes the LaTeX document with a <paramref name="filename"/> into a 'latex' folder at the specified <paramref name="path"/>.</summary>
         public static void WriteLatexDocument(string path, string filename){
             string latexPath = Path.Combine(path, "latex");
             Directory.CreateDirectory(latexPath);

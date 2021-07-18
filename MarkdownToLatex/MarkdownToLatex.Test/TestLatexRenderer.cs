@@ -118,8 +118,7 @@ namespace MarkdownToLatex.Test
         [Fact]
         public void TestWriteLatexDocument(){
             //arrange
-            string expPath = @"test_files";
-            string expFilename = "test.tex";
+            string expPath = @"test_files/test.tex";
             string[] expected = {
                 @"\documentclass{scrreprt}",
                 @"\setlength{\parindent}{0pt}",
@@ -134,8 +133,8 @@ namespace MarkdownToLatex.Test
             };
 
             //act
-            LatexRenderer.WriteLatexDocument(expPath, expFilename);
-            string[] result = File.ReadAllLines(Path.Combine(expPath, $"latex/{expFilename}"));
+            LatexRenderer.WriteLatexDocument(expPath);
+            string[] result = File.ReadAllLines(Path.Combine(expPath, $"latex/test.tex"));
 
             //assert
             Assert.Equal(expected, result);

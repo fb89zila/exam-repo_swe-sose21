@@ -38,19 +38,26 @@ namespace MarkdownToLatex
         }}
 
         /// <summary>Writes the LaTeX document with a <paramref name="filename"/> into a 'latex' folder at the specified <paramref name="path"/>.</summary>
-        public static void WriteLatexDocument(string path, string filename){
-            string latexPath = Path.Combine(path, "latex");
+        public static void WriteLatexDocument(string path){
+            string latexPath;
+
+            if(Path.GetExtension(path) == ".tex"){
+                latexPath = path;
+            } else if (Path.GetExtension(path) == ".md"){
+                latexPath = Path.Combine(Path.GetDirectoryName(path), Path.GetFileNameWithoutExtension(path) + ".tex");
+            } else {
+                latexPath = Path.Combine(path, Path.GetFileNameWithoutExtension(MdToTex.mdFilePath) + ".tex");
+            }
             Directory.CreateDirectory(latexPath);
 
-            List<string> latexDoc = new List<string>();
-            latexDoc.Add(@"\documentclass{scrreprt}");
-            latexDoc.Add(@"\setlength{\parindent}{0pt}");
-            latexDoc.Add(@"\newcommand{\quoteline}" + "\n");
-            latexDoc.Add(@"\begin{document}");
-            latexDoc.AddRange(LatexLines);
-            latexDoc.Add(@"\end{document}");
-
-            File.WriteAllText(Path.Combine(latexPath, filename), String.Join("\n", latexDoc));
+            File.WriteAllLines(latexPath, new string[]{
+                @"\documentclass{scrreprt}",
+                @"\setlength{\parindent}{0pt}",
+                @"\newcommand{\quoteline}" + "\n",
+                @"\begin{document}"
+            });
+            File.AppendAllLines(latexPath, LatexLines);
+            File.AppendAllText(latexPath, @"\end{document}");
         }
 
         /// <summary>Writes a MathElement in LaTeX.</summary>
@@ -121,12 +128,12 @@ namespace MarkdownToLatex
             LatexLines.Insert(LatexLines.FindLastIndex(x => x.StartsWith(@"\item"))+offset+1, String.Format(@"\item{{{0}}}", content));
         }
 
-        private static void newList(string content, int offset = 0){
+        private static void newList(string content){
             List<string> tmp = new List<string>();
             tmp.Add(@"\begin{itemize}");
             tmp.Add(String.Format(@"\item{{{0}}}", content));
             tmp.Add(@"\end{itemize}");
-            LatexLines.InsertRange(LatexLines.FindLastIndex(x => x.StartsWith(@"\item"))+offset+1, tmp);
+            LatexLines.InsertRange(LatexLines.FindLastIndex(x => x.StartsWith(@"\item"))+1, tmp);
         }
 
         /// <summary>Writes a Quote in LaTeX using a Match <paramref name="m"/>.</summary>
@@ -171,12 +178,12 @@ namespace MarkdownToLatex
             LatexLines.Insert(LatexLines.FindLastIndex(x => x.StartsWith(@"\quoteline"))+offset+1, String.Format(@"\quoteline{{{0}}}", content));
         }
 
-        private static void newQuote(string content, int offset = 0){
+        private static void newQuote(string content){
             List<string> tmp = new List<string>();
             tmp.Add(@"\begin{quote}");
             tmp.Add(String.Format(@"\quoteline{{{0}}}", content));
             tmp.Add(@"\end{quote}");
-            LatexLines.InsertRange(LatexLines.FindLastIndex(x => x.StartsWith(@"\quoteline"))+offset+1, tmp);
+            LatexLines.InsertRange(LatexLines.FindLastIndex(x => x.StartsWith(@"\quoteline"))+1, tmp);
         }
 
         /// <summary>Writes a <paramref name="line"/> with cursive text in LaTeX.</summary>

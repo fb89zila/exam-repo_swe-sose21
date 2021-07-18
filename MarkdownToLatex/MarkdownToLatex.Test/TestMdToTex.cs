@@ -25,7 +25,7 @@ namespace MarkdownToLatex.Test
         }
         
         [Fact]
-        public void TestConvert()
+        public void TestConvertMathElement()
         {
             //arrange
             LatexRenderer.LatexLines.Clear();

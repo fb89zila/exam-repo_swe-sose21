@@ -82,14 +82,486 @@ $(document).ready(function(){initNavTree('class_markdown_to_latex_1_1_latex_rend
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#properties">Properties</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
+<a href="class_markdown_to_latex_1_1_latex_renderer-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">MarkdownToLatex.LatexRenderer Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>a static class containing methods used for rendering the LaTeX document.  
+ <a href="class_markdown_to_latex_1_1_latex_renderer.html#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a75663e1ad1e231de64c5b90205d2d4da"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_latex_renderer.html#a75663e1ad1e231de64c5b90205d2d4da">WriteLatexDocument</a> (string path)</td></tr>
+<tr class="memdesc:a75663e1ad1e231de64c5b90205d2d4da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the LaTeX document with a <em>filename</em>  into a 'latex' folder at the specified <em>path</em> .  <a href="class_markdown_to_latex_1_1_latex_renderer.html#a75663e1ad1e231de64c5b90205d2d4da">More...</a><br /></td></tr>
+<tr class="separator:a75663e1ad1e231de64c5b90205d2d4da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6b4a5864234b37c210ac9c3379c7683"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_latex_renderer.html#ad6b4a5864234b37c210ac9c3379c7683">WriteMathElement</a> (string line)</td></tr>
+<tr class="memdesc:ad6b4a5864234b37c210ac9c3379c7683"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a MathElement in LaTeX.  <a href="class_markdown_to_latex_1_1_latex_renderer.html#ad6b4a5864234b37c210ac9c3379c7683">More...</a><br /></td></tr>
+<tr class="separator:ad6b4a5864234b37c210ac9c3379c7683"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a68bf6df9565d7d5321338ee433b3d3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_latex_renderer.html#a7a68bf6df9565d7d5321338ee433b3d3">WriteHeadline</a> (Match m)</td></tr>
+<tr class="memdesc:a7a68bf6df9565d7d5321338ee433b3d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a Headline in LaTeX using a Match <em>m</em> .  <a href="class_markdown_to_latex_1_1_latex_renderer.html#a7a68bf6df9565d7d5321338ee433b3d3">More...</a><br /></td></tr>
+<tr class="separator:a7a68bf6df9565d7d5321338ee433b3d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4fd8d0ba5ddc8bf2ca06f63d5111d96"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_latex_renderer.html#ad4fd8d0ba5ddc8bf2ca06f63d5111d96">WriteList</a> (Match m)</td></tr>
+<tr class="memdesc:ad4fd8d0ba5ddc8bf2ca06f63d5111d96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a List in LaTeX using a Match <em>m</em>   <a href="class_markdown_to_latex_1_1_latex_renderer.html#ad4fd8d0ba5ddc8bf2ca06f63d5111d96">More...</a><br /></td></tr>
+<tr class="separator:ad4fd8d0ba5ddc8bf2ca06f63d5111d96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39003cf1e32f1f93fe27844c59126321"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_latex_renderer.html#a39003cf1e32f1f93fe27844c59126321">WriteQuote</a> (Match m)</td></tr>
+<tr class="memdesc:a39003cf1e32f1f93fe27844c59126321"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a Quote in LaTeX using a Match <em>m</em> .  <a href="class_markdown_to_latex_1_1_latex_renderer.html#a39003cf1e32f1f93fe27844c59126321">More...</a><br /></td></tr>
+<tr class="separator:a39003cf1e32f1f93fe27844c59126321"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06d5fdcbe9df1ca8d6155181df38b347"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_latex_renderer.html#a06d5fdcbe9df1ca8d6155181df38b347">WriteCursive</a> (string line)</td></tr>
+<tr class="memdesc:a06d5fdcbe9df1ca8d6155181df38b347"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a <em>line</em>  with cursive text in LaTeX.  <a href="class_markdown_to_latex_1_1_latex_renderer.html#a06d5fdcbe9df1ca8d6155181df38b347">More...</a><br /></td></tr>
+<tr class="separator:a06d5fdcbe9df1ca8d6155181df38b347"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb58e7702215c5e85b757b0731f002a2"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_latex_renderer.html#abb58e7702215c5e85b757b0731f002a2">WriteBold</a> (string line)</td></tr>
+<tr class="memdesc:abb58e7702215c5e85b757b0731f002a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a <em>line</em>  with bold text in LaTeX.  <a href="class_markdown_to_latex_1_1_latex_renderer.html#abb58e7702215c5e85b757b0731f002a2">More...</a><br /></td></tr>
+<tr class="separator:abb58e7702215c5e85b757b0731f002a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b6859188c2746f092213a358a4b8542"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_latex_renderer.html#a7b6859188c2746f092213a358a4b8542">WriteText</a> (string line)</td></tr>
+<tr class="memdesc:a7b6859188c2746f092213a358a4b8542"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a normal text <em>line</em>  in LaTeX.  <a href="class_markdown_to_latex_1_1_latex_renderer.html#a7b6859188c2746f092213a358a4b8542">More...</a><br /></td></tr>
+<tr class="separator:a7b6859188c2746f092213a358a4b8542"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada10bd94c0bff3dc5e49195bf3f9677d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_latex_renderer.html#ada10bd94c0bff3dc5e49195bf3f9677d">StartNewLine</a> (string line)</td></tr>
+<tr class="memdesc:ada10bd94c0bff3dc5e49195bf3f9677d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts a new line after the given <em>line</em> .  <a href="class_markdown_to_latex_1_1_latex_renderer.html#ada10bd94c0bff3dc5e49195bf3f9677d">More...</a><br /></td></tr>
+<tr class="separator:ada10bd94c0bff3dc5e49195bf3f9677d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac123073a20220d771346a660de952d14"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_latex_renderer.html#ac123073a20220d771346a660de952d14">StartNewParagraph</a> ()</td></tr>
+<tr class="memdesc:ac123073a20220d771346a660de952d14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts a new paragraph.  <a href="class_markdown_to_latex_1_1_latex_renderer.html#ac123073a20220d771346a660de952d14">More...</a><br /></td></tr>
+<tr class="separator:ac123073a20220d771346a660de952d14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a70ec49acaee7d2e2fcb167383633ff24"><td class="memItemLeft" align="right" valign="top">static List&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_latex_renderer.html#a70ec49acaee7d2e2fcb167383633ff24">LatexLines</a></td></tr>
+<tr class="memdesc:a70ec49acaee7d2e2fcb167383633ff24"><td class="mdescLeft">&#160;</td><td class="mdescRight">a List containing the LaTeX document line by line.  <a href="class_markdown_to_latex_1_1_latex_renderer.html#a70ec49acaee7d2e2fcb167383633ff24">More...</a><br /></td></tr>
+<tr class="separator:a70ec49acaee7d2e2fcb167383633ff24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a42be13897698d085946c7972c52caca3"><td class="memItemLeft" align="right" valign="top">static byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_latex_renderer.html#a42be13897698d085946c7972c52caca3">InList</a><code> [get, private set]</code></td></tr>
+<tr class="memdesc:a42be13897698d085946c7972c52caca3"><td class="mdescLeft">&#160;</td><td class="mdescRight">a byte indicating whether a list is currently rendered.  <a href="class_markdown_to_latex_1_1_latex_renderer.html#a42be13897698d085946c7972c52caca3">More...</a><br /></td></tr>
+<tr class="separator:a42be13897698d085946c7972c52caca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04877fb500b5f0c7fd64cd0bb439d008"><td class="memItemLeft" align="right" valign="top">static byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_latex_renderer.html#a04877fb500b5f0c7fd64cd0bb439d008">InQuote</a><code> [get, private set]</code></td></tr>
+<tr class="memdesc:a04877fb500b5f0c7fd64cd0bb439d008"><td class="mdescLeft">&#160;</td><td class="mdescRight">a byte indicating whether a quote is currently rendered.  <a href="class_markdown_to_latex_1_1_latex_renderer.html#a04877fb500b5f0c7fd64cd0bb439d008">More...</a><br /></td></tr>
+<tr class="separator:a04877fb500b5f0c7fd64cd0bb439d008"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a62eefde74198a0e91314d5f90018e3d4"><td class="memItemLeft" align="right" valign="top"><a id="a62eefde74198a0e91314d5f90018e3d4"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>appendNewItem</b> (string content, int offset=0)</td></tr>
+<tr class="separator:a62eefde74198a0e91314d5f90018e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac519ad1bc122b99e745811b0f5640d44"><td class="memItemLeft" align="right" valign="top"><a id="ac519ad1bc122b99e745811b0f5640d44"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>newList</b> (string content)</td></tr>
+<tr class="separator:ac519ad1bc122b99e745811b0f5640d44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29b24263b293b9eff3f5cc6bdb43089d"><td class="memItemLeft" align="right" valign="top"><a id="a29b24263b293b9eff3f5cc6bdb43089d"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>appendNewQuoteLine</b> (string content, int offset=0)</td></tr>
+<tr class="separator:a29b24263b293b9eff3f5cc6bdb43089d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26e38167a68178f7cb7d7075a9e567bc"><td class="memItemLeft" align="right" valign="top"><a id="a26e38167a68178f7cb7d7075a9e567bc"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>newQuote</b> (string content)</td></tr>
+<tr class="separator:a26e38167a68178f7cb7d7075a9e567bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a43ec2fb7e282a52eb1eb213eee0ecc0e"><td class="memItemLeft" align="right" valign="top"><a id="a43ec2fb7e282a52eb1eb213eee0ecc0e"></a>
+static byte&#160;</td><td class="memItemRight" valign="bottom"><b>_inlist</b></td></tr>
+<tr class="separator:a43ec2fb7e282a52eb1eb213eee0ecc0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a678741e0e4c7ce5e1e9e4532fef66966"><td class="memItemLeft" align="right" valign="top"><a id="a678741e0e4c7ce5e1e9e4532fef66966"></a>
+static byte&#160;</td><td class="memItemRight" valign="bottom"><b>oldInList</b></td></tr>
+<tr class="separator:a678741e0e4c7ce5e1e9e4532fef66966"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3000552572f9099877edd46000c46a6"><td class="memItemLeft" align="right" valign="top"><a id="af3000552572f9099877edd46000c46a6"></a>
+static byte&#160;</td><td class="memItemRight" valign="bottom"><b>_inquote</b></td></tr>
+<tr class="separator:af3000552572f9099877edd46000c46a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa3f0ab7481301a86ba25cbd69f13d02"><td class="memItemLeft" align="right" valign="top"><a id="aaa3f0ab7481301a86ba25cbd69f13d02"></a>
+static byte&#160;</td><td class="memItemRight" valign="bottom"><b>oldInQuote</b></td></tr>
+<tr class="separator:aaa3f0ab7481301a86ba25cbd69f13d02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_latex_renderer_8cs_source.html#l00003">3</a> of file <a class="el" href="_latex_renderer_8cs_source.html">LatexRenderer.cs</a>.</p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+<div class="textblock"><p>a static class containing methods used for rendering the LaTeX document. </p>
+
+<p class="definition">Definition at line <a class="el" href="_latex_renderer_8cs_source.html#l00010">10</a> of file <a class="el" href="_latex_renderer_8cs_source.html">LatexRenderer.cs</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ada10bd94c0bff3dc5e49195bf3f9677d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada10bd94c0bff3dc5e49195bf3f9677d">&#9670;&nbsp;</a></span>StartNewLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void MarkdownToLatex.LatexRenderer.StartNewLine </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>line</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Starts a new line after the given <em>line</em> . </p>
+
+<p class="definition">Definition at line <a class="el" href="_latex_renderer_8cs_source.html#l00207">207</a> of file <a class="el" href="_latex_renderer_8cs_source.html">LatexRenderer.cs</a>.</p>
+
+</div>
+</div>
+<a id="ac123073a20220d771346a660de952d14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac123073a20220d771346a660de952d14">&#9670;&nbsp;</a></span>StartNewParagraph()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void MarkdownToLatex.LatexRenderer.StartNewParagraph </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Starts a new paragraph. </p>
+
+<p class="definition">Definition at line <a class="el" href="_latex_renderer_8cs_source.html#l00212">212</a> of file <a class="el" href="_latex_renderer_8cs_source.html">LatexRenderer.cs</a>.</p>
+
+</div>
+</div>
+<a id="abb58e7702215c5e85b757b0731f002a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb58e7702215c5e85b757b0731f002a2">&#9670;&nbsp;</a></span>WriteBold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static string MarkdownToLatex.LatexRenderer.WriteBold </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>line</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes a <em>line</em>  with bold text in LaTeX. </p>
+<dl class="section return"><dt>Returns</dt><dd>the line, converted from Markdown into LaTeX.</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_latex_renderer_8cs_source.html#l00197">197</a> of file <a class="el" href="_latex_renderer_8cs_source.html">LatexRenderer.cs</a>.</p>
+
+</div>
+</div>
+<a id="a06d5fdcbe9df1ca8d6155181df38b347"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06d5fdcbe9df1ca8d6155181df38b347">&#9670;&nbsp;</a></span>WriteCursive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static string MarkdownToLatex.LatexRenderer.WriteCursive </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>line</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes a <em>line</em>  with cursive text in LaTeX. </p>
+<dl class="section return"><dt>Returns</dt><dd>the line, converted from Markdown into LaTeX.</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_latex_renderer_8cs_source.html#l00191">191</a> of file <a class="el" href="_latex_renderer_8cs_source.html">LatexRenderer.cs</a>.</p>
+
+</div>
+</div>
+<a id="a7a68bf6df9565d7d5321338ee433b3d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a68bf6df9565d7d5321338ee433b3d3">&#9670;&nbsp;</a></span>WriteHeadline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void MarkdownToLatex.LatexRenderer.WriteHeadline </td>
+          <td>(</td>
+          <td class="paramtype">Match&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes a Headline in LaTeX using a Match <em>m</em> . </p>
+
+<p class="definition">Definition at line <a class="el" href="_latex_renderer_8cs_source.html#l00069">69</a> of file <a class="el" href="_latex_renderer_8cs_source.html">LatexRenderer.cs</a>.</p>
+
+</div>
+</div>
+<a id="a75663e1ad1e231de64c5b90205d2d4da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75663e1ad1e231de64c5b90205d2d4da">&#9670;&nbsp;</a></span>WriteLatexDocument()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void MarkdownToLatex.LatexRenderer.WriteLatexDocument </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes the LaTeX document with a <em>filename</em>  into a 'latex' folder at the specified <em>path</em> . </p>
+
+<p class="definition">Definition at line <a class="el" href="_latex_renderer_8cs_source.html#l00041">41</a> of file <a class="el" href="_latex_renderer_8cs_source.html">LatexRenderer.cs</a>.</p>
+
+</div>
+</div>
+<a id="ad4fd8d0ba5ddc8bf2ca06f63d5111d96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4fd8d0ba5ddc8bf2ca06f63d5111d96">&#9670;&nbsp;</a></span>WriteList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void MarkdownToLatex.LatexRenderer.WriteList </td>
+          <td>(</td>
+          <td class="paramtype">Match&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes a List in LaTeX using a Match <em>m</em>  </p>
+
+<p class="definition">Definition at line <a class="el" href="_latex_renderer_8cs_source.html#l00090">90</a> of file <a class="el" href="_latex_renderer_8cs_source.html">LatexRenderer.cs</a>.</p>
+
+</div>
+</div>
+<a id="ad6b4a5864234b37c210ac9c3379c7683"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6b4a5864234b37c210ac9c3379c7683">&#9670;&nbsp;</a></span>WriteMathElement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void MarkdownToLatex.LatexRenderer.WriteMathElement </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>line</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes a MathElement in LaTeX. </p>
+
+<p class="definition">Definition at line <a class="el" href="_latex_renderer_8cs_source.html#l00064">64</a> of file <a class="el" href="_latex_renderer_8cs_source.html">LatexRenderer.cs</a>.</p>
+
+</div>
+</div>
+<a id="a39003cf1e32f1f93fe27844c59126321"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39003cf1e32f1f93fe27844c59126321">&#9670;&nbsp;</a></span>WriteQuote()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void MarkdownToLatex.LatexRenderer.WriteQuote </td>
+          <td>(</td>
+          <td class="paramtype">Match&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes a Quote in LaTeX using a Match <em>m</em> . </p>
+
+<p class="definition">Definition at line <a class="el" href="_latex_renderer_8cs_source.html#l00140">140</a> of file <a class="el" href="_latex_renderer_8cs_source.html">LatexRenderer.cs</a>.</p>
+
+</div>
+</div>
+<a id="a7b6859188c2746f092213a358a4b8542"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b6859188c2746f092213a358a4b8542">&#9670;&nbsp;</a></span>WriteText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void MarkdownToLatex.LatexRenderer.WriteText </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>line</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes a normal text <em>line</em>  in LaTeX. </p>
+
+<p class="definition">Definition at line <a class="el" href="_latex_renderer_8cs_source.html#l00202">202</a> of file <a class="el" href="_latex_renderer_8cs_source.html">LatexRenderer.cs</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a70ec49acaee7d2e2fcb167383633ff24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70ec49acaee7d2e2fcb167383633ff24">&#9670;&nbsp;</a></span>LatexLines</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;string&gt; MarkdownToLatex.LatexRenderer.LatexLines</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>a List containing the LaTeX document line by line. </p>
+
+<p class="definition">Definition at line <a class="el" href="_latex_renderer_8cs_source.html#l00013">13</a> of file <a class="el" href="_latex_renderer_8cs_source.html">LatexRenderer.cs</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="a42be13897698d085946c7972c52caca3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42be13897698d085946c7972c52caca3">&#9670;&nbsp;</a></span>InList</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte MarkdownToLatex.LatexRenderer.InList</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">get</span><span class="mlabel">private set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>a byte indicating whether a list is currently rendered. </p>
+
+<p class="definition">Definition at line <a class="el" href="_latex_renderer_8cs_source.html#l00020">20</a> of file <a class="el" href="_latex_renderer_8cs_source.html">LatexRenderer.cs</a>.</p>
+
+</div>
+</div>
+<a id="a04877fb500b5f0c7fd64cd0bb439d008"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04877fb500b5f0c7fd64cd0bb439d008">&#9670;&nbsp;</a></span>InQuote</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte MarkdownToLatex.LatexRenderer.InQuote</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">get</span><span class="mlabel">private set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>a byte indicating whether a quote is currently rendered. </p>
+
+<p class="definition">Definition at line <a class="el" href="_latex_renderer_8cs_source.html#l00032">32</a> of file <a class="el" href="_latex_renderer_8cs_source.html">LatexRenderer.cs</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>MarkdownToLatex/<a class="el" href="_latex_renderer_8cs_source.html">LatexRenderer.cs</a></li>
 </ul>
 </div><!-- contents -->

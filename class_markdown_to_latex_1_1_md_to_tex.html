@@ -84,6 +84,7 @@ $(document).ready(function(){initNavTree('class_markdown_to_latex_1_1_md_to_tex.
 <div class="header">
   <div class="summary">
 <a href="#pac-static-methods">Static Package Functions</a> &#124;
+<a href="#pac-static-attribs">Static Package Attributes</a> &#124;
 <a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="class_markdown_to_latex_1_1_md_to_tex-members.html">List of all members</a>  </div>
@@ -110,6 +111,12 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>convertMathEle
 <tr class="memdesc:a5552c0091879a7346bf1408ba0533890"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the <em>inputPath</em>  given as argument.  <a href="class_markdown_to_latex_1_1_md_to_tex.html#a5552c0091879a7346bf1408ba0533890">More...</a><br /></td></tr>
 <tr class="separator:a5552c0091879a7346bf1408ba0533890"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pac-static-attribs"></a>
+Static Package Attributes</h2></td></tr>
+<tr class="memitem:acfb553280b878f4e5660b3760c4a1f0d"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_md_to_tex.html#acfb553280b878f4e5660b3760c4a1f0d">mdFilePath</a></td></tr>
+<tr class="memdesc:acfb553280b878f4e5660b3760c4a1f0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the file path to the Markdown document is parsed.  <a href="class_markdown_to_latex_1_1_md_to_tex.html#acfb553280b878f4e5660b3760c4a1f0d">More...</a><br /></td></tr>
+<tr class="separator:acfb553280b878f4e5660b3760c4a1f0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
 <tr class="memitem:a719b3fe9eab2ad2c8cc299d5389b176f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_md_to_tex.html#a719b3fe9eab2ad2c8cc299d5389b176f">Main</a> (string[] args)</td></tr>
@@ -121,9 +128,6 @@ Static Private Attributes</h2></td></tr>
 <tr class="memitem:a91281eca116e8d754dacba80fe8f4376"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="interface_markdown_to_latex_1_1_i_calculator.html">ICalculator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_md_to_tex.html#a91281eca116e8d754dacba80fe8f4376">calc</a></td></tr>
 <tr class="memdesc:a91281eca116e8d754dacba80fe8f4376"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the currently used <a class="el" href="class_markdown_to_latex_1_1_calculator.html" title="The basic calculator class. T  specifies the parameter/s to use and cannot be a reference type....">Calculator</a> class.  <a href="class_markdown_to_latex_1_1_md_to_tex.html#a91281eca116e8d754dacba80fe8f4376">More...</a><br /></td></tr>
 <tr class="separator:a91281eca116e8d754dacba80fe8f4376"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfb553280b878f4e5660b3760c4a1f0d"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_markdown_to_latex_1_1_md_to_tex.html#acfb553280b878f4e5660b3760c4a1f0d">mdFilePath</a></td></tr>
-<tr class="memdesc:acfb553280b878f4e5660b3760c4a1f0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the file path to the Markdown document is parsed.  <a href="class_markdown_to_latex_1_1_md_to_tex.html#acfb553280b878f4e5660b3760c4a1f0d">More...</a><br /></td></tr>
-<tr class="separator:acfb553280b878f4e5660b3760c4a1f0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Main Class - coordinates which Markdown line is converted to which LaTeX line. </p>
@@ -155,7 +159,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Desides if given <em>line</em>  is Markdown text or a custom math element. </p>
-<dl class="section return"><dt>Returns</dt><dd>LaTeX line to be saved in LatexRenderer.LatexLines.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>LaTeX line to be saved in <a class="el" href="class_markdown_to_latex_1_1_latex_renderer.html#a70ec49acaee7d2e2fcb167383633ff24" title="a List containing the LaTeX document line by line.">LatexRenderer.LatexLines</a>.</dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_md_to_tex_8cs_source.html#l00049">49</a> of file <a class="el" href="_md_to_tex_8cs_source.html">MdToTex.cs</a>.</p>
 
@@ -302,7 +306,7 @@ Static Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">package</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

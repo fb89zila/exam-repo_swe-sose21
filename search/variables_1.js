@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mdfilepath_63',['mdFilePath',['../class_markdown_to_latex_1_1_md_to_tex.html#acfb553280b878f4e5660b3760c4a1f0d',1,'MarkdownToLatex::MdToTex']]]
+  ['latexlines_86',['LatexLines',['../class_markdown_to_latex_1_1_latex_renderer.html#a70ec49acaee7d2e2fcb167383633ff24',1,'MarkdownToLatex::LatexRenderer']]]
 ];

@@ -5,7 +5,7 @@ var annotated_dup =
       [ "ConvertElementException", "class_markdown_to_latex_1_1_convert_element_exception.html", "class_markdown_to_latex_1_1_convert_element_exception" ],
       [ "FuncCalculator", "class_markdown_to_latex_1_1_func_calculator.html", "class_markdown_to_latex_1_1_func_calculator" ],
       [ "ICalculator", "interface_markdown_to_latex_1_1_i_calculator.html", "interface_markdown_to_latex_1_1_i_calculator" ],
-      [ "LatexRenderer", "class_markdown_to_latex_1_1_latex_renderer.html", null ],
+      [ "LatexRenderer", "class_markdown_to_latex_1_1_latex_renderer.html", "class_markdown_to_latex_1_1_latex_renderer" ],
       [ "MarkdownParser", "class_markdown_to_latex_1_1_markdown_parser.html", "class_markdown_to_latex_1_1_markdown_parser" ],
       [ "MathParser", "class_markdown_to_latex_1_1_math_parser.html", "class_markdown_to_latex_1_1_math_parser" ],
       [ "MdToTex", "class_markdown_to_latex_1_1_md_to_tex.html", "class_markdown_to_latex_1_1_md_to_tex" ]

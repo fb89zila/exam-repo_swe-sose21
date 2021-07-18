@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['mathrx_65',['MathRx',['../class_markdown_to_latex_1_1_math_parser.html#a8c28a6058597b5e8a53928d34c90defc',1,'MarkdownToLatex::MathParser']]],
-  ['mdlines_66',['MdLines',['../class_markdown_to_latex_1_1_markdown_parser.html#a186d2c9d16e5ea1910829ac18b16ab05',1,'MarkdownToLatex::MarkdownParser']]]
+  ['inlist_89',['InList',['../class_markdown_to_latex_1_1_latex_renderer.html#a42be13897698d085946c7972c52caca3',1,'MarkdownToLatex::LatexRenderer']]],
+  ['inquote_90',['InQuote',['../class_markdown_to_latex_1_1_latex_renderer.html#a04877fb500b5f0c7fd64cd0bb439d008',1,'MarkdownToLatex::LatexRenderer']]]
 ];

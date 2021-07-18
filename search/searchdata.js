@@ -1,11 +1,11 @@
 var indexSectionsWithContent =
 {
-  0: "cefilmprtv",
+  0: "cefilmprstvw",
   1: "cfilm",
   2: "m",
-  3: "cfmpr",
-  4: "cm",
-  5: "emptv",
+  3: "cfmprsw",
+  4: "clm",
+  5: "eimptv",
   6: "m"
 };
 

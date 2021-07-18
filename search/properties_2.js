@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['param_67',['Param',['../class_markdown_to_latex_1_1_calculator.html#a3895ad0ee10261dfb7852b0b16c2d891',1,'MarkdownToLatex::Calculator']]]
+  ['mathrx_91',['MathRx',['../class_markdown_to_latex_1_1_math_parser.html#a8c28a6058597b5e8a53928d34c90defc',1,'MarkdownToLatex::MathParser']]],
+  ['mdlines_92',['MdLines',['../class_markdown_to_latex_1_1_markdown_parser.html#a186d2c9d16e5ea1910829ac18b16ab05',1,'MarkdownToLatex::MarkdownParser']]]
 ];

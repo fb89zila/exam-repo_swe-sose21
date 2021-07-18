@@ -14,31 +14,43 @@ namespace MarkdownToLatex
 
         private static byte _inlist;
 
+        private static byte oldInList;
+
         /// <summary>a byte indicating whether a list is currently rendered.</summary>
-        /// <exception cref="System.FormatException">Thrown when trying to set the value to something other than 0-3.</exception>
         public static byte InList {get => _inlist; private set {
-            if(0 <= value && value <= 3){
+            if(value <= 3){
                 _inlist = value;
             } else {
-                throw new FormatException("Input has to be between 0 and 3. Check the documentation for details."); 
+                _inlist = 3; 
             }
         }}
 
         private static byte _inquote;
+        private static byte oldInQuote;
 
         /// <summary>a byte indicating whether a quote is currently rendered.</summary>
-        /// <exception cref="System.FormatException">Thrown when trying to set the value to something other than 0-3.</exception>
         public static byte InQuote {get => _inquote; private set {
-            if(0 <= value && value <= 3){
+            if(value <= 3){
                 _inquote = value;
             } else {
-                throw new FormatException("Input has to be between 0 and 3. Check the documentation for details."); 
+                _inquote = 3;
             }
         }}
 
         /// <summary>Writes the LaTeX document into a file at the specified <paramref name="path"/>.</summary>
-        public static void WriteLatexDocument(string path){
-            File.WriteAllLines(path, LatexLines);
+        public static void WriteLatexDocument(string path, string filename){
+            string latexPath = Path.Combine(path, "latex");
+            Directory.CreateDirectory(latexPath);
+
+            List<string> latexDoc = new List<string>();
+            latexDoc.Add(@"\documentclass{scrreprt}");
+            latexDoc.Add(@"\setlength{\parindent}{0pt}");
+            latexDoc.Add(@"\newcommand{\quoteline}" + "\n");
+            latexDoc.Add(@"\begin{document}");
+            latexDoc.AddRange(LatexLines);
+            latexDoc.Add(@"\end{document}");
+
+            File.WriteAllText(Path.Combine(latexPath, filename), String.Join("\n", latexDoc));
         }
 
         /// <summary>Writes a MathElement in LaTeX.</summary>
@@ -48,15 +60,10 @@ namespace MarkdownToLatex
 
         /// <summary>Writes a Headline in LaTeX using a Match <paramref name="m"/>.</summary>
         public static void WriteHeadline(Match m){
-            if(m == Match.Empty) {return;} //SHOULD never happen, but you never know ;D
-
             int length = m.Groups[1].Value.Length; //First Group, number of #'s
             string caption = m.Groups[2].Value; //Second Group, the actual text
 
             switch(length){
-                case 0:
-                    LatexLines.Add(caption); //Should also not happen
-                    break;
                 case 1:
                     LatexLines.Add(String.Format(@"\chapter*{{{0}}}", caption));
                     break;
@@ -77,48 +84,49 @@ namespace MarkdownToLatex
             int depth = m.Groups[1].Value.Length/2+1;
             string content = m.Groups[3].Value;
 
-            if(m == Match.Empty) depth = 0;
-
-            if(depth < InList){
-                InList = 0;
+            while(depth < InList){
+                InList--;
             }
 
-            if(InList == 0 && depth == 1){ //if not in any list
+            if(InList == 0 && InList <= depth){ //if not in any list
                 LatexLines.Add(@"\begin{itemize}");
                 LatexLines.Add(String.Format(@"\item{{{0}}}", content));
                 LatexLines.Add(@"\end{itemize}");
                 InList = 1;
-            } else if (InList == 1){
-                if(depth == 1){
+            } else if (InList == 1 && InList <= depth){
+                if(depth == 1 && oldInList > InList){
+                    appendNewItem(content, oldInList - InList);
+                } else if(depth == 1 && oldInList == InList){
                     appendNewItem(content);
-                } else if(depth == 2) {
-                    newListAfterItem(content);
-                    InList = 2;
+                } else {
+                    newList(content);
+                    InList++;
                 }
-            } else if (InList == 2){
-                if(depth == 2){
+            } else if (InList == 2 && InList <= depth){
+                if(depth == 2 && oldInList > InList){
+                    appendNewItem(content, oldInList - InList);
+                } else if(depth == 2 && oldInList == InList){
                     appendNewItem(content);
-                } else if(depth == 3){
-                    newListAfterItem(content);
-                    InList = 3;
+                } else {
+                    newList(content);
+                    InList++;
                 }
-            } else if (InList == 3){
-                if(depth == 3){
-                    appendNewItem(content);
-                }
+            } else if (InList == 3 && InList <= depth){
+                appendNewItem(content);
             }
+            oldInList = InList;
         }
 
-        private static void appendNewItem(string content){
-            LatexLines.Insert(LatexLines.FindLastIndex(x => x.StartsWith(@"\item"))+1, String.Format(@"\item{{{0}}}", content));
+        private static void appendNewItem(string content, int offset = 0){
+            LatexLines.Insert(LatexLines.FindLastIndex(x => x.StartsWith(@"\item"))+offset+1, String.Format(@"\item{{{0}}}", content));
         }
 
-        private static void newListAfterItem(string content){
+        private static void newList(string content, int offset = 0){
             List<string> tmp = new List<string>();
             tmp.Add(@"\begin{itemize}");
             tmp.Add(String.Format(@"\item{{{0}}}", content));
             tmp.Add(@"\end{itemize}");
-            LatexLines.InsertRange(LatexLines.FindLastIndex(x => x.StartsWith(@"\item"))+1, tmp);
+            LatexLines.InsertRange(LatexLines.FindLastIndex(x => x.StartsWith(@"\item"))+offset+1, tmp);
         }
 
         /// <summary>Writes a Quote in LaTeX using a Match <paramref name="m"/>.</summary>
@@ -126,48 +134,49 @@ namespace MarkdownToLatex
             int depth = m.Groups[1].Value.Length;
             string content = m.Groups[2].Value;
 
-            if(m == Match.Empty) depth = 0;
-
-            if(depth < InQuote){
-                InQuote = 0;
+            while(depth < InQuote){
+                InQuote--;
             }
 
-            if(InQuote == 0 && depth == 1){ //if not in any quote
+            if(InQuote == 0 && InQuote <= depth){ //if not in any quote
                 LatexLines.Add(@"\begin{quote}");
-                LatexLines.Add(content);
+                LatexLines.Add(String.Format(@"\quoteline{{{0}}}", content));
                 LatexLines.Add(@"\end{quote}");
                 InQuote = 1;
-            } else if (InQuote == 1){
-                if(depth == 1){
-                    appendNewQuoteLine(0, content);
-                } else if(depth == 2) {
-                    newQuoteInQuote(content);
-                    InQuote = 2;
+            } else if (InQuote == 1 && InQuote <= depth){
+                if(depth == 1 && oldInQuote > InQuote){
+                    appendNewQuoteLine(content, oldInQuote - InQuote);
+                } else if(depth == 1 && oldInQuote == InQuote){
+                    appendNewQuoteLine(content);
+                } else {
+                    newQuote(content);
+                    InQuote++;
                 }
-            } else if (InQuote == 2){
-                if(depth == 2){
-                    appendNewQuoteLine(1, content);
-                } else if(depth == 3){
-                    newQuoteInQuote(content);
-                    InQuote = 3;
+            } else if (InQuote == 2 && InQuote <= depth){
+                if(depth == 2 && oldInQuote > InQuote){
+                    appendNewQuoteLine(content, oldInQuote - InQuote);
+                } else if(depth == 2 && oldInQuote == InQuote){
+                    appendNewQuoteLine(content);
+                } else {
+                    newQuote(content);
+                    InQuote++;
                 }
-            } else if (InQuote == 3){
-                if(depth == 3){
-                    appendNewQuoteLine(2, content);
-                }
+            } else if (InQuote == 3 && InQuote <= depth){
+                appendNewQuoteLine(content);
             }
+            oldInQuote = InQuote;
         }
 
-        private static void appendNewQuoteLine(byte depth, string content){
-            LatexLines.Insert(LatexLines.FindLastIndex(x => x.StartsWith(@"\end{quote}"))-depth, content);
+        private static void appendNewQuoteLine(string content, int offset = 0){
+            LatexLines.Insert(LatexLines.FindLastIndex(x => x.StartsWith(@"\quoteline"))+offset+1, String.Format(@"\quoteline{{{0}}}", content));
         }
 
-        private static void newQuoteInQuote(string content){
+        private static void newQuote(string content, int offset = 0){
             List<string> tmp = new List<string>();
             tmp.Add(@"\begin{quote}");
-            tmp.Add(content);
+            tmp.Add(String.Format(@"\quoteline{{{0}}}", content));
             tmp.Add(@"\end{quote}");
-            LatexLines.InsertRange(LatexLines.FindLastIndex(x => x.StartsWith(@"\end{quote}")), tmp);
+            LatexLines.InsertRange(LatexLines.FindLastIndex(x => x.StartsWith(@"\quoteline"))+offset+1, tmp);
         }
 
         /// <summary>Writes a <paramref name="line"/> with cursive text in LaTeX.</summary>

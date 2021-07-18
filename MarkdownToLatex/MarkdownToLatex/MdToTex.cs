@@ -15,7 +15,7 @@ namespace MarkdownToLatex
         private static ICalculator calc;
 
         /// <summary>Contains the file path to the Markdown document is parsed.</summary>
-        private static string mdFilePath;
+        internal static string mdFilePath;
 
         //methods
         internal static void convertMathElement(string element)

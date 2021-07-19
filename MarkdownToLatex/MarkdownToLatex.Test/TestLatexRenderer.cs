@@ -128,7 +128,8 @@ namespace MarkdownToLatex.Test
             string expPath = @"test_files/latex/test.tex";
             string[] expected = {
                 @"\documentclass{scrreprt}",
-                @"\setlength{\parindent}{0pt}",
+                @"\setlength{\parindent}{0em}",
+                @"\setlength{\parskip}{1em}",
                 @"\newcommand{\quoteline}",
                 @"",
                 @"\begin{document}",
@@ -184,7 +185,7 @@ namespace MarkdownToLatex.Test
         public void TestNewParagraph(){
             //arrange
             LatexRenderer.LatexLines.Clear();
-            string[] texlines = {"This is a really wonderful sentence!", @"\\\\", "And now a different topic!"};
+            string[] texlines = {"This is a really wonderful sentence!", @"\par", "And now a different topic!"};
 
             //act
             LatexRenderer.WriteText("This is a really wonderful sentence!");

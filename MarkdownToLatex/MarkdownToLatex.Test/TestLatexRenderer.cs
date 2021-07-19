@@ -16,6 +16,7 @@ namespace MarkdownToLatex.Test
         [InlineData("#### vërÿ wëïrd ïnpüt", @"\subsection*{vërÿ wëïrd ïnpüt}")]
         public void TestWriteHeadline(string mdline, string expected){
             //arrange
+            LatexRenderer.LatexLines.Clear();
             string line = mdline;
 
             //act
@@ -152,6 +153,7 @@ namespace MarkdownToLatex.Test
         [Fact]
         public void TestWriteText(){
             //arrange
+            LatexRenderer.LatexLines.Clear();
             string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 ";
             string randomText = "";
             int randomTextLength = rnd.Next(1, 256);

@@ -49,20 +49,21 @@ namespace MarkdownToLatex
         /// <returns>LaTeX lines of given Markdown <paramref name="text"/>.</returns>
         internal static void convertText(string text)
         {
-            string bcText = LatexRenderer.WriteCursive(LatexRenderer.WriteBold(text)).TrimStart();
+            string tempstr = text.TrimStart();
+            string bcText = LatexRenderer.WriteCursive(LatexRenderer.WriteBold(text));
 
-            if (bcText.StartsWith('#')) {
+            if (tempstr.StartsWith('#')) {
                 LatexRenderer.WriteHeadline(MarkdownParser.MatchHeadline(bcText));
-            } else if (bcText.StartsWith('-') || bcText.StartsWith('+')) {
-                LatexRenderer.WriteList(MarkdownParser.MatchList(text));
-            } else if (bcText.StartsWith('>')) {
-                LatexRenderer.WriteQuote(MarkdownParser.MatchQuote(text));
-            } else if (bcText.EndsWith("  ")) {
-                LatexRenderer.StartNewLine(text);
+            } else if (tempstr.StartsWith('-') || tempstr.StartsWith('+')) {
+                LatexRenderer.WriteList(MarkdownParser.MatchList(bcText));
+            } else if (tempstr.StartsWith('>')) {
+                LatexRenderer.WriteQuote(MarkdownParser.MatchQuote(bcText));
+            } else if (tempstr.EndsWith("  ")) {
+                LatexRenderer.StartNewLine(bcText);
             } else if (String.IsNullOrWhiteSpace(bcText)) {
                 LatexRenderer.StartNewParagraph();
             } else {
-                LatexRenderer.WriteText(text);
+                LatexRenderer.WriteText(bcText);
             }
         }
 
@@ -119,6 +120,10 @@ namespace MarkdownToLatex
         /// <param name="args">[2]: (maybe later LaTeX output)</param>
         static void Main(string[] args)
         {
+            foreach (string a in args) {
+                Console.WriteLine(a + "   " + args.Length);
+            }
+
             try {
                 mdFilePath = parseInputPath(args[0]);
             } catch (FileNotFoundException e) {
@@ -143,7 +148,7 @@ namespace MarkdownToLatex
                 Console.WriteLine("Error:\n{0}", e.Message);
             }
 
-            if (2 >= args.Length) {
+            if (2 <= args.Length) {
                 try {
                     LatexRenderer.WriteLatexDocument(parseOutputPath(args[1]));
                 } catch (FormatException e) {

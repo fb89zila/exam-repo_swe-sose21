@@ -47,12 +47,10 @@ namespace MarkdownToLatex.Test
             }
         }
 
-        /*
         [Fact]
         public void TestConvertText()
         {
             //arrange
-            LatexRenderer.LatexLines.Clear();
             string[] mdLines = {
                 "### head",
                 ">> gucken",
@@ -72,21 +70,28 @@ namespace MarkdownToLatex.Test
                 @"\begin{quote}",
                 @"\quoteline{mal}",
                 @"\end{quote}",
+                @"\quoteline{test}",
                 @"\end{quote}",
-                @"",
-                @"",
-                @"",
+                @"\begin{itemize}",
+                @"\item{wer}",
+                @"\begin{itemize}",
+                @"\item{wer}",
+                @"\end{itemize}",
+                @"\item{w}",
+                @"\end{itemize}",
+                @"sdf  \\",
+                @"ass",
+                @"\par"
             };
 
             //act
             foreach (string s in mdLines) {
                 MdToTex.convertText(s);
             }
+            string[] result = LatexRenderer.LatexLines.ToArray();
 
             //assert
-            foreach (string expLine in expTex) {
-                Assert.Contains(expLine, LatexRenderer.LatexLines);
-            }
+            Assert.Equal(expTex, result);
         }
 
         [Fact]
@@ -95,10 +100,38 @@ namespace MarkdownToLatex.Test
             //arranged 
             LatexRenderer.LatexLines.Clear();
             string[] mdLines = {
+                "### head",
+                ">> gucken",
+                ">>> mal",
+                "> test",
+                "- wer",
+                "  - wer",
+                "- w",
+                "sdf  ",
+                "ass",
+                "",
                 "!{svfunc} f(x)=x^2+x-100:x !{result}  ",
                 "!{svfunc} f(99.12)=x^4+3*x^3-111/100:x !{result}"
             };
             string[] expTex = {
+                @"\subsection*{head}",
+                @"\begin{quote}",
+                @"\quoteline{gucken}",
+                @"\begin{quote}",
+                @"\quoteline{mal}",
+                @"\end{quote}",
+                @"\quoteline{test}",
+                @"\end{quote}",
+                @"\begin{itemize}",
+                @"\item{wer}",
+                @"\begin{itemize}",
+                @"\item{wer}",
+                @"\end{itemize}",
+                @"\item{w}",
+                @"\end{itemize}",
+                @"sdf  \\",
+                @"ass",
+                @"\par",
                 @"\[f(x)=-100 + x + {x}^{2}\]",
                 @"\[f(0)=-100\]",
                 @"\[f(x)=-\frac{111}{100} + 3{x}^{3} + {x}^{4}\]",
@@ -109,12 +142,10 @@ namespace MarkdownToLatex.Test
             foreach (string s in mdLines) {
                 MdToTex.convert(s);
             }
+            string[] result = LatexRenderer.LatexLines.ToArray();
 
             //assert
-            foreach (string expLine in expTex) {
-                Assert.Contains(expLine, LatexRenderer.LatexLines);
-            }
+            Assert.Equal(expTex, result);
 		}
-        */
     }
 }

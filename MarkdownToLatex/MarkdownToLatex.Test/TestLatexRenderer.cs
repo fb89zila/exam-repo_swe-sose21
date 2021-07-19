@@ -21,9 +21,10 @@ namespace MarkdownToLatex.Test
 
             //act
             LatexRenderer.WriteHeadline(MarkdownParser.MatchHeadline(line));
+            string[] result = LatexRenderer.LatexLines.ToArray();
 
             //assert
-            Assert.Contains(expected, LatexRenderer.LatexLines);
+            Assert.Contains(expected, result);
         }
 
         [Fact]
@@ -56,9 +57,10 @@ namespace MarkdownToLatex.Test
             foreach(string s in mdlines){
                 LatexRenderer.WriteList(MarkdownParser.MatchList(s));
             }
+            string[] result = LatexRenderer.LatexLines.ToArray();
 
             //assert
-            Assert.Equal(expected, LatexRenderer.LatexLines.ToArray());
+            Assert.Equal(expected, result);
         }
 
         [Fact]
@@ -95,9 +97,10 @@ namespace MarkdownToLatex.Test
             foreach(string s in mdlines){
                 LatexRenderer.WriteQuote(MarkdownParser.MatchQuote(s));
             }
+            string[] result = LatexRenderer.LatexLines.ToArray();
 
             //assert
-            Assert.Equal(expected, LatexRenderer.LatexLines.ToArray());
+            Assert.Equal(expected, result);
         }
 
         [Theory]
@@ -144,6 +147,7 @@ namespace MarkdownToLatex.Test
             //act
             LatexRenderer.LatexLines.AddRange(input);
             LatexRenderer.WriteLatexDocument(expPath);
+            System.Threading.Thread.Sleep(1000);
             string[] result = File.ReadAllLines(expPath);
 
             //assert
@@ -178,9 +182,10 @@ namespace MarkdownToLatex.Test
             LatexRenderer.WriteText("Hello, this is very important: ");
             LatexRenderer.StartNewLine("a new line will be started after this text.");
             LatexRenderer.WriteText("And there it is!");
+            string[] result = LatexRenderer.LatexLines.ToArray();
 
             //assert
-            Assert.Equal(texlines, LatexRenderer.LatexLines.ToArray());
+            Assert.Equal(texlines, result);
         }
 
         [Fact]
@@ -193,9 +198,10 @@ namespace MarkdownToLatex.Test
             LatexRenderer.WriteText("This is a really wonderful sentence!");
             LatexRenderer.StartNewParagraph();
             LatexRenderer.WriteText("And now a different topic!");
+            string[] result = LatexRenderer.LatexLines.ToArray();
 
             //assert
-            Assert.Equal(texlines, LatexRenderer.LatexLines.ToArray());
+            Assert.Equal(texlines, result);
         }
     }
 }

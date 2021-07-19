@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['main_65',['Main',['../class_markdown_to_latex_1_1_md_to_tex.html#a719b3fe9eab2ad2c8cc299d5389b176f',1,'MarkdownToLatex::MdToTex']]],
-  ['markdownparser_66',['MarkdownParser',['../class_markdown_to_latex_1_1_markdown_parser.html#aba21f724ef87014a68ffa656474ba59f',1,'MarkdownToLatex::MarkdownParser']]],
-  ['matchbold_67',['MatchBold',['../class_markdown_to_latex_1_1_markdown_parser.html#a314dac022219ad9432b11002f07db1cf',1,'MarkdownToLatex::MarkdownParser']]],
-  ['matchcursive_68',['MatchCursive',['../class_markdown_to_latex_1_1_markdown_parser.html#a49e2a271f56458cb9b3c00ef5587e35f',1,'MarkdownToLatex::MarkdownParser']]],
-  ['matchheadline_69',['MatchHeadline',['../class_markdown_to_latex_1_1_markdown_parser.html#afa4f46aa478a809e0795a208c4214039',1,'MarkdownToLatex::MarkdownParser']]],
-  ['matchlist_70',['MatchList',['../class_markdown_to_latex_1_1_markdown_parser.html#ab64d00547e7ecac176806579aa3b72f4',1,'MarkdownToLatex::MarkdownParser']]],
-  ['matchmathelement_71',['MatchMathElement',['../class_markdown_to_latex_1_1_markdown_parser.html#a2445f0ea3e826799a91603a2c817f06a',1,'MarkdownToLatex::MarkdownParser']]],
-  ['matchquote_72',['MatchQuote',['../class_markdown_to_latex_1_1_markdown_parser.html#ad5d11814cb6238995a75406b1c10d414',1,'MarkdownToLatex::MarkdownParser']]],
-  ['matchsvfunction_73',['MatchSVFunction',['../class_markdown_to_latex_1_1_math_parser.html#a0ade73682c5c0a9e11154fb112c51926',1,'MarkdownToLatex::MathParser']]],
-  ['mathparser_74',['MathParser',['../class_markdown_to_latex_1_1_math_parser.html#aea78beddd07a25de31fb75fe5c05b6a2',1,'MarkdownToLatex::MathParser']]]
+  ['main_66',['Main',['../class_markdown_to_latex_1_1_md_to_tex.html#a719b3fe9eab2ad2c8cc299d5389b176f',1,'MarkdownToLatex::MdToTex']]],
+  ['markdownparser_67',['MarkdownParser',['../class_markdown_to_latex_1_1_markdown_parser.html#aba21f724ef87014a68ffa656474ba59f',1,'MarkdownToLatex::MarkdownParser']]],
+  ['matchbold_68',['MatchBold',['../class_markdown_to_latex_1_1_markdown_parser.html#a314dac022219ad9432b11002f07db1cf',1,'MarkdownToLatex::MarkdownParser']]],
+  ['matchcursive_69',['MatchCursive',['../class_markdown_to_latex_1_1_markdown_parser.html#a49e2a271f56458cb9b3c00ef5587e35f',1,'MarkdownToLatex::MarkdownParser']]],
+  ['matchheadline_70',['MatchHeadline',['../class_markdown_to_latex_1_1_markdown_parser.html#afa4f46aa478a809e0795a208c4214039',1,'MarkdownToLatex::MarkdownParser']]],
+  ['matchlist_71',['MatchList',['../class_markdown_to_latex_1_1_markdown_parser.html#ab64d00547e7ecac176806579aa3b72f4',1,'MarkdownToLatex::MarkdownParser']]],
+  ['matchmathelement_72',['MatchMathElement',['../class_markdown_to_latex_1_1_markdown_parser.html#a2445f0ea3e826799a91603a2c817f06a',1,'MarkdownToLatex::MarkdownParser']]],
+  ['matchquote_73',['MatchQuote',['../class_markdown_to_latex_1_1_markdown_parser.html#ad5d11814cb6238995a75406b1c10d414',1,'MarkdownToLatex::MarkdownParser']]],
+  ['matchsvfunction_74',['MatchSVFunction',['../class_markdown_to_latex_1_1_math_parser.html#a0ade73682c5c0a9e11154fb112c51926',1,'MarkdownToLatex::MathParser']]],
+  ['mathparser_75',['MathParser',['../class_markdown_to_latex_1_1_math_parser.html#aea78beddd07a25de31fb75fe5c05b6a2',1,'MarkdownToLatex::MathParser']]]
 ];

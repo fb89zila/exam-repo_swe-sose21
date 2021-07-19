@@ -6,24 +6,23 @@ namespace MarkdownToLatex.Test
 {
     
     public class TestMdToTex
-    {
-        private readonly char dirSep = Path.DirectorySeparatorChar;
-        
+    {        
         [Fact]
         public void TestParsePath(/*string path, string expPath*/)
         {
             //arrange
-            string fileName = "path_test.md";
-            string path = @"test_files"; 
-            string expPath = @"test_files/path_test.md";
+            char dirSep = Path.DirectorySeparatorChar;
+            string mdPath = $@"test_files{dirSep}path_test.md";
+            string texPath = $@"test_files{dirSep}latex{dirSep}path_test.tex";
+            string expMdPath = Path.GetFullPath(mdPath);
+            string expTexPath = $@"test_files{dirSep}latex{dirSep}path_test.tex";
 
             //act
-            string filePath = Path.Combine(path, fileName);
-            File.Create(filePath);
-            string result = MdToTex.parsePath(filePath);
+            string mdResult = MdToTex.parseInputPath(mdPath);
 
             //assert
-            Assert.Equal(expPath, result);
+            Assert.Equal(expMdPath, mdResult);
+            Assert.Equal(expTexPath, texPath);
         }
         
         [Fact]
@@ -45,5 +44,75 @@ namespace MarkdownToLatex.Test
                 Assert.Contains(expLine, LatexRenderer.LatexLines);
             }
         }
+
+        /*
+        [Fact]
+        public void TestConvertText()
+        {
+            //arrange
+            LatexRenderer.LatexLines.Clear();
+            string[] mdLines = {
+                "### head",
+                ">> gucken",
+                ">>> mal",
+                "> test",
+                "- wer",
+                "  - wer",
+                "- w",
+                "sdf  ",
+                "ass",
+                ""
+            };
+            string[] expTex = {
+                @"\subsection*{head}",
+                @"\begin{quote}",
+                @"\quoteline{gucken}",
+                @"\begin{quote}",
+                @"\quoteline{mal}",
+                @"\end{quote}",
+                @"\end{quote}",
+                @"",
+                @"",
+                @"",
+            };
+
+            //act
+            foreach (string s in mdLines) {
+                MdToTex.convertText(s);
+            }
+
+            //assert
+            foreach (string expLine in expTex) {
+                Assert.Contains(expLine, LatexRenderer.LatexLines);
+            }
+        }
+
+        [Fact]
+        public void TestConvert()
+        {
+            //arranged 
+            LatexRenderer.LatexLines.Clear();
+            string[] mdLines = {
+                "!{svfunc} f(x)=x^2+x-100:x !{result}  ",
+                "!{svfunc} f(99.12)=x^4+3*x^3-111/100:x !{result}"
+            };
+            string[] expTex = {
+                @"\[f(x)=-100 + x + {x}^{2}\]",
+                @"\[f(0)=-100\]",
+                @"\[f(x)=-\frac{111}{100} + 3{x}^{3} + {x}^{4}\]",
+                @"\[f(99.12)=99447685.82\]"
+            };
+
+            //act
+            foreach (string s in mdLines) {
+                MdToTex.convert(s);
+            }
+
+            //assert
+            foreach (string expLine in expTex) {
+                Assert.Contains(expLine, LatexRenderer.LatexLines);
+            }
+		}
+        */
     }
 }

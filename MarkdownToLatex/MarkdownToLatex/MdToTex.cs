@@ -79,19 +79,39 @@ namespace MarkdownToLatex
             }
         }
 
-        /// <summary>Parses the <paramref name="inputPath"/> given as argument.</summary>
+        /// <summary>Parses the <paramref name="inputPath"/> given as argument one.</summary>
         /// <returns>Usable path to a Markdown file.</returns>
-        internal static string parsePath(string inputPath)
+        /// <exception cref="FormatException">Thrown when path to a file has a file extention that is not '.md'</exception>
+        /// <exception cref="FileNotFoundException">Thrown when the file in given path does not exist.</exception>
+        internal static string parseInputPath(string inputPath)
         {
-            if (File.Exists(inputPath)) {
-                if (Path.GetExtension(inputPath) == ".md") {
-                    return inputPath;
+            string path = Path.GetFullPath(inputPath);
+
+            if (File.Exists(path)) {
+                if (Path.GetExtension(path) == ".md") {
+                    return path;
                 } else {
-                    throw new FileNotFoundException("Only Markdown files can be converted.");
+                    throw new FormatException("Only Markdown files can be converted.");
                 }
             } else {
                 throw new FileNotFoundException();
             }
+        }
+
+        /// <summary>Parses the <paramref name="outputPath"/> given as argument two.</summary>
+        /// <returns>Usable path to location where the LaTeX file should be created.</returns>
+        /// <exception cref="FormatException">Thrown when path to a file has a file extention that is not '.tex'.</exception>
+        internal static string parseOutputPath(string outputPath)
+        {
+            if (Path.HasExtension(outputPath)) {
+                if (Path.GetExtension(outputPath) == ".tex") {
+                    return outputPath;
+                } else {
+                    throw new FormatException("Only LaTeX documents with the file extention '.tex' can be created.");
+                }
+            } else {
+                return outputPath;
+            }  
         }
         
         /// <summary>Entrypoint</summary>
@@ -100,14 +120,20 @@ namespace MarkdownToLatex
         static void Main(string[] args)
         {
             try {
-                mdFilePath = parsePath(args[1]);
+                mdFilePath = parseInputPath(args[0]);
             } catch (FileNotFoundException e) {
-                Console.WriteLine("There was a problem with given path:\n{0}", e.Message);
+                Console.WriteLine("There was a problem with given file:\n{0}", e.Message);
+            } catch (ArgumentOutOfRangeException) {
+                Console.WriteLine("Please input the path to a Markdown file (.md) as the first argument.");
             } catch (Exception e) {
                 Console.WriteLine("Error:\n{0}", e.Message);
             }
 
-            MarkdownParser.ReadMdDocument(mdFilePath);
+            try {
+                MarkdownParser.ReadMdDocument(mdFilePath);
+            } catch (PathTooLongException) {
+                Console.WriteLine("The given file path was too long, could not read Markdown file.");
+            }
 
             try {
                 foreach (string line in MarkdownParser.MdLines) {
@@ -116,7 +142,20 @@ namespace MarkdownToLatex
             } catch (Exception e) {
                 Console.WriteLine("Error:\n{0}", e.Message);
             }
-            
+
+            if (2 >= args.Length) {
+                try {
+                    LatexRenderer.WriteLatexDocument(parseOutputPath(args[1]));
+                } catch (FormatException e) {
+                    Console.WriteLine("There was a problem with given file path:\n{0}", e.Message);
+                } catch (PathTooLongException) {
+                    Console.WriteLine("The given file path was too long, could not write LaTeX file.");
+                } catch (Exception e) {
+                    Console.WriteLine("Error:\n{0}", e.Message);
+                }
+            } else {
+                LatexRenderer.WriteLatexDocument(mdFilePath);
+            }
         }
     }
 }

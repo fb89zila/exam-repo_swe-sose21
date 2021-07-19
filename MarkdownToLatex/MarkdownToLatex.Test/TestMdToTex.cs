@@ -16,6 +16,8 @@ namespace MarkdownToLatex.Test
             string texPath = $@"test_files{dirSep}latex{dirSep}path_test.tex";
             string expMdPath = Path.GetFullPath(mdPath);
             string expTexPath = $@"test_files{dirSep}latex{dirSep}path_test.tex";
+            File.Create(mdPath);
+            File.Create(texPath);
 
             //act
             string mdResult = MdToTex.parseInputPath(mdPath);

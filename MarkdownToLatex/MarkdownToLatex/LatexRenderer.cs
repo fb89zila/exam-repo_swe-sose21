@@ -52,7 +52,8 @@ namespace MarkdownToLatex
 
             File.WriteAllLines(latexPath, new string[]{
                 @"\documentclass{scrreprt}",
-                @"\setlength{\parindent}{0pt}",
+                @"\setlength{\parindent}{0em}",
+                @"\setlength{\parskip}{1em}",
                 @"\newcommand{\quoteline}" + "\n",
                 @"\begin{document}"
             });
@@ -210,7 +211,7 @@ namespace MarkdownToLatex
 
         /// <summary>Starts a new paragraph.</summary>
         public static void StartNewParagraph(){
-            LatexLines.Add(@"\\\\");
+            LatexLines.Add(@"\par");
         }
 
         static LatexRenderer(){

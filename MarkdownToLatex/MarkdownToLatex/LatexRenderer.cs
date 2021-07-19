@@ -44,9 +44,9 @@ namespace MarkdownToLatex
             if(Path.GetExtension(path) == ".tex"){
                 latexPath = path;
             } else if (Path.GetExtension(path) == ".md"){
-                latexPath = Path.Combine(Path.GetDirectoryName(path), "latex", Path.GetFileNameWithoutExtension(path), ".tex");
+                latexPath = Path.Combine(Path.GetDirectoryName(path), "latex", Path.GetFileNameWithoutExtension(path) + ".tex");
             } else {
-                latexPath = Path.Combine(path, Path.GetFileNameWithoutExtension(MdToTex.mdFilePath), ".tex");
+                latexPath = Path.Combine(path, Path.GetFileNameWithoutExtension(MdToTex.mdFilePath) + ".tex");
             }
             Directory.CreateDirectory(Path.GetDirectoryName(latexPath));
 

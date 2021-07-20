@@ -144,12 +144,14 @@ namespace MarkdownToLatex
             }
 
             //Trying to convert the Markdown lines.
-            try {
-                foreach (string line in MarkdownParser.MdLines) {
-                    convert(line);
+            for (int i = 0; i < MarkdownParser.MdLines.Length; i++) {
+                try {
+                    convert(MarkdownParser.MdLines[i]);
+                } catch (ConvertElementException e) {
+                    Console.WriteLine("\n'{0}' line {1} - {2}", Path.GetFileName(mdFilePath), i+1, e.Message);
+                } catch (Exception e) {
+                    Console.WriteLine("\n'{0}' line {1} - Error while converting: {0}\n", Path.GetFileName(mdFilePath), i+1, e.Message);
                 }
-            } catch (Exception e) {
-                Console.WriteLine("Error while converting: {0}\n", e.Message);
             }
 
             //Trying to save LaTeX file.

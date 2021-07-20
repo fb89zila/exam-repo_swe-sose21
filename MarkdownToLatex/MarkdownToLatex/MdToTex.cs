@@ -33,10 +33,12 @@ namespace MarkdownToLatex
 
                     MatchCollection mc = MathParser.MatchParameters(match.Groups[3].Value);
                     foreach(Match m in mc){
-                        if(m.Groups[1].Value.StartsWith("result")){
-                            double param;
-                            bool hasParam = double.TryParse(m.Groups[2].Value, NumberStyles.AllowLeadingSign | NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out param);
-                            LatexRenderer.WriteMathElement((calc as FuncCalculator).Calculate(hasParam ? param : 0));
+                        switch(m.Groups[1].Value){
+                            case "result":
+                                double param;
+                                bool hasParam = double.TryParse(m.Groups[2].Value, NumberStyles.AllowLeadingSign | NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out param);
+                                LatexRenderer.WriteMathElement((calc as FuncCalculator).Calculate(hasParam ? param : 0));
+                                break;
                         }
                     }
                     break;

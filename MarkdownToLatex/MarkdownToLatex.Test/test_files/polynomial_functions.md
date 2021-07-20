@@ -7,7 +7,7 @@ A polynomial function of second degree (also referred to as quadratic function) 
 ## Example
 
 As an example, take the following function, which is a polyomial of fourth degree (quartic function):
-!{svfunc} f(0)=6*x^4-9*x^3+12*x^2+2*x-89:x !{result}
+!{svfunc} f(x)=6*x^4-9*x^3+12*x^2+2*x-89:x !{result(0)}
 
 As you can see, it intersects with the y-Axis at $x = -89$.
 

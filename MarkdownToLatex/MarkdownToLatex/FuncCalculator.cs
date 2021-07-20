@@ -5,14 +5,14 @@ using Expr = MathNet.Symbolics.SymbolicExpression;
 
 namespace MarkdownToLatex {
     /// <summary>This class is used for processing single variable functions.</summary>
-    public class FuncCalculator : Calculator<double, string> {
+    public class FuncCalculator : Calculator<string> {
 
-        /// <summary>Calculates the function at the given parameter, if no parameter is set, assuming '0'.
+        /// <summary>Calculates the function at the given <paramref name="param"/>.
         /// The <paramref name="precision"/> paameter specifies the rounding accuracy.</summary>
-        public string Calculate(int precision = 2){
+        public string Calculate(double param, int precision = 2){
             try{
                 var func = Expr.Parse(this.Element);
-                return $"f({(this.Param ?? 0).ToString(CultureInfo.InvariantCulture)})=" + Math.Round(func.Compile(this.Var)(this.Param ?? 0), precision).ToString(CultureInfo.InvariantCulture);
+                return $"f({(param).ToString(CultureInfo.InvariantCulture)})=" + Math.Round(func.Compile(this.Var)(param), precision).ToString(CultureInfo.InvariantCulture);
             } catch (Exception ex){
                 throw new ConvertElementException($"Error calculating function: {ex.Message}", ex);
             }
@@ -30,6 +30,6 @@ namespace MarkdownToLatex {
         }
 
         /// <summary>Initializes a new Instance of the the <see cref="FuncCalculator"/> class.</summary>
-        public FuncCalculator(string var, string element, double? param = null) : base(var, element, param){}
+        public FuncCalculator(string var, string element) : base(var, element){}
     }
 }

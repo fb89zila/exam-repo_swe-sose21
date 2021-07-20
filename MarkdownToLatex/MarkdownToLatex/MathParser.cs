@@ -10,6 +10,8 @@ namespace MarkdownToLatex {
         /// <summary>The Dictionary containing regular expressions to parse math elements.</summary>
         public static Dictionary<string, Regex> MathRx {get;}
 
+        /// <summary>Matches every parameter in <paramref name="parameters"/>.</summary>
+        /// <returns>MatchCollection with matched parameters.</returns>
         public static MatchCollection MatchParameters(string parameters){
             return MathRx["params"].Matches(parameters);
         }

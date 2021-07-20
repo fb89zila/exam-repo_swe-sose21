@@ -12,8 +12,10 @@ namespace MarkdownToLatex
         /// <summary>a List containing the LaTeX document line by line.</summary>
         public static List<string> LatexLines;
 
+        /// <seealso cref="InList"/>
         private static byte _inlist;
 
+        /// <summary>Contains list level of last Markdown line ('0' if it was not in a list)</summary>
         private static byte oldInList;
 
         /// <summary>a byte indicating whether a list is currently rendered.</summary>
@@ -25,7 +27,10 @@ namespace MarkdownToLatex
             }
         }}
 
+        /// <seealso cref="InQuote"/>
         private static byte _inquote;
+
+        /// <summary>Contains quote level of last Markdown line ('0' if it was not in a quote)</summary>
         private static byte oldInQuote;
 
         /// <summary>a byte indicating whether a quote is currently rendered.</summary>
@@ -37,6 +42,7 @@ namespace MarkdownToLatex
             }
         }}
 
+        /// <summary>Resets the properties <see cref="InList"/> and <see cref="InQuote"/> to '0'.</summary>
         private static void ResetListOrQuote()
         {
             if (InList > 0) { InList = 0; }
@@ -135,10 +141,14 @@ namespace MarkdownToLatex
             oldInList = InList;
         }
 
+        /// <summary>Appends a new item to an already existing list.</summary>
+        /// <param name="content">The item to append</param>
+        /// <param name="offset">Adds to the index where the new item should be inserted (for changing list level)</param>
         private static void appendNewItem(string content, int offset = 0){
             LatexLines.Insert(LatexLines.FindLastIndex(x => x.StartsWith(@"\item"))+offset+1, String.Format(@"\item{{{0}}}", content));
         }
 
+        /// <summary>Starts a new list level with one item from <paramref name="content"/></summary>
         private static void newList(string content){
             List<string> tmp = new List<string>();
             tmp.Add(@"\begin{itemize}");
@@ -185,10 +195,14 @@ namespace MarkdownToLatex
             oldInQuote = InQuote;
         }
 
+        /// <summary>Appends a new line to an already existing quote.</summary>
+        /// <param name="content">The line to append</param>
+        /// <param name="offset">Adds to the index where the new line should be inserted (for changing quote level)</param>
         private static void appendNewQuoteLine(string content, int offset = 0){
             LatexLines.Insert(LatexLines.FindLastIndex(x => x.StartsWith(@"\quoteline"))+offset+1, String.Format(@"\quoteline{{{0}}}", content));
         }
 
+        /// <summary>Starts a new quote level with one item from <paramref name="content"/></summary>
         private static void newQuote(string content){
             List<string> tmp = new List<string>();
             tmp.Add(@"\begin{quote}");

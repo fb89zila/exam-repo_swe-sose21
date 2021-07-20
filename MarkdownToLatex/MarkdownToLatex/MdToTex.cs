@@ -118,8 +118,8 @@ namespace MarkdownToLatex
         }
         
         /// <summary>Entrypoint</summary>
-        /// <param name="args">[1]: path to Markdownfile</param>
-        /// <param name="args">[2]: (maybe later LaTeX output)</param>
+        /// <param name="args">[1]: path to Markdownfile  
+        /// [2]: [optional] path for LaTeX output file</param>
         static void Main(string[] args)
         {
             Console.WriteLine("\nMarkdown to LaTeX converter\n---------------------------\n");

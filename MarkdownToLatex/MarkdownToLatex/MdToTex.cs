@@ -28,16 +28,16 @@ namespace MarkdownToLatex
             switch(match.Groups[1].Value){
                 case "svfunc":
                     Match svfunc = MathParser.MatchSVFunction(match.Groups[2].Value);
-                    double param;
-                    bool hasParam = double.TryParse(svfunc.Groups[1].Value, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out param);
-                    calc = new FuncCalculator(svfunc.Groups[3].Value, svfunc.Groups[2].Value, hasParam ? param : null);
+                    calc = new FuncCalculator(svfunc.Groups[3].Value, svfunc.Groups[2].Value);
                     LatexRenderer.WriteMathElement(calc.ConvertElement());
 
                     MatchCollection mc = MathParser.MatchParameters(match.Groups[3].Value);
                     foreach(Match m in mc){
                         switch(m.Groups[1].Value){
                             case "result":
-                                LatexRenderer.WriteMathElement((calc as FuncCalculator).Calculate());
+                                double param;
+                                bool hasParam = double.TryParse(m.Groups[2].Value, NumberStyles.AllowLeadingSign | NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out param);
+                                LatexRenderer.WriteMathElement((calc as FuncCalculator).Calculate(hasParam ? param : 0));
                                 break;
                         }
                     }

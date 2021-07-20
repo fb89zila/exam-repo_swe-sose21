@@ -17,13 +17,13 @@ As I've written in the headline, sine and cosine are essentially the same thing,
 one with another:
 
 Let's look at
-!{svfunc} f(47.32)=sin(x):x !{result}
+!{svfunc} f(x)=sin(x):x !{result(47.32)}
 
 We can get the same result with
-!{svfunc} f(47.32)=cos(x+3*pi/2):x !{result}
+!{svfunc} f(x)=cos(x+3*pi/2):x !{result(47.32)}
 
 ## Pythagorean trigonometric identity
 
 The *Pythagorean trigonometric identity* states that
-!{svfunc} f(2.71)=sin^2(x)+cos^2(x):x !{result}
-This funcion equals $1$ not only for $x = 2.71$, but for **every real number**.
+!{svfunc} f(x)=sin^2(x)+cos^2(x):x !{result(-50)}{result(2.71)}{result(80)}
+This funcion equals $1$ not only for $x = -50$, $x = 2.71$ or $x = 80$, but for **every real number**.

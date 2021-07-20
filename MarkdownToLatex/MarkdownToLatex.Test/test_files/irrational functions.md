@@ -12,7 +12,7 @@ Irrational functions consist of at least one squared polynomial function.
 ### Examples
 
 The simplest irrational function is:
-!{svfunc} f(2)=sqrt(x):x !{result}
+!{svfunc} f(x)=sqrt(x):x !{result(2)}
 
 But they can also be more complicated, with multiple roots:
-!{svfunc} f(2)=(sqrt(x^2+2*x-1))/(sqrt(x^5-1)):x !{result}
+!{svfunc} f(x)=(sqrt(x^2+2*x-1))/(sqrt(x^5-1)):x !{result(2)}

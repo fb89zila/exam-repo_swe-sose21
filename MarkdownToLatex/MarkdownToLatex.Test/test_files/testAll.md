@@ -9,7 +9,7 @@
 >>> wo*w so d**ee***p
 
 !{svfunc} f(x)=x^2+x-100:x !{result}  
-!{svfunc} f(99.12)=x^4+3*x^3-111/100:x !{result}
+!{svfunc} f(x)=x^4+3*x^3-111/100:x !{result(99.12)}
 
 some normal text  
 with line break

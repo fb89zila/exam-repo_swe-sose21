@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['calculate_57',['Calculate',['../class_markdown_to_latex_1_1_func_calculator.html#ad3f978046d4eecfd1b6b95e96d84c675',1,'MarkdownToLatex::FuncCalculator']]],
+  ['calculate_57',['Calculate',['../class_markdown_to_latex_1_1_func_calculator.html#a4b26d705d1e7f08a3f8240b8a185d052',1,'MarkdownToLatex::FuncCalculator']]],
   ['calculator_58',['Calculator',['../class_markdown_to_latex_1_1_calculator.html#a86039b5602ffbcc09a5728e7212f76b1',1,'MarkdownToLatex::Calculator']]],
   ['convert_59',['convert',['../class_markdown_to_latex_1_1_md_to_tex.html#ac4edf6bc575d51d76366549d176a7642',1,'MarkdownToLatex::MdToTex']]],
   ['convertelement_60',['ConvertElement',['../class_markdown_to_latex_1_1_calculator.html#a68f1a02f608f57a7a5f2eb71c6a933c2',1,'MarkdownToLatex.Calculator.ConvertElement()'],['../class_markdown_to_latex_1_1_func_calculator.html#a02302b5507cfe7d798343eac69f23084',1,'MarkdownToLatex.FuncCalculator.ConvertElement()'],['../interface_markdown_to_latex_1_1_i_calculator.html#a803d7531e45170585747ab3317d4dd7f',1,'MarkdownToLatex.ICalculator.ConvertElement()']]],

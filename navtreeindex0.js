@@ -20,7 +20,7 @@ var NAVTREEINDEX0 =
 "class_markdown_to_latex_1_1_convert_element_exception.html#ade6d5726e98babecc2c908b2d98dd1f4":[8,0,0,1,1],
 "class_markdown_to_latex_1_1_func_calculator.html":[8,0,0,2],
 "class_markdown_to_latex_1_1_func_calculator.html#a02302b5507cfe7d798343eac69f23084":[8,0,0,2,2],
-"class_markdown_to_latex_1_1_func_calculator.html#ad3f978046d4eecfd1b6b95e96d84c675":[8,0,0,2,1],
+"class_markdown_to_latex_1_1_func_calculator.html#a4b26d705d1e7f08a3f8240b8a185d052":[8,0,0,2,1],
 "class_markdown_to_latex_1_1_func_calculator.html#aff51cdda11d7e613919fb83242cb7728":[8,0,0,2,0],
 "class_markdown_to_latex_1_1_latex_renderer.html":[8,0,0,4],
 "class_markdown_to_latex_1_1_latex_renderer.html#a04877fb500b5f0c7fd64cd0bb439d008":[8,0,0,4,22],

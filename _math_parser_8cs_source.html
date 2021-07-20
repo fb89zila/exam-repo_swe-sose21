@@ -108,7 +108,7 @@ $(document).ready(function(){initNavTree('_math_parser_8cs_source.html',''); ini
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="class_markdown_to_latex_1_1_math_parser.html#a8c28a6058597b5e8a53928d34c90defc">MathRx</a> = <span class="keyword">new</span> Dictionary&lt;string, Regex&gt;()</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            {</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                {<span class="stringliteral">&quot;svfunction&quot;</span>, <span class="keyword">new</span> Regex(<span class="stringliteral">@&quot;f\&zwj;(([a-z]|[\d\.]+)\&zwj;)=(.*):([a-z])&quot;</span>)},</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                {<span class="stringliteral">&quot;params&quot;</span>, <span class="keyword">new</span> Regex(<span class="stringliteral">@&quot;(?:{(?:([^{}\&zwj;(\&zwj;)]+)(?:\&zwj;(((?:,?[\-\d\.]+)*)\&zwj;))?)})&quot;</span>)}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                {<span class="stringliteral">&quot;params&quot;</span>, <span class="keyword">new</span> Regex(<span class="stringliteral">@&quot;(?:{(?:([^{}\&zwj;(\&zwj;)]+)(?:\&zwj;(((?:,?[\-\d\.]+)*)\&zwj;))?(?:\[([\d]*)\])?)})&quot;</span>)}</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            };</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>

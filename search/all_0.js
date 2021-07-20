@@ -1,7 +1,7 @@
 var searchData=
 [
   ['calc_0',['calc',['../class_markdown_to_latex_1_1_md_to_tex.html#a91281eca116e8d754dacba80fe8f4376',1,'MarkdownToLatex::MdToTex']]],
-  ['calculate_1',['Calculate',['../class_markdown_to_latex_1_1_func_calculator.html#ad3f978046d4eecfd1b6b95e96d84c675',1,'MarkdownToLatex::FuncCalculator']]],
+  ['calculate_1',['Calculate',['../class_markdown_to_latex_1_1_func_calculator.html#a4b26d705d1e7f08a3f8240b8a185d052',1,'MarkdownToLatex::FuncCalculator']]],
   ['calculator_2',['Calculator',['../class_markdown_to_latex_1_1_calculator.html#a86039b5602ffbcc09a5728e7212f76b1',1,'MarkdownToLatex.Calculator.Calculator()'],['../class_markdown_to_latex_1_1_calculator.html',1,'MarkdownToLatex.Calculator&lt; T &gt;']]],
   ['calculator_3c_20string_20_3e_3',['Calculator&lt; string &gt;',['../class_markdown_to_latex_1_1_calculator.html',1,'MarkdownToLatex']]],
   ['convert_4',['convert',['../class_markdown_to_latex_1_1_md_to_tex.html#ac4edf6bc575d51d76366549d176a7642',1,'MarkdownToLatex::MdToTex']]],

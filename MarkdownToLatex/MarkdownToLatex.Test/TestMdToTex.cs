@@ -21,6 +21,7 @@ namespace MarkdownToLatex.Test
 
             //act
             string mdResult = MdToTex.parseInputPath(mdPath);
+            string texResult = MdToTex.parseOutputPath(texPath);
 
             //assert
             Assert.Equal(expMdPath, mdResult);

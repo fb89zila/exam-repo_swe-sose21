@@ -14,7 +14,7 @@ namespace MarkdownToLatex {
                 var func = Expr.Parse(this.Element);
                 return $"f({(this.Param ?? 0).ToString(CultureInfo.InvariantCulture)})=" + Math.Round(func.Compile(this.Var)(this.Param ?? 0), precision).ToString(CultureInfo.InvariantCulture);
             } catch (Exception ex){
-                throw new ConvertElementException("Error calculating function!", ex);
+                throw new ConvertElementException($"Error calculating function: {ex.Message}", ex);
             }
         }
 
@@ -25,7 +25,7 @@ namespace MarkdownToLatex {
                 var func = Expr.Parse(this.Element);
                 return $"f({this.Var})=" + func.ToLaTeX();
             } catch (Exception ex){
-                throw new ConvertElementException("Error converting function!", ex);
+                throw new ConvertElementException($"Error converting function: {ex.Message}", ex);
             }
         }
 

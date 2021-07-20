@@ -20,7 +20,6 @@ namespace MarkdownToLatex
         /// <summary>Initializes a new Calculator. Only used in derived classes.</summary>
         /// <param name="var">The variable/s to use.</param>
         /// <param name="element">The element to process</param>
-        /// <param name="param">The parameter/s to use, can be <c>null</c>.</param>
         protected Calculator(T var, string element){
             this.Var = var;
             this.Element = element;

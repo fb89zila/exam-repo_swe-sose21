@@ -51,6 +51,7 @@ namespace MarkdownToLatex.Test
         public void TestConvertText()
         {
             //arrange
+            LatexRenderer.LatexLines.Clear();
             string[] mdLines = {
                 "### head",
                 ">> gucken",

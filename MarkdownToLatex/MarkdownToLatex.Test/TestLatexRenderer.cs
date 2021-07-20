@@ -2,6 +2,8 @@ using System.IO;
 using Xunit;
 using System;
 
+[assembly: CollectionBehavior(DisableTestParallelization = true)]
+
 namespace MarkdownToLatex.Test
 {
     public class TestLatexRenderer

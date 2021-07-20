@@ -120,47 +120,70 @@ namespace MarkdownToLatex
         /// <param name="args">[2]: (maybe later LaTeX output)</param>
         static void Main(string[] args)
         {
-            foreach (string a in args) {
-                Console.WriteLine(a + "   " + args.Length);
-            }
+            Console.WriteLine("\nMarkdown to LaTeX converter\n---------------------------\n");
 
+            //Trying to find the Markdown file.
             try {
                 mdFilePath = parseInputPath(args[0]);
             } catch (FileNotFoundException e) {
-                Console.WriteLine("There was a problem with given file:\n{0}", e.Message);
+                Console.WriteLine("Error trying to find Markdown file:\nThere was a problem with given file: {0}\n", e.Message);
             } catch (ArgumentOutOfRangeException) {
-                Console.WriteLine("Please input the path to a Markdown file (.md) as the first argument.");
+                Console.WriteLine("Error trying to find Markdown file:\nPlease input the path to a Markdown file (.md) as the first argument.\n");
             } catch (Exception e) {
-                Console.WriteLine("Error:\n{0}", e.Message);
+                Console.WriteLine("Error trying to find Markdown file: {0}\n", e.Message);
             }
 
+            //Trying to read the Markdown lines from the file.
             try {
+                Console.WriteLine("Converting Markdown document...");
                 MarkdownParser.ReadMdDocument(mdFilePath);
             } catch (PathTooLongException) {
-                Console.WriteLine("The given file path was too long, could not read Markdown file.");
+                Console.WriteLine("Error while reading Markdown file:\nThe given file path was too long, could not read Markdown file.\n");
+            } catch (Exception e) {
+                Console.WriteLine("Error while reading Markdown file: {0}\n", e.Message);
             }
 
+            //Trying to convert the Markdown lines.
             try {
                 foreach (string line in MarkdownParser.MdLines) {
                     convert(line);
                 }
             } catch (Exception e) {
-                Console.WriteLine("Error:\n{0}", e.Message);
+                Console.WriteLine("Error while converting: {0}\n", e.Message);
             }
 
-            if (2 <= args.Length) {
-                try {
-                    LatexRenderer.WriteLatexDocument(parseOutputPath(args[1]));
-                } catch (FormatException e) {
-                    Console.WriteLine("There was a problem with given file path:\n{0}", e.Message);
-                } catch (PathTooLongException) {
-                    Console.WriteLine("The given file path was too long, could not write LaTeX file.");
-                } catch (Exception e) {
-                    Console.WriteLine("Error:\n{0}", e.Message);
+            //Trying to save LaTeX file.
+            //Inner try: Try to save file with the path given as command line argument two.
+            //Outer try: Try to save file in the same directory as the Markdown file in a subdirectory "latex".
+            try {
+                if (2 <= args.Length) {
+                    try {
+                        string latexPath = parseOutputPath(args[1]);
+                        LatexRenderer.WriteLatexDocument(latexPath);
+                        Console.WriteLine("Saved '{0}' to: {1}", Path.GetFileName(latexPath), Path.GetDirectoryName(latexPath));
+                    } catch (FormatException e) {
+                        Console.WriteLine("Error while creating LaTeX file:\nThere was a problem with given file path: " +
+                                          "{0}\nTrying to save file to the directory with Markdown file...\n", e.Message);
+                        LatexRenderer.WriteLatexDocument(mdFilePath);
+                    } catch (PathTooLongException) {
+                        Console.WriteLine("Error while creating LaTeX file:\nThe given file path for the LaTeX document was too long.\n" +
+                                          "Trying to save file to the directory with Markdown file...\n");
+                        LatexRenderer.WriteLatexDocument(mdFilePath);
+                    } catch (Exception e) {
+                        Console.WriteLine("Error while creating LaTeX file: {0}\nTrying to save file to the directory with Markdown file...\n", e.Message);
+                        LatexRenderer.WriteLatexDocument(mdFilePath);
+                    }
+                } else {
+                    LatexRenderer.WriteLatexDocument(mdFilePath);
+                    Console.WriteLine("Saved LaTeX file to: {0}", Path.GetFullPath(mdFilePath));
                 }
-            } else {
-                LatexRenderer.WriteLatexDocument(mdFilePath);
+            } catch (PathTooLongException) {
+                Console.WriteLine("Error while creating LaTeX file: The resulting path was too long.\nFile could not be saved.\n");
+            } catch (Exception e) {
+                Console.WriteLine("Error while creating LaTeX file: {0}\nFile could not be saved.\n", e.Message);
             }
+
+            Console.WriteLine("\n-----------------\nEnd of convertion");
         }
     }
 }

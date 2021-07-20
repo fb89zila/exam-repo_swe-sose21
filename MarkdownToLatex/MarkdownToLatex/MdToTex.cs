@@ -183,7 +183,7 @@ namespace MarkdownToLatex
                 Console.WriteLine("Error while creating LaTeX file: {0}\nFile could not be saved.\n", e.Message);
             }
 
-            Console.WriteLine("\n-----------------\nEnd of convertion");
+            Console.WriteLine("\n-----------------\nEnd of conversion");
         }
     }
 }

@@ -5,6 +5,7 @@ var class_markdown_to_latex_1_1_latex_renderer =
     [ "appendNewQuoteLine", "class_markdown_to_latex_1_1_latex_renderer.html#a29b24263b293b9eff3f5cc6bdb43089d", null ],
     [ "newList", "class_markdown_to_latex_1_1_latex_renderer.html#ac519ad1bc122b99e745811b0f5640d44", null ],
     [ "newQuote", "class_markdown_to_latex_1_1_latex_renderer.html#a26e38167a68178f7cb7d7075a9e567bc", null ],
+    [ "ResetListOrQuote", "class_markdown_to_latex_1_1_latex_renderer.html#ab75cafa222f20a04e82226ac4ce9169a", null ],
     [ "StartNewLine", "class_markdown_to_latex_1_1_latex_renderer.html#ada10bd94c0bff3dc5e49195bf3f9677d", null ],
     [ "StartNewParagraph", "class_markdown_to_latex_1_1_latex_renderer.html#ac123073a20220d771346a660de952d14", null ],
     [ "WriteBold", "class_markdown_to_latex_1_1_latex_renderer.html#abb58e7702215c5e85b757b0731f002a2", null ],

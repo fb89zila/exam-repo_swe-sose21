@@ -35,7 +35,7 @@ namespace MarkdownToLatex
                     foreach(Match m in mc){
                         if(m.Groups[1].Value.StartsWith("result")){
                             double param;
-                            bool hasParam = double.TryParse(m.Groups[2].Value, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out param);
+                            bool hasParam = double.TryParse(m.Groups[2].Value, NumberStyles.AllowLeadingSign | NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out param);
                             LatexRenderer.WriteMathElement((calc as FuncCalculator).Calculate(hasParam ? param : 0));
                         }
                     }

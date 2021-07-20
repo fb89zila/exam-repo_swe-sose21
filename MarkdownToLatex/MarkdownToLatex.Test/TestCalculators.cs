@@ -8,7 +8,7 @@ namespace MarkdownToLatex.Test
         public void TestCalculateFunction()
         {
             FuncCalculator calc = new FuncCalculator("x", "2*x^3-7*x^2+5*x-3");
-            string result = calc.Calculate(13.37);
+            string result = calc.Calculate(13.37, 2);
 
             Assert.Equal("f(13.37)=3592.51", result);
         }

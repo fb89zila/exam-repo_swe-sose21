@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['element_92',['Element',['../class_markdown_to_latex_1_1_calculator.html#a262dd15e09fd921208c62563ed4a45cc',1,'MarkdownToLatex::Calculator']]]
+  ['element_91',['Element',['../class_markdown_to_latex_1_1_calculator.html#a67602c143fb0648780d00b2e1ec5f6e3',1,'MarkdownToLatex::Calculator']]]
 ];

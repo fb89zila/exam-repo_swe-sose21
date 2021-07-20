@@ -37,6 +37,12 @@ namespace MarkdownToLatex
             }
         }}
 
+        private static void ResetListOrQuote()
+        {
+            if (InList > 0) { InList = 0; }
+            if (InQuote > 0) { InQuote = 0; }
+        }
+
         /// <summary>Writes the LaTeX document with a <paramref name="filename"/> into a 'latex' folder at the specified <paramref name="path"/>.</summary>
         public static void WriteLatexDocument(string path){
             string latexPath;
@@ -63,11 +69,15 @@ namespace MarkdownToLatex
 
         /// <summary>Writes a MathElement in LaTeX.</summary>
         public static void WriteMathElement(string line){
+            ResetListOrQuote();
+
             LatexLines.Add(@"\[" + line + @"\]"); //The calculation stuff is handled in MdToTex class
         }
 
         /// <summary>Writes a Headline in LaTeX using a Match <paramref name="m"/>.</summary>
         public static void WriteHeadline(Match m){
+            ResetListOrQuote();
+
             int length = m.Groups[1].Value.Length; //First Group, number of #'s
             string caption = m.Groups[2].Value; //Second Group, the actual text
 
@@ -201,16 +211,22 @@ namespace MarkdownToLatex
 
         /// <summary>Writes a normal text <paramref name="line"/> in LaTeX.</summary>
         public static void WriteText(string line){
+            ResetListOrQuote();
+
             LatexLines.Add(line);
         }
 
         /// <summary>Starts a new line after the given <paramref name="line"/>.</summary>
         public static void StartNewLine(string line){
+            ResetListOrQuote();
+
             LatexLines.Add(line + @"\\");
         }
 
         /// <summary>Starts a new paragraph.</summary>
         public static void StartNewParagraph(){
+            ResetListOrQuote();
+            
             LatexLines.Add(@"\par");
         }
 

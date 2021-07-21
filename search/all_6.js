@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['parseinputpath_32',['parseInputPath',['../class_markdown_to_latex_1_1_md_to_tex.html#ad4a3a13eda474ab31945dac4138eea6b',1,'MarkdownToLatex::MdToTex']]],
-  ['parseoutputpath_33',['parseOutputPath',['../class_markdown_to_latex_1_1_md_to_tex.html#a3cee5f672279c3ea5c31ea9b59a17e09',1,'MarkdownToLatex::MdToTex']]]
+  ['latexlines_18',['LatexLines',['../class_markdown_to_latex_1_1_latex_renderer.html#a70ec49acaee7d2e2fcb167383633ff24',1,'MarkdownToLatex::LatexRenderer']]],
+  ['latexrenderer_19',['LatexRenderer',['../class_markdown_to_latex_1_1_latex_renderer.html',1,'MarkdownToLatex']]]
 ];

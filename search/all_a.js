@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['var_38',['Var',['../class_markdown_to_latex_1_1_calculator.html#a4d4bbfba6d17d7e3a1c8d4e63d1f7880',1,'MarkdownToLatex::Calculator']]]
+  ['parseinputpath_41',['parseInputPath',['../class_markdown_to_latex_1_1_md_to_tex.html#ad4a3a13eda474ab31945dac4138eea6b',1,'MarkdownToLatex::MdToTex']]],
+  ['parseoutputpath_42',['parseOutputPath',['../class_markdown_to_latex_1_1_md_to_tex.html#a3cee5f672279c3ea5c31ea9b59a17e09',1,'MarkdownToLatex::MdToTex']]]
 ];

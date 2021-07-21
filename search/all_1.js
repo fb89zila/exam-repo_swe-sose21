@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['element_9',['Element',['../class_markdown_to_latex_1_1_calculator.html#a67602c143fb0648780d00b2e1ec5f6e3',1,'MarkdownToLatex::Calculator']]]
+  ['appendnewitem_2',['appendNewItem',['../class_markdown_to_latex_1_1_latex_renderer.html#a62eefde74198a0e91314d5f90018e3d4',1,'MarkdownToLatex::LatexRenderer']]],
+  ['appendnewquoteline_3',['appendNewQuoteLine',['../class_markdown_to_latex_1_1_latex_renderer.html#a29b24263b293b9eff3f5cc6bdb43089d',1,'MarkdownToLatex::LatexRenderer']]]
 ];

@@ -1,5 +1,4 @@
 using System;
-using System.Threading.Tasks;
 using System.IO;
 using Xunit;
 
@@ -181,6 +180,7 @@ namespace MarkdownToLatex.Test
             string path3 = @"test_files/nonexistantfile.md";
 
             //act
+            File.Create(path2).Close();
             Action parse1 = new Action(() => {string parsedPath1 = MdToTex.parseOutputPath(path1);});
             Action parse2 = new Action(() => {string parsedPath2 = MdToTex.parseOutputPath(path2);});
             Action parse3 = new Action(() => {string parsedPath3 = MdToTex.parseOutputPath(path3);});

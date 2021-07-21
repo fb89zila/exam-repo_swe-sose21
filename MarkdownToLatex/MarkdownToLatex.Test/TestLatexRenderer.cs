@@ -37,11 +37,12 @@ namespace MarkdownToLatex.Test
             LatexRenderer.InQuote = 0;
             string[] mdlines = {
                 "- Hello, this is a test",
+                "- An important test",
                 "  - with a list",
                 "  - which really is very nice",
                 "    - or is it?",
                 "    - this is still in layer 3",
-                "    - does it work?",
+                "      - does it work?",
                 "  - Adding more to extend test converage",
                 "- ok, that was it for now!"
             };
@@ -49,6 +50,7 @@ namespace MarkdownToLatex.Test
             string[] expected = {
                 @"\begin{itemize}",
                 @"\item{Hello, this is a test}",
+                @"\item{An important test}",
                 @"\begin{itemize}",
                 @"\item{with a list}",
                 @"\item{which really is very nice}",
@@ -60,7 +62,7 @@ namespace MarkdownToLatex.Test
                 @"\item{Adding more to extend test converage}",
                 @"\end{itemize}",
                 @"\item{ok, that was it for now!}",
-                @"\end{itemize}",
+                @"\end{itemize}"
             };
 
             //act

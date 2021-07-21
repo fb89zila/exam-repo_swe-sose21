@@ -20,5 +20,12 @@ namespace MarkdownToLatex.Test
             FuncCalculator calc = new FuncCalculator(var, function);
             Assert.Equal(output, calc.ConvertElement());
         }
+
+        [Fact]
+        public void TestExceptions(){
+            FuncCalculator calc = new FuncCalculator("e", "tanh(e**2)");
+            Assert.Throws<ConvertElementException>(() => {calc.ConvertElement();});
+            Assert.Throws<ConvertElementException>(() => {calc.Calculate(90, 0);});
+        }
     }
 }

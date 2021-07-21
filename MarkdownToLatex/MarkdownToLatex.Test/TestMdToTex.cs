@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using System.IO;
 using Xunit;
 
@@ -114,7 +115,8 @@ namespace MarkdownToLatex.Test
                 "ass",
                 "",
                 "!{svfunc} f(x)=x^2+x-100:x !{result}  ",
-                "!{svfunc} f(x)=x^4+3*x^3-111/100:x !{result(99.12)}"
+                "!{svfunc} f(x)=x^4+3*x^3-111/100:x !{result(99.12)}",
+                "!{svfunc} f(x)=x^4+3*x^3-111/100:x !{result(99.12)[5]}"
             };
             string[] expTex = {
                 @"\subsection*{head}",
@@ -138,7 +140,9 @@ namespace MarkdownToLatex.Test
                 @"\[f(x)=-100 + x + {x}^{2}\]",
                 @"\[f(0)=-100\]",
                 @"\[f(x)=-\frac{111}{100} + 3{x}^{3} + {x}^{4}\]",
-                @"\[f(99.12)=99447685.82\]"
+                @"\[f(99.12)=99447685.82\]",
+                @"\[f(x)=-\frac{111}{100} + 3{x}^{3} + {x}^{4}\]", 
+                @"\[f(99.12)=99447685.81648\]"
             };
 
             //act
@@ -150,5 +154,41 @@ namespace MarkdownToLatex.Test
             //assert
             Assert.Equal(expTex, result);
 		}
+
+        [Fact]
+        public void TestParseInputPath(){
+            //arrange
+            string path1 = @"test_files/testAll.md";
+            string path2 = @"test_files/latex/test1.tex";
+            string path3 = @"test_files/nonexistantfile.md";
+
+            //act
+            Action parse1 = new Action(() => {string parsedPath1 = MdToTex.parseInputPath(path1);});
+            Action parse2 = new Action(() => {string parsedPath2 = MdToTex.parseInputPath(path2);});
+            Action parse3 = new Action(() => {string parsedPath3 = MdToTex.parseInputPath(path3);});
+            parse1.Invoke();
+
+            //assert
+            Assert.Throws<FormatException>(parse2);
+            Assert.Throws<FileNotFoundException>(parse3);
+        }
+
+        [Fact]
+        public void TestParseOutputPath(){
+            //arrange
+            string path1 = @"test_files/latex";
+            string path2 = @"test_files/latex/test1.tex";
+            string path3 = @"test_files/nonexistantfile.md";
+
+            //act
+            Action parse1 = new Action(() => {string parsedPath1 = MdToTex.parseOutputPath(path1);});
+            Action parse2 = new Action(() => {string parsedPath2 = MdToTex.parseOutputPath(path2);});
+            Action parse3 = new Action(() => {string parsedPath3 = MdToTex.parseOutputPath(path3);});
+            parse1.Invoke();
+            parse2.Invoke();
+
+            //assert
+            Assert.Throws<FormatException>(parse3);
+        }
     }
 }

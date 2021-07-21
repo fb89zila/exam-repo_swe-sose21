@@ -19,7 +19,7 @@ namespace MarkdownToLatex
         private static byte oldInList;
 
         /// <summary>a byte indicating whether a list is currently rendered.</summary>
-        public static byte InList {get => _inlist; private set {
+        public static byte InList {get => _inlist; internal set {
             if(value <= 3){
                 _inlist = value;
             } else {
@@ -34,7 +34,7 @@ namespace MarkdownToLatex
         private static byte oldInQuote;
 
         /// <summary>a byte indicating whether a quote is currently rendered.</summary>
-        public static byte InQuote {get => _inquote; private set {
+        public static byte InQuote {get => _inquote; internal set {
             if(value <= 3){
                 _inquote = value;
             } else {

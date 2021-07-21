@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['newlist_37',['newList',['../class_markdown_to_latex_1_1_latex_renderer.html#ac519ad1bc122b99e745811b0f5640d44',1,'MarkdownToLatex::LatexRenderer']]],
-  ['newquote_38',['newQuote',['../class_markdown_to_latex_1_1_latex_renderer.html#a26e38167a68178f7cb7d7075a9e567bc',1,'MarkdownToLatex::LatexRenderer']]]
+  ['oldinlist_37',['oldInList',['../class_markdown_to_latex_1_1_latex_renderer.html#a678741e0e4c7ce5e1e9e4532fef66966',1,'MarkdownToLatex::LatexRenderer']]],
+  ['oldinquote_38',['oldInQuote',['../class_markdown_to_latex_1_1_latex_renderer.html#aaa3f0ab7481301a86ba25cbd69f13d02',1,'MarkdownToLatex::LatexRenderer']]]
 ];

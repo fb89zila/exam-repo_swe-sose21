@@ -16,8 +16,6 @@ var class_markdown_to_latex_1_1_latex_renderer =
     [ "WriteMathElement", "class_markdown_to_latex_1_1_latex_renderer.html#ad6b4a5864234b37c210ac9c3379c7683", null ],
     [ "WriteQuote", "class_markdown_to_latex_1_1_latex_renderer.html#a39003cf1e32f1f93fe27844c59126321", null ],
     [ "WriteText", "class_markdown_to_latex_1_1_latex_renderer.html#a7b6859188c2746f092213a358a4b8542", null ],
-    [ "_inlist", "class_markdown_to_latex_1_1_latex_renderer.html#a43ec2fb7e282a52eb1eb213eee0ecc0e", null ],
-    [ "_inquote", "class_markdown_to_latex_1_1_latex_renderer.html#af3000552572f9099877edd46000c46a6", null ],
     [ "LatexLines", "class_markdown_to_latex_1_1_latex_renderer.html#a70ec49acaee7d2e2fcb167383633ff24", null ],
     [ "oldInList", "class_markdown_to_latex_1_1_latex_renderer.html#a678741e0e4c7ce5e1e9e4532fef66966", null ],
     [ "oldInQuote", "class_markdown_to_latex_1_1_latex_renderer.html#aaa3f0ab7481301a86ba25cbd69f13d02", null ],

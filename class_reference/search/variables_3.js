@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['mdfilepath_108',['mdFilePath',['../class_markdown_to_latex_1_1_md_to_tex.html#acfb553280b878f4e5660b3760c4a1f0d',1,'MarkdownToLatex::MdToTex']]]
+  ['oldinlist_105',['oldInList',['../class_markdown_to_latex_1_1_latex_renderer.html#a678741e0e4c7ce5e1e9e4532fef66966',1,'MarkdownToLatex::LatexRenderer']]],
+  ['oldinquote_106',['oldInQuote',['../class_markdown_to_latex_1_1_latex_renderer.html#aaa3f0ab7481301a86ba25cbd69f13d02',1,'MarkdownToLatex::LatexRenderer']]]
 ];

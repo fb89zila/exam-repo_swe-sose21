@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['markdowntolatex_66',['MarkdownToLatex',['../namespace_markdown_to_latex.html',1,'']]]
+  ['markdowntolatex_64',['MarkdownToLatex',['../namespace_markdown_to_latex.html',1,'']]]
 ];

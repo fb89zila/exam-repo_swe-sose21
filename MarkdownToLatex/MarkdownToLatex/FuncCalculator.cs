@@ -8,7 +8,7 @@ namespace MarkdownToLatex {
     public class FuncCalculator : Calculator<string> {
 
         /// <summary>Calculates the function at the given <paramref name="param"/>.
-        /// The <paramref name="precision"/> paameter specifies the rounding accuracy.</summary>
+        /// The <paramref name="precision"/> parameter specifies the rounding accuracy.</summary>
         public string Calculate(double param, int precision){
             try{
                 var func = Expr.Parse(this.Element);

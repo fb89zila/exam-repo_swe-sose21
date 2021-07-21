@@ -35,21 +35,29 @@ namespace MarkdownToLatex.Test
             LatexRenderer.LatexLines.Clear();
             string[] mdlines = {
                 "- Hello, this is a test",
+                "- An important test",
                 "  - with a list",
                 "  - which really is very nice",
                 "    - or is it?",
+                "    - this is still in layer 3",
+                "      - does it work?",
+                "  - Adding more to extend test converage",
                 "- ok, that was it for now!"
             };
 
             string[] expected = {
                 @"\begin{itemize}",
                 @"\item{Hello, this is a test}",
+                @"\item{An important test}",
                 @"\begin{itemize}",
                 @"\item{with a list}",
                 @"\item{which really is very nice}",
                 @"\begin{itemize}",
                 @"\item{or is it?}",
+                @"\item{this is still in layer 3}",
+                @"\item{does it work?}",
                 @"\end{itemize}",
+                @"\item{Adding more to extend test converage}",
                 @"\end{itemize}",
                 @"\item{ok, that was it for now!}",
                 @"\end{itemize}"
@@ -72,7 +80,8 @@ namespace MarkdownToLatex.Test
             string[] mdlines = {
                 "> Yesterday, I heard someone saying",
                 "> something interesting to somebody.",
-                ">> I have a very deep quote for you:",
+                ">> I have a very deep quote for you!",
+                ">> Here it is:",
                 ">>> Life is what happens when you're busy making other plans.",
                 ">>> - John Lennon",
                 ">> I hope, you liked it!",
@@ -84,7 +93,8 @@ namespace MarkdownToLatex.Test
                 @"\quoteline{Yesterday, I heard someone saying}",
                 @"\quoteline{something interesting to somebody.}",
                 @"\begin{quote}",
-                @"\quoteline{I have a very deep quote for you:}",
+                @"\quoteline{I have a very deep quote for you!}",
+                @"\quoteline{Here it is:}",
                 @"\begin{quote}",
                 @"\quoteline{Life is what happens when you're busy making other plans.}",
                 @"\quoteline{- John Lennon}",
@@ -131,7 +141,10 @@ namespace MarkdownToLatex.Test
                 @"\subsection*{vërÿ wëïrd ïnpüt}",
                 @"\subsection*{An even nicer Subsection}"
             };
-            string expPath = @"test_files/latex/test.tex";
+            string expPath1 = @"test_files/latex/test1.tex";
+            string expPath2 = @"test_files/testAll.md";
+            MdToTex.mdFilePath = @"test_files/test2.md";
+            string expPath3 = @"test_files/custom_dir";
             string[] expected = {
                 @"\documentclass{scrreprt}",
                 @"\setlength{\parindent}{0em}",
@@ -148,12 +161,18 @@ namespace MarkdownToLatex.Test
 
             //act
             LatexRenderer.LatexLines.AddRange(input);
-            LatexRenderer.WriteLatexDocument(expPath);
+            LatexRenderer.WriteLatexDocument(expPath1);
+            LatexRenderer.WriteLatexDocument(expPath2);
+            LatexRenderer.WriteLatexDocument(expPath3);
             System.Threading.Thread.Sleep(1000);
-            string[] result = File.ReadAllLines(expPath);
+            string[] result1 = File.ReadAllLines(expPath1);
+            string[] result2 = File.ReadAllLines(Path.Combine(Path.GetDirectoryName(expPath2), "latex", Path.GetFileNameWithoutExtension(expPath2) + ".tex"));
+            string[] result3 = File.ReadAllLines(Path.Combine(expPath3, Path.GetFileNameWithoutExtension(MdToTex.mdFilePath) + ".tex"));
 
             //assert
-            Assert.Equal(expected, result);
+            Assert.Equal(expected, result1);
+            Assert.Equal(expected, result2);
+            Assert.Equal(expected, result3);
         }
 
         [Fact]

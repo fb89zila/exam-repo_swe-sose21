@@ -12,35 +12,17 @@ namespace MarkdownToLatex
         /// <summary>a List containing the LaTeX document line by line.</summary>
         public static List<string> LatexLines;
 
-        /// <seealso cref="InList"/>
-        private static byte _inlist;
-
         /// <summary>Contains list level of last Markdown line ('0' if it was not in a list)</summary>
         private static byte oldInList;
 
         /// <summary>a byte indicating whether a list is currently rendered.</summary>
-        public static byte InList {get => _inlist; private set {
-            if(value <= 3){
-                _inlist = value;
-            } else {
-                _inlist = 3; 
-            }
-        }}
-
-        /// <seealso cref="InQuote"/>
-        private static byte _inquote;
+        public static byte InList {get; private set;}
 
         /// <summary>Contains quote level of last Markdown line ('0' if it was not in a quote)</summary>
         private static byte oldInQuote;
 
         /// <summary>a byte indicating whether a quote is currently rendered.</summary>
-        public static byte InQuote {get => _inquote; private set {
-            if(value <= 3){
-                _inquote = value;
-            } else {
-                _inquote = 3;
-            }
-        }}
+        public static byte InQuote {get; private set;}
 
         /// <summary>Resets the properties <see cref="InList"/> and <see cref="InQuote"/> to '0'.</summary>
         private static void ResetListOrQuote()
@@ -135,7 +117,7 @@ namespace MarkdownToLatex
                     newList(content);
                     InList++;
                 }
-            } else if (InList == 3 && InList <= depth){
+            } else if (InList == 3){
                 appendNewItem(content);
             }
             oldInList = InList;
@@ -189,7 +171,7 @@ namespace MarkdownToLatex
                     newQuote(content);
                     InQuote++;
                 }
-            } else if (InQuote == 3 && InQuote <= depth){
+            } else if (InQuote == 3){
                 appendNewQuoteLine(content);
             }
             oldInQuote = InQuote;

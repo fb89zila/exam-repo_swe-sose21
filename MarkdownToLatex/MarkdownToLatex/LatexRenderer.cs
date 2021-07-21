@@ -135,7 +135,7 @@ namespace MarkdownToLatex
                     newList(content);
                     InList++;
                 }
-            } else if (InList == 3 && InList <= depth){
+            } else if (InList == 3){
                 appendNewItem(content);
             }
             oldInList = InList;
@@ -189,7 +189,7 @@ namespace MarkdownToLatex
                     newQuote(content);
                     InQuote++;
                 }
-            } else if (InQuote == 3 && InQuote <= depth){
+            } else if (InQuote == 3){
                 appendNewQuoteLine(content);
             }
             oldInQuote = InQuote;

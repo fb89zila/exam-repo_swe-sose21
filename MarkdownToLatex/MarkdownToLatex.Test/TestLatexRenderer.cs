@@ -33,8 +33,6 @@ namespace MarkdownToLatex.Test
         public void TestWriteList(){
             //arrange
             LatexRenderer.LatexLines.Clear();
-            LatexRenderer.InList = 0;
-            LatexRenderer.InQuote = 0;
             string[] mdlines = {
                 "- Hello, this is a test",
                 "- An important test",
@@ -225,25 +223,6 @@ namespace MarkdownToLatex.Test
 
             //assert
             Assert.Equal(texlines, result);
-        }
-
-        [Theory]
-        [InlineData(0, 0)]
-        [InlineData(1, 1)]
-        [InlineData(2, 2)]
-        [InlineData(3, 3)]
-        [InlineData(4, 3)]
-        public void TestInListInQuote(byte value, byte expected){
-            //arrange
-            byte input = value;
-
-            //act
-            LatexRenderer.InList = input;
-            LatexRenderer.InQuote = input;
-
-            //assert
-            Assert.Equal(expected, LatexRenderer.InList);
-            Assert.Equal(expected, LatexRenderer.InQuote);
         }
     }
 }

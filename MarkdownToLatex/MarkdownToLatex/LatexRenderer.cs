@@ -16,13 +16,13 @@ namespace MarkdownToLatex
         private static byte oldInList;
 
         /// <summary>a byte indicating whether a list is currently rendered.</summary>
-        public static byte InList {get; internal set;}
+        public static byte InList {get; private set;}
 
         /// <summary>Contains quote level of last Markdown line ('0' if it was not in a quote)</summary>
         private static byte oldInQuote;
 
         /// <summary>a byte indicating whether a quote is currently rendered.</summary>
-        public static byte InQuote {get; internal set;}
+        public static byte InQuote {get; private set;}
 
         /// <summary>Resets the properties <see cref="InList"/> and <see cref="InQuote"/> to '0'.</summary>
         private static void ResetListOrQuote()

@@ -196,19 +196,19 @@ namespace MarkdownToLatex
         /// <summary>Writes a <paramref name="line"/> with cursive text in LaTeX.</summary>
         /// <returns>the line, converted from Markdown into LaTeX.</returns>
         public static string WriteCursive(string line){
-            return MarkdownParser.TextRx["cursive"].Replace(line, @"\textit{$2}");
+            return MarkdownParser.TextRx["cursive"].Replace(line, @"\textit{$1}");
         }
 
         /// <summary>Writes a <paramref name="line"/> with bold text in LaTeX.</summary>
         /// <returns>the line, converted from Markdown into LaTeX.</returns>
         public static string WriteBold(string line){
-            return MarkdownParser.TextRx["bold"].Replace(line, @"\textbf{$2}");
+            return MarkdownParser.TextRx["bold"].Replace(line, @"\textbf{$1}");
         }
 
         /// <summary>Writes a <paramref name="line"/> with verbatim text in LaTeX.</summary>
         /// <returns>the line, converted from Markdown into LaTeX.</returns>
         public static string WriteVerbatim(string line){
-            return MarkdownParser.TextRx["verbatim"].Replace(line, @"\verb|$2|");
+            return MarkdownParser.TextRx["verbatim"].Replace(line, @"\verb|$1|");
         }
 
         /// <summary>Writes a normal text <paramref name="line"/> in LaTeX.</summary>

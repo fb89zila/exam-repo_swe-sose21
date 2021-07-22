@@ -120,13 +120,13 @@ namespace MarkdownToLatex.Test
             boldMatch = MarkdownParser.MatchBold(resultstr);
             boldCounter = boldMatch.Count;
 
-            resultstr = MarkdownParser.TextRx["bold"].Replace(resultstr, @"\textbf{$2}");
+            resultstr = MarkdownParser.TextRx["bold"].Replace(resultstr, @"\textbf{$1}");
 
                 //cursive
             cursiveMatch = MarkdownParser.MatchCursive(resultstr);
             cursiveCounter = cursiveMatch.Count;
 
-            resultstr = MarkdownParser.TextRx["cursive"].Replace(resultstr, @"\textit{$2}");
+            resultstr = MarkdownParser.TextRx["cursive"].Replace(resultstr, @"\textit{$1}");
 
             Console.WriteLine(resultstr);
             //assert

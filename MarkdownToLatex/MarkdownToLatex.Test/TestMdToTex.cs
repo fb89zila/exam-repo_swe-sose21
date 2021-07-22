@@ -34,7 +34,7 @@ namespace MarkdownToLatex.Test
         {
             //arrange
             LatexRenderer.LatexLines.Clear();
-            string mathElement = "!{svfunc} f(x)=x^2+3*x+5:x !{result(3.1415)}";
+            string mathElement = "!{svfunc} f(x)=x^2+3*x+5 !{result(3.1415)}";
             string[] expected = {
                 @"\[f(x)=5 + 3x + {x}^{2}\]",
                 @"\[f(3.1415)=24.29\]"
@@ -113,9 +113,9 @@ namespace MarkdownToLatex.Test
                 "sdf  ",
                 "ass",
                 "",
-                "!{svfunc} f(x)=x^2+x-100:x !{result}  ",
-                "!{svfunc} f(x)=x^4+3*x^3-111/100:x !{result(99.12)}",
-                "!{svfunc} f(x)=x^4+3*x^3-111/100:x !{result(99.12)[5]}"
+                "!{svfunc} f(x)=x^2+x-100 !{result}  ",
+                "!{svfunc} f(x)=x^4+3*x^3-111/100 !{result(99.12)}",
+                "!{svfunc} f(x)=x^4+3*x^3-111/100 !{result(99.12)[5]}"
             };
             string[] expTex = {
                 @"\subsection*{head}",

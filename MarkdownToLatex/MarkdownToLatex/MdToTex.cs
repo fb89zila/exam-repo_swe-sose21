@@ -28,7 +28,7 @@ namespace MarkdownToLatex
             switch(match.Groups[1].Value){
                 case "svfunc":
                     Match svfunc = MathParser.MatchSVFunction(match.Groups[2].Value);
-                    calc = new FuncCalculator(svfunc.Groups[3].Value, svfunc.Groups[2].Value);
+                    calc = new FuncCalculator(svfunc.Groups[1].Value, svfunc.Groups[2].Value);
                     LatexRenderer.WriteMathElement(calc.ConvertElement());
 
                     MatchCollection mc = MathParser.MatchParameters(match.Groups[3].Value);

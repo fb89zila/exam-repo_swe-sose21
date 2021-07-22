@@ -216,7 +216,7 @@ namespace MarkdownToLatex
         public static void StartNewLine(string line){
             ResetListOrQuote();
 
-            LatexLines.Add(line + @"\\");
+            LatexLines.Add(line.TrimEnd() + @"\\");
         }
 
         /// <summary>Starts a new paragraph.</summary>

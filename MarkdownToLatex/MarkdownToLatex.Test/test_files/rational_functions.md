@@ -11,7 +11,7 @@ The rational fraction can also be split into multiple summands.
 ## Examples
 
 The following function is not defined in $x=\pm 5$ and its **limit diverges** (goes against infinity).
-!{svfunc} f(x)=(x^3-2*x)/(2*(x-5)) !{result(5)}{result(2.1)[4]}{result{0}}
+!{svfunc} f(x)=(x^3-2*x)/(2*(x-5)) !{result(5)}{result(21.4)}{root(-3,-1)[3]}
 
 Here the domain of the function is the *set of all real numbers*:
 !{svfunc} f(x)=(x^2+2)/(x^2+1) !{result(-2)}

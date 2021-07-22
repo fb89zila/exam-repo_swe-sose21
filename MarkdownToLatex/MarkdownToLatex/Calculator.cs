@@ -1,4 +1,5 @@
 using System;
+using Expr = MathNet.Symbolics.SymbolicExpression;
 
 namespace MarkdownToLatex
 {
@@ -8,10 +9,10 @@ namespace MarkdownToLatex
     public abstract class Calculator<T> : ICalculator {
 
         /// <summary>The element to process.</summary>
-        public string Element {get; protected set;}
+        public Expr Element {get;}
 
         /// <summary>The variable to use.</summary>
-        public T Var {get; protected set;}
+        public T Var {get;}
 
         /// <summary>Converts the <see cref="Element"/> to LaTeX.</summary>
         public abstract string ConvertElement();
@@ -19,9 +20,15 @@ namespace MarkdownToLatex
         /// <summary>Initializes a new Calculator. Only used in derived classes.</summary>
         /// <param name="var">The variable/s to use.</param>
         /// <param name="element">The element to process</param>
-        protected Calculator(T var, string element){
+        protected Calculator(T var, string element)
+        {
             this.Var = var;
-            this.Element = element;
+
+            try {
+                this.Element = Expr.Parse(element);
+            } catch (Exception e) {
+                throw new ConvertElementException($"Could not parse function: {e.Message}", e);
+            }
         }
     }
 }

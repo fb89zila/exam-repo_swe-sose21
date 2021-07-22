@@ -17,7 +17,8 @@ namespace MarkdownToLatex
         /// <summary>Converts the <see cref="Element"/> to LaTeX.</summary>
         public abstract string ConvertElement();
 
-        /// <summary>Initializes a new Calculator. Only used in derived classes.</summary>
+        /// <summary>Initializes a new Calculator and parses math element string.  
+        /// Only used in derived classes.</summary>
         /// <param name="var">The variable/s to use.</param>
         /// <param name="element">The element to process</param>
         protected Calculator(T var, string element)

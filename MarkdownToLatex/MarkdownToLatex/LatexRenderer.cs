@@ -205,6 +205,12 @@ namespace MarkdownToLatex
             return MarkdownParser.TextRx["bold"].Replace(line, @"\textbf{$2}");
         }
 
+        /// <summary>Writes a <paramref name="line"/> with verbatim text in LaTeX.</summary>
+        /// <returns>the line, converted from Markdown into LaTeX.</returns>
+        public static string WriteVerbatim(string line){
+            return MarkdownParser.TextRx["verbatim"].Replace(line, @"\verb|$2|");
+        }
+
         /// <summary>Writes a normal text <paramref name="line"/> in LaTeX.</summary>
         public static void WriteText(string line){
             ResetListOrQuote();

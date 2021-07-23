@@ -224,13 +224,13 @@ var assemblies = [
   {
     "name": "MarkdownToLatex",
     "classes": [
-      { "name": "MarkdownToLatex.Calculator<T>", "rp": "MarkdownToLatex_Calculator_1.html", "cl": 6, "ucl": 0, "cal": 6, "tl": 27, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "MarkdownToLatex.Calculator<T>", "rp": "MarkdownToLatex_Calculator_1.html", "cl": 10, "ucl": 0, "cal": 10, "tl": 35, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "MarkdownToLatex.ConvertElementException", "rp": "MarkdownToLatex_ConvertElementException.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 17, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "MarkdownToLatex.FuncCalculator", "rp": "MarkdownToLatex_FuncCalculator.html", "cl": 15, "ucl": 0, "cal": 15, "tl": 35, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "MarkdownToLatex.LatexRenderer", "rp": "MarkdownToLatex_LatexRenderer.html", "cl": 152, "ucl": 0, "cal": 152, "tl": 233, "ct": "LineCoverage", "mc": "-", "cb": 76, "tb": 76, "lch": [], "bch": [], "hc": [] },
-      { "name": "MarkdownToLatex.MarkdownParser", "rp": "MarkdownToLatex_MarkdownParser.html", "cl": 34, "ucl": 0, "cal": 34, "tl": 86, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "MarkdownToLatex.FuncCalculator", "rp": "MarkdownToLatex_FuncCalculator.html", "cl": 52, "ucl": 9, "cal": 61, "tl": 145, "ct": "LineCoverage", "mc": "-", "cb": 19, "tb": 24, "lch": [], "bch": [], "hc": [] },
+      { "name": "MarkdownToLatex.LatexRenderer", "rp": "MarkdownToLatex_LatexRenderer.html", "cl": 162, "ucl": 0, "cal": 162, "tl": 249, "ct": "LineCoverage", "mc": "-", "cb": 78, "tb": 78, "lch": [], "bch": [], "hc": [] },
+      { "name": "MarkdownToLatex.MarkdownParser", "rp": "MarkdownToLatex_MarkdownParser.html", "cl": 35, "ucl": 3, "cal": 38, "tl": 94, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "MarkdownToLatex.MathParser", "rp": "MarkdownToLatex_MathParser.html", "cl": 14, "ucl": 0, "cal": 14, "tl": 34, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "MarkdownToLatex.MdToTex", "rp": "MarkdownToLatex_MdToTex.html", "cl": 59, "ucl": 57, "cal": 116, "tl": 193, "ct": "LineCoverage", "mc": "-", "cb": 32, "tb": 36, "lch": [], "bch": [], "hc": [] },
+      { "name": "MarkdownToLatex.MdToTex", "rp": "MarkdownToLatex_MdToTex.html", "cl": 57, "ucl": 64, "cal": 121, "tl": 200, "ct": "LineCoverage", "mc": "-", "cb": 28, "tb": 38, "lch": [], "bch": [], "hc": [] },
     ]},
 ];
 

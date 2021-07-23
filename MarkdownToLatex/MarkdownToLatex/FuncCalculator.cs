@@ -11,7 +11,7 @@ namespace MarkdownToLatex {
     public class FuncCalculator : Calculator<string> {
 
         /// <summary>Variable <see cref="Calculator.Var"/> as SymbolicExpression</summary>
-        private Expr VarExpr;
+        private Expr varExpr;
 
         /// <summary>Combined NumberStyles used to parse doubles.</summary>
         private NumberStyles doubleNumStyles = NumberStyles.AllowLeadingSign | NumberStyles.AllowDecimalPoint | NumberStyles.AllowExponent;
@@ -99,13 +99,13 @@ namespace MarkdownToLatex {
                     if (hasInput) {
                         return $"f'({(input).ToString(CultureInfo.InvariantCulture)})=" + roundResult(dfunc(input), hasPrecision ? precision : 2).ToString(CultureInfo.InvariantCulture);
                     } else {
-                        return $"f'({this.Var})=" + Element.Differentiate(VarExpr).RationalSimplify(VarExpr).ToLaTeX();
+                        return $"f'({this.Var})=" + Element.Differentiate(varExpr).RationalSimplify(varExpr).ToLaTeX();
                     }
                 case 2:
                     if (hasInput) {
                         return $"f''({(input).ToString(CultureInfo.InvariantCulture)})=" + roundResult(ddfunc(input), hasPrecision ? precision : 2).ToString(CultureInfo.InvariantCulture);
                     } else {
-                        return $"f''({this.Var})=" + Element.Differentiate(VarExpr).Differentiate(VarExpr).RationalSimplify(VarExpr).ToLaTeX();
+                        return $"f''({this.Var})=" + Element.Differentiate(varExpr).Differentiate(varExpr).RationalSimplify(varExpr).ToLaTeX();
                     }
                 default:
                     throw new ConvertElementException("Derivatives higher than the second order are not supported."); //Can't be reached, but is needed because else "not every path returns a value"
@@ -123,7 +123,7 @@ namespace MarkdownToLatex {
         public FuncCalculator(string var, string element) : base(var, element)
         {
             try {
-                this.VarExpr = Expr.Variable(Var);
+                this.varExpr = Expr.Variable(Var);
             } catch (Exception e) {
                 throw new ConvertElementException($"Could not compile function: {e.Message}", e);
             }

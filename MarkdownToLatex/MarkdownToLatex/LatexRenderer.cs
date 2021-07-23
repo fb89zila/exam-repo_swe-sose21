@@ -211,6 +211,16 @@ namespace MarkdownToLatex
             return MarkdownParser.TextRx["verbatim"].Replace(line, @"\verb|$1|");
         }
 
+        /// <summary>Writes a <paramref name="line"/> with bold and cursive text but takes verbatim text into account.</summary>
+        /// <returns>The line, converted into LaTeX (except for verbatim parts)</returns>
+        public static string WriteInlineSyntax(string line){
+            string[] lineparts = line.Split('`');
+            for(int i = 0; i < lineparts.Length; i+=2){
+                lineparts[i] = WriteCursive(WriteBold(lineparts[i]));
+            }
+            return String.Join('`', lineparts);
+        }
+
         /// <summary>Writes a normal text <paramref name="line"/> in LaTeX.</summary>
         public static void WriteText(string line){
             ResetListOrQuote();

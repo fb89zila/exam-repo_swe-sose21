@@ -63,7 +63,7 @@ namespace MarkdownToLatex.Test
                 "  - wer",
                 "- w",
                 "sdf  ",
-                "ass `\\ldots ist sehr schön`",
+                "ass *test* `\\ldots ist **sehr** schön`",
                 ""
             };
             string[] expTex = {
@@ -83,7 +83,7 @@ namespace MarkdownToLatex.Test
                 @"\item{w}",
                 @"\end{itemize}",
                 @"sdf\\",
-                @"ass \verb|\ldots ist sehr schön|",
+                @"ass \textit{test} \verb|\ldots ist **sehr** schön|",
                 @"\par"
             };
 

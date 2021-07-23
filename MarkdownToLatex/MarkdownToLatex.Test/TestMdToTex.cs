@@ -113,7 +113,6 @@ namespace MarkdownToLatex.Test
                 "sdf  ",
                 "ass",
                 "",
-                "!{svfunc} f(x)=x^2+x-100 !{result}  ",
                 "!{svfunc} f(x)=x^4+3*x^3-111/100 !{result(99.12)}",
                 "!{svfunc} f(x)=x^4+3*x^3-111/100 !{result(99.12)[5]}"
             };
@@ -136,8 +135,6 @@ namespace MarkdownToLatex.Test
                 @"sdf\\",
                 @"ass",
                 @"\par",
-                @"\[f(x)=-100 + x + {x}^{2}\]",
-                @"\[f(0)=-100\]",
                 @"\[f(x)=-\frac{111}{100} + 3{x}^{3} + {x}^{4}\]",
                 @"\[f(99.12)=99447685.82\]",
                 @"\[f(x)=-\frac{111}{100} + 3{x}^{3} + {x}^{4}\]", 

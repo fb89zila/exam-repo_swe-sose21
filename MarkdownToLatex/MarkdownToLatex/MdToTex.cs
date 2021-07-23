@@ -35,11 +35,16 @@ namespace MarkdownToLatex
                     foreach(Match m in mc){
                         switch(m.Groups[1].Value){
                             case "result":
-                                double param; 
-                                int precision;
-                                bool hasParam = double.TryParse(m.Groups[2].Value, NumberStyles.AllowLeadingSign | NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out param);
-                                bool hasPrecision = int.TryParse(m.Groups[3].Value, out precision);
-                                LatexRenderer.WriteMathElement((calc as FuncCalculator).Calculate(hasParam ? param : 0, hasPrecision ? precision : 2));
+                                LatexRenderer.WriteMathElement((calc as FuncCalculator).Calculate(m));
+                                break;
+                            case "root":
+                                LatexRenderer.WriteMathElement((calc as FuncCalculator).CalcRoot(m));
+                                break;
+                            case "d1f":
+                                LatexRenderer.WriteMathElement((calc as FuncCalculator).CalcDerivative(m, 1));
+                                break;
+                            case "d2f":
+                                LatexRenderer.WriteMathElement((calc as FuncCalculator).CalcDerivative(m, 2));
                                 break;
                         }
                     }
@@ -151,8 +156,10 @@ namespace MarkdownToLatex
                     convert(MarkdownParser.MdLines[i]);
                 } catch (ConvertElementException e) {
                     Console.WriteLine("\n'{0}' line {1} - {2}", Path.GetFileName(mdFilePath), i+1, e.Message);
+                    continue;
                 } catch (Exception e) {
                     Console.WriteLine("\n'{0}' line {1} - Error while converting: {0}\n", Path.GetFileName(mdFilePath), i+1, e.Message);
+                    continue;
                 }
             }
 

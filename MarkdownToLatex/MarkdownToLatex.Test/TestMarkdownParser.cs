@@ -104,6 +104,19 @@ namespace MarkdownToLatex.Test
         }
 
         [Theory]
+        [InlineData("simple text", 0)]
+        [InlineData(@"the `\begin` and `\end` tags", 2)]
+        [InlineData("```test```", 1)]
+        [InlineData("`only one match``", 1)]
+        [InlineData("this `is````` crazy!`", 2)]
+        public void TestMatchVerbatim(string teststr, int matchCount){
+            //act
+            MatchCollection result = MarkdownParser.MatchVerbatim(teststr);
+            //assert
+            Assert.Equal(matchCount, result.Count);
+        }
+
+        [Theory]
         [InlineData("***s***a*a***a*a*a**a***a*a**a**a*a***a*a**a***a**a*a**a**a*a***a**a*a*a**a***", 8 + 9)] // bold + cursive
         [InlineData("simple **bold**, *cursive* and ***bold+cursive***", 2 + 2)]
         public void TestMatchBoldAndCursive(string teststr, int matchCount)

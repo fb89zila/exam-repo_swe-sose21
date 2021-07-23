@@ -27,7 +27,7 @@ namespace MarkdownToLatex {
             MathRx = new Dictionary<string, Regex>()
             {
                 {"svfunction", new Regex(@"f\(([a-z])\)=(.*)")},
-                {"params", new Regex(@"(?:{(?:([^{}\(\)]+)(?:\(((?:,?\-?[\d]*[\.]?(?:e|e-)?[\d]+)+)\))?(?:\[([\d]*)\])?)})")}
+                {"params", new Regex(@"(?:{(?:([^{}\(\)\[\]]+)(?:\(((?:,?\-?[\d]*[\.]?(?:e|e-)?[\d]+)+)\))?(?:(?<![^\(\)])(?:\[([\d]+)\]))?)})")}
             };
         }
     }

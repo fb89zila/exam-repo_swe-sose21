@@ -34,10 +34,13 @@ namespace MarkdownToLatex.Test
         {
             //arrange
             LatexRenderer.LatexLines.Clear();
-            string mathElement = "!{svfunc} f(x)=x^2+3*x+5 !{result(3.1415)}";
+            string mathElement = "!{svfunc} f(x)=x^2+3*x-5 !{result(3.1415)}{root(-5,-3)}{d1f}{d2f}";
             string[] expected = {
-                @"\[f(x)=5 + 3x + {x}^{2}\]",
-                @"\[f(3.1415)=24.29\]"
+                @"\[f(x)=-5 + 3x + {x}^{2}\]",
+                @"\[f(3.1415)=14.29\]",
+                @"\[root([-5,-3])=-4.19\]",
+                @"\[f'(x)=3 + 2x\]",
+                @"\[f''(x)=2\]"
             };
 
             //act

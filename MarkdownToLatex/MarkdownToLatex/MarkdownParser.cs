@@ -68,6 +68,13 @@ namespace MarkdownToLatex
             return TextRx["bold"].Matches(text);
         }
 
+        /// <summary>Matches verbatim text in a Markdown line</summary>
+        /// <returns>MatchCollection with all the verbatim text in Group[1]</returns>
+        public static MatchCollection MatchVerbatim(string text)
+        {
+            return TextRx["verbatim"].Matches(text);
+        }
+
         //ctor
         /// <summary>Constructor initializes <see cref="TextRx"/></summary>
         static MarkdownParser()
@@ -78,8 +85,9 @@ namespace MarkdownToLatex
                 {"headline", new Regex(@"^(#+) (.+)")},
                 {"list", new Regex(@"^((?:  )*)[-+] (.+)")},
                 {"quote", new Regex(@"^(>+) (.+)")},
-                {"cursive", new Regex(@"(\*|_)([^\*_]+?|[^\*_]*?(?:\*\*|__)[^\*_]+?(?:\*\*|__)[^\*_]*?)(?:\1)")},
-                {"bold", new Regex(@"(\*\*|__)([^\*_]+?|[^\*_]*?(?:\*|_)[^\*_]+?(?:\*|_)[^\*_]*?)(?:\1)")}
+                {"cursive", new Regex(@"(?:\*|_)([^\*_]+?|[^\*_]*?(?:\*\*|__)[^\*_]+?(?:\*\*|__)[^\*_]*?)(?:\*|_)")},
+                {"bold", new Regex(@"(?:\*\*|__)([^\*_]+?|[^\*_]*?(?:\*|_)[^\*_]+?(?:\*|_)[^\*_]*?)(?:\*\*|__)")},
+                {"verbatim", new Regex(@"(?:\`)([^\`]+)(?:\`)")}
             };
         }
     }

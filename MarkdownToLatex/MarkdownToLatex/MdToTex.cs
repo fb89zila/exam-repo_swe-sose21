@@ -57,7 +57,7 @@ namespace MarkdownToLatex
         internal static void convertText(string text)
         {
             string tempstr = text.TrimStart();
-            string bcText = LatexRenderer.WriteCursive(LatexRenderer.WriteBold(text));
+            string bcText = LatexRenderer.WriteInlineSyntax(text);
 
             if (tempstr.StartsWith('#')) {
                 LatexRenderer.WriteHeadline(MarkdownParser.MatchHeadline(bcText));

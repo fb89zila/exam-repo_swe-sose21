@@ -21,8 +21,8 @@ namespace MarkdownToLatex.Test
         }
 
         [Theory]
-        [InlineData("!{svfunc} f(x)=x^2+5*x-11/10:x !", "svfunc", "f(x)=x^2+5*x-11/10:x", "")]
-        [InlineData("!{mvfunc} f(99.12,0)=x^4+3*x^3-111/100-1.2*y:x,y !{result}{root}", "mvfunc", "f(99.12,0)=x^4+3*x^3-111/100-1.2*y:x,y", "{result}{root}")]
+        [InlineData("!{svfunc} f(x)=x^2+5*x-11/10 !", "svfunc", "f(x)=x^2+5*x-11/10", "")]
+        [InlineData("!{mvfunc} f(x,y)=x^4+3*x^3-111/100-1.2*y !{result(99.12,0)}{root}", "mvfunc", "f(x,y)=x^4+3*x^3-111/100-1.2*y", "{result(99.12,0)}{root}")]
         public void TestMatchMathElement(string teststr, string expType, string expText, string expParam)
         {
             //act
@@ -120,13 +120,13 @@ namespace MarkdownToLatex.Test
             boldMatch = MarkdownParser.MatchBold(resultstr);
             boldCounter = boldMatch.Count;
 
-            resultstr = MarkdownParser.TextRx["bold"].Replace(resultstr, @"\textbf{$2}");
+            resultstr = MarkdownParser.TextRx["bold"].Replace(resultstr, @"\textbf{$1}");
 
                 //cursive
             cursiveMatch = MarkdownParser.MatchCursive(resultstr);
             cursiveCounter = cursiveMatch.Count;
 
-            resultstr = MarkdownParser.TextRx["cursive"].Replace(resultstr, @"\textit{$2}");
+            resultstr = MarkdownParser.TextRx["cursive"].Replace(resultstr, @"\textit{$1}");
 
             Console.WriteLine(resultstr);
             //assert

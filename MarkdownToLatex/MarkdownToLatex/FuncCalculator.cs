@@ -120,24 +120,16 @@ namespace MarkdownToLatex {
         /// <summary>Initializes a new Instance of the the <see cref="FuncCalculator"/> class.</summary>
         public FuncCalculator(string var, string element) : base(var, element)
         {
-            try {
-                this.varExpr = Expr.Variable(Var);
-            } catch (Exception e) {
-                throw new ConvertElementException($"Could not compile function: {e.Message}", e);
-            }
+            this.varExpr = Expr.Variable(var);
 
             try {
                 this.func = this.Element.Compile(this.Var);
             } catch (Exception e) {
                 throw new ConvertElementException($"Could not compile function: {e.Message}", e);
             }
-
-            try {
-                this.dfunc = Differentiate.FirstDerivativeFunc(func);
-                this.ddfunc = Differentiate.SecondDerivativeFunc (func);
-            } catch (Exception e) {
-                throw new ConvertElementException($"Could not create derivatives: {e.Message}", e);
-            }
+            
+            this.dfunc = Differentiate.FirstDerivativeFunc(func);
+            this.ddfunc = Differentiate.SecondDerivativeFunc (func);
         }
     }
 }

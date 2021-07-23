@@ -30,9 +30,7 @@ namespace MarkdownToLatex {
         /// <returns>Rounded result</returns>
         private double roundResult(double tempResult, int precision)
         {
-            if (precision < 0) {
-                return Math.Round(tempResult);
-            } else if (precision > 15) {
+            if (precision > 15) {
                 return Math.Round(tempResult, 15);
             } else {
                 return Math.Round(tempResult, precision);

@@ -12,9 +12,10 @@ var searchData=
   ['matchparameters_33',['MatchParameters',['../class_markdown_to_latex_1_1_math_parser.html#a0be8675e7a8f15bab882969b24d33d68',1,'MarkdownToLatex::MathParser']]],
   ['matchquote_34',['MatchQuote',['../class_markdown_to_latex_1_1_markdown_parser.html#ad5d11814cb6238995a75406b1c10d414',1,'MarkdownToLatex::MarkdownParser']]],
   ['matchsvfunction_35',['MatchSVFunction',['../class_markdown_to_latex_1_1_math_parser.html#a0ade73682c5c0a9e11154fb112c51926',1,'MarkdownToLatex::MathParser']]],
-  ['mathparser_36',['MathParser',['../class_markdown_to_latex_1_1_math_parser.html',1,'MarkdownToLatex.MathParser'],['../class_markdown_to_latex_1_1_math_parser.html#aea78beddd07a25de31fb75fe5c05b6a2',1,'MarkdownToLatex.MathParser.MathParser()']]],
-  ['mathrx_37',['MathRx',['../class_markdown_to_latex_1_1_math_parser.html#a8c28a6058597b5e8a53928d34c90defc',1,'MarkdownToLatex::MathParser']]],
-  ['mdfilepath_38',['mdFilePath',['../class_markdown_to_latex_1_1_md_to_tex.html#acfb553280b878f4e5660b3760c4a1f0d',1,'MarkdownToLatex::MdToTex']]],
-  ['mdlines_39',['MdLines',['../class_markdown_to_latex_1_1_markdown_parser.html#a186d2c9d16e5ea1910829ac18b16ab05',1,'MarkdownToLatex::MarkdownParser']]],
-  ['mdtotex_40',['MdToTex',['../class_markdown_to_latex_1_1_md_to_tex.html',1,'MarkdownToLatex']]]
+  ['matchverbatim_36',['MatchVerbatim',['../class_markdown_to_latex_1_1_markdown_parser.html#ae4ad22c77db7e9f630be56d3089667bd',1,'MarkdownToLatex::MarkdownParser']]],
+  ['mathparser_37',['MathParser',['../class_markdown_to_latex_1_1_math_parser.html',1,'MarkdownToLatex.MathParser'],['../class_markdown_to_latex_1_1_math_parser.html#aea78beddd07a25de31fb75fe5c05b6a2',1,'MarkdownToLatex.MathParser.MathParser()']]],
+  ['mathrx_38',['MathRx',['../class_markdown_to_latex_1_1_math_parser.html#a8c28a6058597b5e8a53928d34c90defc',1,'MarkdownToLatex::MathParser']]],
+  ['mdfilepath_39',['mdFilePath',['../class_markdown_to_latex_1_1_md_to_tex.html#acfb553280b878f4e5660b3760c4a1f0d',1,'MarkdownToLatex::MdToTex']]],
+  ['mdlines_40',['MdLines',['../class_markdown_to_latex_1_1_markdown_parser.html#a186d2c9d16e5ea1910829ac18b16ab05',1,'MarkdownToLatex::MarkdownParser']]],
+  ['mdtotex_41',['MdToTex',['../class_markdown_to_latex_1_1_md_to_tex.html',1,'MarkdownToLatex']]]
 ];

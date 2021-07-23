@@ -2,12 +2,12 @@
 ## Standard Form
 
 A polynomial function of second degree (also referred to as quadratic function) can be written as
-!{svfunc} f(x)=a*x^2+b*x+c:x !
+!{svfunc} f(x)=a*x^2+b*x+c !
 
 ## Example
 
 As an example, take the following function, which is a polyomial of fourth degree (quartic function):
-!{svfunc} f(x)=6*x^4-9*x^3+12*x^2+2*x-89:x !{result(0)}
+!{svfunc} f(x)=6*x^4-9*x^3+12*x^2+2*x-89 !{result(0)}
 
 As you can see, it intersects with the y-Axis at $x = -89$.
 

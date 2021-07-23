@@ -12,9 +12,11 @@ namespace MarkdownToLatex.Test
         {
             //arrange
             FuncCalculator calc = new FuncCalculator("x", "2*x^3-7*x^2+5*x-3");
-            MatchCollection mc = MathParser.MatchParameters("{result(13.37)[0]}{result(13.37)}");
+            MatchCollection mc = MathParser.MatchParameters("{result(13.37)[16]}{result(13.37)[0]}{result(13.37)}");
+            Match invalidInput = MathParser.MatchParameters("{result(7-e4)}")[0];
             List<string> result = new List<string>();
             string[] expected = new string[] {
+                @"f(13.37)=3592.5112059999988",
                 @"f(13.37)=3593",
                 @"f(13.37)=3592.51"
             };
@@ -26,6 +28,7 @@ namespace MarkdownToLatex.Test
 
             //assert
             Assert.Equal(expected, result.ToArray());
+            Assert.Throws<ConvertElementException>(() => calc.Calculate(invalidInput));
         }
 
         [Fact]
@@ -34,6 +37,7 @@ namespace MarkdownToLatex.Test
             //arrange
             FuncCalculator calc = new FuncCalculator("x", "2*x^4-4*x^2+5*x-3");
             MatchCollection mc = MathParser.MatchParameters("{root(-2,0)[0]}{root(-2,0)}");
+            Match invalidInput = MathParser.MatchParameters("{root(7-e4,1)}")[0];
             List<string> result = new List<string>();
             string[] expected = new string[] {
                 @"root([-2,0])=-2",
@@ -47,6 +51,7 @@ namespace MarkdownToLatex.Test
 
             //assert
             Assert.Equal(expected, result.ToArray());
+            Assert.Throws<ConvertElementException>(() => calc.CalcRoot(invalidInput));
         }
 
         [Fact]
@@ -76,6 +81,7 @@ namespace MarkdownToLatex.Test
 
             //assert
             Assert.Equal(expected, result.ToArray());
+            Assert.Throws<ConvertElementException>(() => calc.CalcDerivative(mc[0], 3));
         }
 
         [Theory]

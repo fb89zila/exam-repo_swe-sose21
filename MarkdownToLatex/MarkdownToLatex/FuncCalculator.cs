@@ -11,7 +11,10 @@ namespace MarkdownToLatex {
     public class FuncCalculator : Calculator<string> {
 
         /// <summary>Variable <see cref="Calculator.Var"/> as SymbolicExpression</summary>
-        Expr VarExpr;
+        private Expr VarExpr;
+
+        /// <summary>Combined NumberStyles used to parse doubles.</summary>
+        private NumberStyles doubleNumStyles = NumberStyles.AllowLeadingSign | NumberStyles.AllowDecimalPoint | NumberStyles.AllowExponent;
 
         /// <summary>Function compiled in <see cref="FuncCalculator()"/> for MathNet calculations.</summary>
         private Func<double, double> func;
@@ -41,11 +44,17 @@ namespace MarkdownToLatex {
         /// <returns>Result in LaTeX format.</returns>
         public string Calculate(Match param)
         {
-            double input = Double.Parse(param.Groups[2].Value, NumberStyles.AllowLeadingSign | NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture);
+            double input;
+            bool hasInput = Double.TryParse(param.Groups[2].Value, doubleNumStyles, CultureInfo.InvariantCulture, out input);
 
-            int precision;
-            bool hasPrecision = int.TryParse(param.Groups[3].Value, out precision);
-            return $"f({(input).ToString(CultureInfo.InvariantCulture)})=" + roundResult(func(input), hasPrecision ? precision : 2).ToString(CultureInfo.InvariantCulture);
+            if (hasInput) {
+                int precision;
+                bool hasPrecision = int.TryParse(param.Groups[3].Value, out precision);
+
+                return $"f({(input).ToString(CultureInfo.InvariantCulture)})=" + roundResult(func(input), hasPrecision ? precision : 2).ToString(CultureInfo.InvariantCulture);
+            } else {
+                throw new ConvertElementException("Input could not be parsed.");
+            }
         }
 
         /// <summary>Tries to find a root in given bounds rounded with given <paramref name="precision"/>.</summary>
@@ -54,16 +63,24 @@ namespace MarkdownToLatex {
         public string CalcRoot(Match param)
         {
             string[] bounds = param.Groups[2].Value.Split(",");
-            double lowerBound = Double.Parse(bounds[0], NumberStyles.AllowLeadingSign | NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture);
-            double upperBound = Double.Parse(bounds[1], NumberStyles.AllowLeadingSign | NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture);
-
-            int precision;
-            bool hasPrecision = int.TryParse(param.Groups[3].Value, out precision);
-
-            double result;
-            bool foundRoot = RobustNewtonRaphson.TryFindRoot(func, dfunc, lowerBound, upperBound, 1e-8, 100, 20, out result);
             
-            return $"root([{lowerBound},{upperBound}])=" + roundResult(result, hasPrecision ? precision : 2).ToString(CultureInfo.InvariantCulture);
+            double lowerBound;
+            double upperBound;
+
+            bool hasBounds = Double.TryParse(bounds[0], doubleNumStyles, CultureInfo.InvariantCulture, out lowerBound);
+            hasBounds &= Double.TryParse(bounds[1], doubleNumStyles, CultureInfo.InvariantCulture, out upperBound);
+
+            if (hasBounds) {
+                int precision;
+                bool hasPrecision = int.TryParse(param.Groups[3].Value, out precision);
+
+                double result;
+                bool foundRoot = RobustNewtonRaphson.TryFindRoot(func, dfunc, lowerBound, upperBound, 1e-8, 100, 20, out result);
+                
+                return $"root([{lowerBound},{upperBound}])=" + roundResult(result, hasPrecision ? precision : 2).ToString(CultureInfo.InvariantCulture);
+            } else {
+                throw new ConvertElementException("Input could not be parsed.");
+            }
         }
 
         /// <summary>Compute the first or second derivative or calculate it with eventual input from <paramref name="param"/>.</summary>
@@ -72,7 +89,7 @@ namespace MarkdownToLatex {
         public string CalcDerivative(Match param, int order)
         {
             double input;
-            bool hasInput = Double.TryParse(param.Groups[2].Value, NumberStyles.AllowLeadingSign | NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out input);
+            bool hasInput = Double.TryParse(param.Groups[2].Value, doubleNumStyles, CultureInfo.InvariantCulture, out input);
 
             int precision;
             bool hasPrecision = int.TryParse(param.Groups[3].Value, out precision);

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['readmddocument_41',['ReadMdDocument',['../class_markdown_to_latex_1_1_markdown_parser.html#ab87ed678a64ee19b64a93d252122f7df',1,'MarkdownToLatex::MarkdownParser']]],
-  ['resetlistorquote_42',['ResetListOrQuote',['../class_markdown_to_latex_1_1_latex_renderer.html#ab75cafa222f20a04e82226ac4ce9169a',1,'MarkdownToLatex::LatexRenderer']]]
+  ['parseinputpath_46',['parseInputPath',['../class_markdown_to_latex_1_1_md_to_tex.html#ad4a3a13eda474ab31945dac4138eea6b',1,'MarkdownToLatex::MdToTex']]],
+  ['parseoutputpath_47',['parseOutputPath',['../class_markdown_to_latex_1_1_md_to_tex.html#a3cee5f672279c3ea5c31ea9b59a17e09',1,'MarkdownToLatex::MdToTex']]]
 ];

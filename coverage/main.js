@@ -226,11 +226,11 @@ var assemblies = [
     "classes": [
       { "name": "MarkdownToLatex.Calculator<T>", "rp": "MarkdownToLatex_Calculator_1.html", "cl": 10, "ucl": 0, "cal": 10, "tl": 35, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "MarkdownToLatex.ConvertElementException", "rp": "MarkdownToLatex_ConvertElementException.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 17, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "MarkdownToLatex.FuncCalculator", "rp": "MarkdownToLatex_FuncCalculator.html", "cl": 52, "ucl": 9, "cal": 61, "tl": 145, "ct": "LineCoverage", "mc": "-", "cb": 19, "tb": 24, "lch": [], "bch": [], "hc": [] },
+      { "name": "MarkdownToLatex.FuncCalculator", "rp": "MarkdownToLatex_FuncCalculator.html", "cl": 53, "ucl": 0, "cal": 53, "tl": 135, "ct": "LineCoverage", "mc": "-", "cb": 22, "tb": 22, "lch": [], "bch": [], "hc": [] },
       { "name": "MarkdownToLatex.LatexRenderer", "rp": "MarkdownToLatex_LatexRenderer.html", "cl": 162, "ucl": 0, "cal": 162, "tl": 249, "ct": "LineCoverage", "mc": "-", "cb": 78, "tb": 78, "lch": [], "bch": [], "hc": [] },
-      { "name": "MarkdownToLatex.MarkdownParser", "rp": "MarkdownToLatex_MarkdownParser.html", "cl": 35, "ucl": 3, "cal": 38, "tl": 94, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "MarkdownToLatex.MarkdownParser", "rp": "MarkdownToLatex_MarkdownParser.html", "cl": 38, "ucl": 0, "cal": 38, "tl": 94, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "MarkdownToLatex.MathParser", "rp": "MarkdownToLatex_MathParser.html", "cl": 14, "ucl": 0, "cal": 14, "tl": 34, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "MarkdownToLatex.MdToTex", "rp": "MarkdownToLatex_MdToTex.html", "cl": 57, "ucl": 64, "cal": 121, "tl": 200, "ct": "LineCoverage", "mc": "-", "cb": 28, "tb": 38, "lch": [], "bch": [], "hc": [] },
+      { "name": "MarkdownToLatex.MdToTex", "rp": "MarkdownToLatex_MdToTex.html", "cl": 63, "ucl": 0, "cal": 63, "tl": 201, "ct": "LineCoverage", "mc": "-", "cb": 34, "tb": 34, "lch": [], "bch": [], "hc": [] },
     ]},
 ];
 

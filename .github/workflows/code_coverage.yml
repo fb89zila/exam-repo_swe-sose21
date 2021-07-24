@@ -11,6 +11,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Set timezone to Berlin
+      uses: szenius/set-timezone@v1.0
+      with:
+        timezoneLinux: "Europe/Berlin"
     - name: Install dependencies
       run: |
         cd MarkdownToLatex

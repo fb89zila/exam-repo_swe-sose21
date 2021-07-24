@@ -1,0 +1,32 @@
+name: .NET
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: |
+        cd MarkdownToLatex
+        dotnet restore
+        dotnet new tool-manifest # if you are setting up this repo
+        dotnet tool install --local dotnet-reportgenerator-globaltool --version 4.8.12
+    - name: Create XML report
+      run: |
+        cd MarkdownToLatex
+        dotnet test --collect:"XPlat Code Coverage" --results-directory:"./.coverage"
+    - name: |
+        cd MarkdownToLatex
+        reportgenerator "-reports:.coverage/**/*.cobertura.xml" "-targetdir:.coverage/coverage-report/" "-reporttypes:HTML;"
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: MarkdownToLatex/.coverage/coverage-report/
+        destination_dir: coverage

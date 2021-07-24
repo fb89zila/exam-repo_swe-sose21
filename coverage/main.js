@@ -222,15 +222,15 @@ for (i = 0, l = charts.length; i < l; i++) {
 
 var assemblies = [
   {
-    "name": "MarkdownToLatex",
+    "name": "mdtotex",
     "classes": [
-      { "name": "MarkdownToLatex.Calculator<T>", "rp": "MarkdownToLatex_Calculator_1.html", "cl": 10, "ucl": 0, "cal": 10, "tl": 35, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "MarkdownToLatex.ConvertElementException", "rp": "MarkdownToLatex_ConvertElementException.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 17, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "MarkdownToLatex.FuncCalculator", "rp": "MarkdownToLatex_FuncCalculator.html", "cl": 53, "ucl": 0, "cal": 53, "tl": 135, "ct": "LineCoverage", "mc": "-", "cb": 22, "tb": 22, "lch": [], "bch": [], "hc": [] },
-      { "name": "MarkdownToLatex.LatexRenderer", "rp": "MarkdownToLatex_LatexRenderer.html", "cl": 162, "ucl": 0, "cal": 162, "tl": 249, "ct": "LineCoverage", "mc": "-", "cb": 78, "tb": 78, "lch": [], "bch": [], "hc": [] },
-      { "name": "MarkdownToLatex.MarkdownParser", "rp": "MarkdownToLatex_MarkdownParser.html", "cl": 38, "ucl": 0, "cal": 38, "tl": 94, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "MarkdownToLatex.MathParser", "rp": "MarkdownToLatex_MathParser.html", "cl": 14, "ucl": 0, "cal": 14, "tl": 34, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "MarkdownToLatex.MdToTex", "rp": "MarkdownToLatex_MdToTex.html", "cl": 63, "ucl": 0, "cal": 63, "tl": 201, "ct": "LineCoverage", "mc": "-", "cb": 34, "tb": 34, "lch": [], "bch": [], "hc": [] },
+      { "name": "MarkdownToLatex.Calculator<T>", "rp": "mdtotex_Calculator_1.html", "cl": 10, "ucl": 0, "cal": 10, "tl": 35, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "MarkdownToLatex.ConvertElementException", "rp": "mdtotex_ConvertElementException.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 17, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "MarkdownToLatex.FuncCalculator", "rp": "mdtotex_FuncCalculator.html", "cl": 53, "ucl": 0, "cal": 53, "tl": 135, "ct": "LineCoverage", "mc": "-", "cb": 22, "tb": 22, "lch": [], "bch": [], "hc": [] },
+      { "name": "MarkdownToLatex.LatexRenderer", "rp": "mdtotex_LatexRenderer.html", "cl": 162, "ucl": 0, "cal": 162, "tl": 249, "ct": "LineCoverage", "mc": "-", "cb": 78, "tb": 78, "lch": [], "bch": [], "hc": [] },
+      { "name": "MarkdownToLatex.MarkdownParser", "rp": "mdtotex_MarkdownParser.html", "cl": 38, "ucl": 0, "cal": 38, "tl": 94, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "MarkdownToLatex.MathParser", "rp": "mdtotex_MathParser.html", "cl": 14, "ucl": 0, "cal": 14, "tl": 34, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "MarkdownToLatex.MdToTex", "rp": "mdtotex_MdToTex.html", "cl": 63, "ucl": 0, "cal": 63, "tl": 201, "ct": "LineCoverage", "mc": "-", "cb": 34, "tb": 34, "lch": [], "bch": [], "hc": [] },
     ]},
 ];
 
@@ -242,12 +242,12 @@ var riskHotspotMetrics = [
 
 var riskHotspots = [
   {
-    "assembly": "MarkdownToLatex", "class": "MarkdownToLatex.LatexRenderer", "reportPath": "MarkdownToLatex_LatexRenderer.html", "methodName": "WriteList(System.Text.RegularExpressions.Match)", "methodShortName": "WriteList(...)", "fileIndex": 0, "line": 89,
+    "assembly": "mdtotex", "class": "MarkdownToLatex.LatexRenderer", "reportPath": "mdtotex_LatexRenderer.html", "methodName": "WriteList(System.Text.RegularExpressions.Match)", "methodShortName": "WriteList(...)", "fileIndex": 0, "line": 89,
     "metrics": [
       { "value": 32, "exceeded": true },
     ]},
   {
-    "assembly": "MarkdownToLatex", "class": "MarkdownToLatex.LatexRenderer", "reportPath": "MarkdownToLatex_LatexRenderer.html", "methodName": "WriteQuote(System.Text.RegularExpressions.Match)", "methodShortName": "WriteQuote(...)", "fileIndex": 0, "line": 143,
+    "assembly": "mdtotex", "class": "MarkdownToLatex.LatexRenderer", "reportPath": "mdtotex_LatexRenderer.html", "methodName": "WriteQuote(System.Text.RegularExpressions.Match)", "methodShortName": "WriteQuote(...)", "fileIndex": 0, "line": 143,
     "metrics": [
       { "value": 32, "exceeded": true },
     ]},

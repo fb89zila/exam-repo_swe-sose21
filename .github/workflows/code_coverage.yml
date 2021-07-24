@@ -21,7 +21,8 @@ jobs:
       run: |
         cd MarkdownToLatex
         dotnet test --collect:"XPlat Code Coverage" --results-directory:"./.coverage"
-    - name: |
+    - name: Create HTML report
+      run: |
         cd MarkdownToLatex
         reportgenerator "-reports:.coverage/**/*.cobertura.xml" "-targetdir:.coverage/coverage-report/" "-reporttypes:HTML;"
     - name: Deploy

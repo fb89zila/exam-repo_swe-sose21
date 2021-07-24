@@ -24,7 +24,7 @@ jobs:
     - name: Create HTML report
       run: |
         cd MarkdownToLatex
-        reportgenerator "-reports:.coverage/**/*.cobertura.xml" "-targetdir:.coverage/coverage-report/" "-reporttypes:HTML;"
+        dotnet reportgenerator "-reports:.coverage/**/*.cobertura.xml" "-targetdir:.coverage/coverage-report/" "-reporttypes:HTML;"
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:

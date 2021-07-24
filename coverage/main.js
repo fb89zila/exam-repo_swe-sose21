@@ -230,7 +230,7 @@ var assemblies = [
       { "name": "MarkdownToLatex.LatexRenderer", "rp": "mdtotex_LatexRenderer.html", "cl": 162, "ucl": 0, "cal": 162, "tl": 249, "ct": "LineCoverage", "mc": "-", "cb": 78, "tb": 78, "lch": [], "bch": [], "hc": [] },
       { "name": "MarkdownToLatex.MarkdownParser", "rp": "mdtotex_MarkdownParser.html", "cl": 38, "ucl": 0, "cal": 38, "tl": 94, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "MarkdownToLatex.MathParser", "rp": "mdtotex_MathParser.html", "cl": 14, "ucl": 0, "cal": 14, "tl": 34, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "MarkdownToLatex.MdToTex", "rp": "mdtotex_MdToTex.html", "cl": 63, "ucl": 0, "cal": 63, "tl": 201, "ct": "LineCoverage", "mc": "-", "cb": 34, "tb": 34, "lch": [], "bch": [], "hc": [] },
+      { "name": "MarkdownToLatex.MdToTex", "rp": "mdtotex_MdToTex.html", "cl": 63, "ucl": 0, "cal": 63, "tl": 214, "ct": "LineCoverage", "mc": "-", "cb": 34, "tb": 34, "lch": [], "bch": [], "hc": [] },
     ]},
 ];
 
